@@ -1,0 +1,73 @@
+r_fallen_graysky = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_fallen_relic_graysky"
+	sound = "relic_activation_the_omnicodex"
+	resources = {
+		category = relics
+		PRODUCES = {nanites = 50 }
+	}
+	ai_weight = { weight = 0 }
+	score = 5000
+	active_effect = {}
+	# Possible check for activation
+	possible = {
+		custom_tooltip = never_you_sgyh
+		always = no
+	}
+}
+
+r_fallen_grays = {
+	activation_duration = @triumph_duration
+	portrait = GFX_fallen_relic_grays
+	sound = "relic_activation_the_omnicodex"
+	resources = { category = relics }
+	ai_weight = { weight = 0 }
+	triggered_country_modifier = {
+		planet_miners_nanites_produces_add = 0.75
+		potential = { always = yes }
+	}
+	score = 5000
+	active_effect = {
+		custom_tooltip = relic_triumph_cooldown
+		custom_tooltip = relic_grays_add
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
+			root.capital_scope = {
+				create_fleet = {
+					name = nanite_swarmer
+					effect = {
+						set_owner = root
+						set_location = prev
+						while = {
+							count = root.graygoo_fleet_counts
+							create_ship = {
+								design = NAME_Nanite_Mothership
+								name = NAME_Nanite_Mothership
+							}
+							while = {
+								count = 6
+								create_ship = {
+									design = NAME_Nanite_Interdictor
+									name = NAME_Nanite_Interdictor
+								}
+							}
+							add_modifier = { modifier = gray_warship }
+						}
+					}
+				}
+			}
+			change_variable = { which = graygoo_fleet_counts value = 1 }
+		}
+
+	}
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_fallen_grays
+		}
+	}
+}

@@ -1,0 +1,139 @@
+awaken_fallen_machine_empire = {
+    every_country = {
+        limit = {
+            is_country_type = fallen_empire
+            is_machine_empire = yes
+            not = { has_country_flag = fallen_empire_machine_LgateGrander }
+        }
+
+        country_event = { id = fallen_machine_empire.1 days = 30 random = 30 }
+    }
+}
+
+create_fallen_empire_large_ship = {
+    if = {
+        limit = {
+            owner = { is_fallen_empire_machine = yes }
+        }
+        create_ship = {
+            name = random
+            design = "NAME_Beta"
+            graphical_culture = owner
+        }
+    }
+    else_if = {
+        limit = {
+            owner = { has_country_flag = fallen_empire_machine_LgateGrander }
+        }
+        create_ship = {
+            name = NAME_Nanite_Mothership
+            design = NAME_Nanite_Mothership
+        }
+    }
+    else_if = {
+        limit = {
+            owner = { has_ethic = ethic_fanatic_materialist }
+        }
+        create_ship = {
+            name = random
+            design = "NAME_Scholar"
+            graphical_culture = owner
+        }
+    }
+    else_if = {
+        limit = {
+            owner = { has_ethic = ethic_fanatic_spiritualist }
+        }
+        create_ship = {
+            name = random
+            design = "NAME_Avatar"
+            graphical_culture = owner
+        }
+    }
+    else_if = {
+        limit = {
+            owner = {
+                OR = {
+                    has_ethic = ethic_fanatic_xenophobe
+                    has_ethic = ethic_fanatic_militarist
+                }
+            }
+        }
+        create_ship = {
+            name = random
+            design = "NAME_Supremacy"
+            graphical_culture = owner
+        }
+    }
+    else = {
+        create_ship = {
+            name = random
+            design = "NAME_Custodian"
+            graphical_culture = owner
+        }
+    }
+}
+
+create_fallen_empire_small_ship = {
+    if = {
+        limit = {
+            owner = { is_fallen_empire_machine = yes }
+        }
+        create_ship = {
+            name = random
+            design = "NAME_Gamma"
+            graphical_culture = owner
+        }
+    }
+    else_if = {
+        limit = {
+            owner = { has_country_flag = fallen_empire_machine_LgateGrander }
+        }
+        create_ship = {
+            name = NAME_Nanite_Interdictor
+            design = NAME_Nanite_Interdictor
+        }
+    }
+    else_if = {
+        limit = {
+            owner = { has_ethic = ethic_fanatic_materialist }
+        }
+        create_ship = {
+            name = random
+            design = "NAME_Sage"
+            graphical_culture = owner
+        }
+    }
+    else_if = {
+        limit = {
+            owner = { has_ethic = ethic_fanatic_spiritualist }
+        }
+        create_ship = {
+            name = random
+            design = "NAME_Zealot"
+            graphical_culture = owner
+        }
+    }
+    else_if = {
+        limit = {
+            owner = {
+                OR = {
+                    has_ethic = ethic_fanatic_xenophobe
+                    has_ethic = ethic_fanatic_militarist
+                }
+            }
+        }
+        create_ship = {
+            name = random
+            design = "NAME_Glory"
+            graphical_culture = owner
+        }
+    }
+    else = {
+        create_ship = {
+            name = random
+            design = "NAME_Overseer"
+            graphical_culture = owner
+        }
+    }
+}

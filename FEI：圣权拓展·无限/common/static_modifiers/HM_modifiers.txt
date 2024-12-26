@@ -1,0 +1,31 @@
+
+
+mod_fallen_lgater = {
+	country_base_nanites_produces_add = 10000
+	country_produces_mult = 2.5
+	planet_stability_add = 25
+	planet_housing_add = 200
+}
+mod_research_reduce_lgate = {
+	all_technology_research_speed = -0.25
+}
+mod_produces_reduce_lgate = {
+	country_produces_mult = -0.2
+}
+mod_graygoo_kill_gater = {
+	damage_vs_country_type_awakened_fallen_empire_mult = 100
+}
+mod_lgater_helping = {
+	country_produces_mult = 0.15
+}
+mod_graysky_sci_produce = {
+	hide_from_country_list = yes
+	country_base_physics_research_produces_add = 1
+	country_base_society_research_produces_add = 1
+	country_base_engineering_research_produces_add = 1
+}
+mod_graygoo_sepcies = {
+	country_base_nanites_produces_add = 100
+	ship_hull_regen_add_perc = 0.1
+	ship_armor_regen_add_perc = 0.2
+}

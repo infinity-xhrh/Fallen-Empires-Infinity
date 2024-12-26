@@ -1,0 +1,140 @@
+on_game_start_country = {
+	events = {
+		change_fallen_empire_power.1
+		balanced_fallen_empire_events.1
+		balanced_fallen_empire_events.4
+		rebuilt_computer_events.1
+		fallen_leader_events.1
+		tech_fallen_events.1
+		fallen_per_ftl_events.1
+		angle_of_end_events.1
+   }
+}
+
+on_monthly_pulse = {
+	events = {
+		rebuilt_computer_events.14
+		tech_fallen_events.13
+	}
+}
+
+on_decade_pulse_country = {
+	events = {
+		tech_fallen_events.15
+	}
+}
+
+on_country_destroyed = {
+	events = {
+		balanced_fallen_empire_events.8
+	}
+}
+
+on_planet_attackers_win = {
+	events = {
+		balanced_fallen_empire_events.9
+		fallen_leader_events.2
+	}
+}
+
+on_space_battle_won = {
+	events = {
+		fallen_leader_events.2
+	}
+}
+
+on_planet_defenders_win = {
+	events = {
+		fallen_leader_events.2
+	}
+}
+
+
+on_colonized = {
+	events = {
+		balanced_fallen_empire_events.11
+	}
+}
+
+on_entering_system_first_time = {
+	events = {
+		rebuilt_computer_events.3
+		fallen_per_ftl_events.3
+	}
+}
+
+on_war_ended = {
+	events = {
+		rebuilt_computer_events.13
+		tech_fallen_events.12
+	}
+}
+
+on_entering_system_fleet = {
+	random_events = {
+		90 = 0
+		10 = tech_fallen_events.2
+	}
+}
+
+on_planet_bombarded = {
+	events = {
+		fallen_per_ftl_events.16
+	}
+}
+
+on_game_start = {
+	events = {
+		Nanites_grander.1
+	}
+}
+
+on_monthly_pulse_country = {
+	events = {
+		Nanites_grander.3
+		Nanites_grander.4
+		Nanites_grander.5
+		Nanites_grander.6
+		Nanites_grander.7
+		Nanites_grander.18  #灰空复活
+		Nanites_grander.23  #灰空科研
+	}
+}
+
+on_yearly_pulse_country = {
+	events = {
+		Nanites_grander.10
+		Nanites_grander.22
+		Nanites_grander.26
+	}
+}
+
+on_custom_diplomacy = {
+	events = {
+		Nanites_grander.20
+		Nanites_grander.21
+	}
+}
+
+on_war_beginning = {
+	events = {
+		Nanites_grander.24
+	}
+}
+
+on_first_contact = {
+	events = {
+		Nanites_grander.33
+	}
+}
+on_country_destroyed = {
+	events = {
+		Nanites_grander.34
+	}
+}
+
+on_war_lost = {
+	events = {
+		tech_fallen_events.12
+	}
+}

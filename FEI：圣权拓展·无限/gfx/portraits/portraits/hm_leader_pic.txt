@@ -1,0 +1,4 @@
+
+portraits = {
+    gray_sky = { texturefile = gfx/models/portraits/gray_sky.dds  }
+}
