@@ -157,11 +157,11 @@ ship_design= {
         }
         component = {
             slot = AUX_UTILITY_1
-            template = BATTLESHIP_CLOAKING_DARK_MATTER
+            template = GRAVITY_SNARE_CLOAKING_3
         }
         component = {
             slot = AUX_UTILITY_2
-            template = BATTLESHIP_CLOAKING_DARK_MATTER
+            template = GRAVITY_SNARE_CLOAKING_3
         }
         component = {
             slot = AUX_UTILITY_3
@@ -195,3 +195,212 @@ ship_design= {
     required_component = TITAN_DARK_MATTER_REACTOR
 }
 
+ship_design= {
+    name = NAME_graysky_wariship_big
+    ship_size = graysky_big_warship
+    is_event_design = yes
+    section = {
+        template = graysky_big_warship
+        slot = mid
+
+        component = {
+            slot = TITANIC_01
+            template = TITAN_LASER_graysky
+        }
+        component = {
+            slot = G_02
+            template =energy_laser_graysky
+        }
+        component = {
+            slot = G_03
+            template =energy_laser_graysky
+        }
+        component = {
+            slot = G_09
+            template = missile_graysky
+        }
+        component = {
+            slot = G_12
+            template = missile_graysky
+        }
+        component = {
+            slot = STRIKE_CRAFT_01
+            template = striker_graysky
+        }
+        component = {
+            slot = STRIKE_CRAFT_02
+            template =striker_graysky
+        }
+
+        component = {
+            slot = LARGE_UTILITY_1
+            template = LARGE_ARMOR_5
+        }
+        component = {
+            slot = LARGE_UTILITY_2
+            template = LARGE_ARMOR_5
+        }
+        component = {
+            slot = LARGE_UTILITY_3
+            template = LARGE_ARMOR_5
+        }
+        component = {
+            slot = LARGE_UTILITY_4
+            template = LARGE_ARMOR_5
+        }
+        component = {
+            slot = LARGE_UTILITY_5
+            template = LARGE_ARMOR_5
+        }
+        component = {
+            slot = LARGE_UTILITY_6
+            template = LARGE_ARMOR_5
+        }
+        component = {
+            slot = LARGE_UTILITY_7
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = LARGE_UTILITY_8
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = LARGE_UTILITY_9
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = LARGE_UTILITY_10
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = LARGE_UTILITY_11
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = LARGE_UTILITY_12
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = LARGE_UTILITY_13
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = LARGE_UTILITY_14
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = AUX_UTILITY_1
+            template = GRAVITY_SNARE_CLOAKING_3
+        }
+        component = {
+            slot = AUX_UTILITY_2
+            template = GRAVITY_SNARE_CLOAKING_3
+        }
+        component = {
+            slot = AUX_UTILITY_3
+            template = SHIELD_BOOSTER
+        }
+        component = {
+            slot = AUX_UTILITY_4
+            template = SHIELD_BOOSTER
+        }
+        component = {
+            slot = AUX_UTILITY_5
+            template = AUTO_REPAIR_2
+        }
+        component = {
+            slot = AUX_UTILITY_6
+            template = AUTO_REPAIR_2
+        }
+    }
+    required_component = HYPER_DRIVE_3
+    required_component = COMBAT_COMPUTER_LINE_ADVANCED
+    required_component = TITAN_SHIP_THRUSTER_5
+    required_component = SENSOR_4
+    required_component = TITAN_DARK_MATTER_REACTOR
+}
+
+ship_design= {
+    name = NAME_graysky_wariship_small
+    ship_size = graysky_small_warship
+    is_event_design = yes
+    section = {
+        template = graysky_small_warship
+        slot = mid
+
+        component = {
+            slot = G_02
+            template =energy_laser_graysky
+        }
+        component = {
+            slot = G_09
+            template = missile_graysky
+        }
+        component = {
+            slot = G_12
+            template = missile_graysky
+        }
+        component = {
+            slot = STRIKE_CRAFT_01
+            template = striker_graysky
+        }
+        component = {
+            slot = STRIKE_CRAFT_02
+            template =striker_graysky
+        }
+
+        component = {
+            slot = LARGE_UTILITY_1
+            template = LARGE_ARMOR_5
+        }
+        component = {
+            slot = LARGE_UTILITY_2
+            template = LARGE_ARMOR_5
+        }
+        component = {
+            slot = LARGE_UTILITY_3
+            template = LARGE_ARMOR_5
+        }
+        component = {
+            slot = LARGE_UTILITY_4
+            template = LARGE_ARMOR_5
+        }
+        component = {
+            slot = LARGE_UTILITY_5
+            template = LARGE_ARMOR_5
+        }
+        component = {
+            slot = LARGE_UTILITY_6
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = LARGE_UTILITY_7
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = LARGE_UTILITY_8
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = LARGE_UTILITY_9
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = LARGE_UTILITY_10
+            template = LARGE_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = AUX_UTILITY_1
+            template = GRAVITY_SNARE_CLOAKING_3
+        }
+        component = {
+            slot = AUX_UTILITY_2
+            template = AUTO_REPAIR_2
+        }
+    }
+    required_component = HYPER_DRIVE_3
+    required_component = COMBAT_COMPUTER_LINE_ADVANCED
+    required_component = TITAN_SHIP_THRUSTER_5
+    required_component = SENSOR_4
+    required_component = TITAN_DARK_MATTER_REACTOR
+}

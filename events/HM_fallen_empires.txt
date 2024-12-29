@@ -155,16 +155,20 @@ event = {
                             effect = {
                                 set_owner = event_target:lgate_grander_fallen
                                 set_location = prev
+                                create_ship = {
+                                    design = NAME_graysky_titan
+                                    name = random
+                                }
                                 while = {
-                                    count = 4
+                                    count = 2
                                     create_ship = {
-                                        design = NAME_Nanite_Mothership
+                                        design = NAME_graysky_wariship_big
                                         name = random
                                     }
                                     while = {
-                                        count = 8
+                                        count = 4
                                         create_ship = {
-                                            design = NAME_Nanite_Interdictor
+                                            design = NAME_graysky_wariship_small
                                             name = random
                                         }
                                     }
@@ -310,16 +314,20 @@ country_event = {
                     effect = {
                         set_owner = event_target:lgate_grander_fallen
                         set_location = prev
+                        create_ship = {
+                            design = NAME_graysky_titan
+                            name = random
+                        }
                         while = {
-                            count = 4
+                            count = 2
                             create_ship = {
-                                design = NAME_Nanite_Mothership
+                                design = NAME_graysky_wariship_big
                                 name = random
                             }
                             while = {
-                                count = 8
+                                count = 4
                                 create_ship = {
-                                    design = NAME_Nanite_Interdictor
+                                    design = NAME_graysky_wariship_small
                                     name = random
                                 }
                             }
@@ -574,13 +582,13 @@ country_event = {
                             set_owner = root
                             set_location = prev
                             create_ship = {
-                                design = NAME_Nanite_Mothership
+                                design = NAME_graysky_wariship_big
                                 name = NAME_Nanite_Mothership
                             }
                             while = {
                                 count = 4
                                 create_ship = {
-                                    design = NAME_Nanite_Interdictor
+                                    design = NAME_graysky_wariship_small
                                     name = NAME_Nanite_Interdictor
                                 }
                             }
@@ -988,7 +996,7 @@ country_event = {
                         while = {
                             count = 4
                             create_ship = {
-                                name = NAME_Nanite_Interdictor
+                                name = NAME_graysky_wariship_small
                                 design = NAME_Nanite_Interdictor
                             }
                         }

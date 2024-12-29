@@ -44,13 +44,13 @@ r_fallen_grays = {
 						while = {
 							count = root.graygoo_fleet_counts
 							create_ship = {
-								design = NAME_Nanite_Mothership
+								design = NAME_graysky_wariship_big
 								name = NAME_Nanite_Mothership
 							}
 							while = {
 								count = 6
 								create_ship = {
-									design = NAME_Nanite_Interdictor
+									design = NAME_graysky_wariship_small
 									name = NAME_Nanite_Interdictor
 								}
 							}

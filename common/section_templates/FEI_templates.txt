@@ -97,3 +97,89 @@ ship_section_template = {
     large_utility_slots = 20
     aux_utility_slots = 8
 }
+
+ship_section_template = {
+    key = graysky_big_warship
+    ship_size = graysky_big_warship
+    fits_on_slot = mid
+    entity = nano_fallen_empire_warship_large_entity
+    icon = "GFX_ship_part_core_mid"
+
+    component_slot = {
+        name = "TITANIC_01"
+        template = "invisible_titanic_fixed"
+        locatorname = root
+    }
+    component_slot = {
+        name = "G_02"
+        template = "extra_large_turret"
+        locatorname = "root"
+    }
+    component_slot = {
+        name = "G_03"
+        template = "extra_large_turret"
+        locatorname = "root"
+    }
+    component_slot = {
+        name = G_09
+        template = invisible_missile_turret
+        locatorname = "root"
+    }
+    component_slot = {
+        name = G_12
+        template = invisible_missile_turret
+        locatorname = "root"
+    }
+    component_slot = {
+        name = "STRIKE_CRAFT_01"
+        template = "large_strike_craft"
+        rotation = 90
+        locatorname = "root"
+    }
+    component_slot = {
+        name = "STRIKE_CRAFT_02"
+        template = "large_strike_craft"
+        rotation = 90
+        locatorname = "root"
+    }
+    large_utility_slots = 14
+    aux_utility_slots = 6
+}
+
+ship_section_template = {
+    key = graysky_small_warship
+    ship_size = graysky_small_warship
+    fits_on_slot = mid
+    entity = nano_fallen_empire_warship_large_entity
+    icon = "GFX_ship_part_core_mid"
+
+    component_slot = {
+        name = "G_02"
+        template = "extra_large_turret"
+        locatorname = "root"
+    }
+    component_slot = {
+        name = G_09
+        template = invisible_missile_turret
+        locatorname = "root"
+    }
+    component_slot = {
+        name = G_12
+        template = invisible_missile_turret
+        locatorname = "root"
+    }
+    component_slot = {
+        name = "STRIKE_CRAFT_01"
+        template = "large_strike_craft"
+        rotation = 90
+        locatorname = "root"
+    }
+    component_slot = {
+        name = "STRIKE_CRAFT_02"
+        template = "large_strike_craft"
+        rotation = 90
+        locatorname = "root"
+    }
+    large_utility_slots = 10
+    aux_utility_slots = 2
+}
