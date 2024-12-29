@@ -1,0 +1,155 @@
+#纳米泰坦光矛
+weapon_component_template = {
+    key = TITAN_LASER_graysky
+    size = titanic
+    type = instant
+    prio_projectile = yes
+    hidden = yes
+    icon = "GFX_ship_part_energy_lance_2"
+    icon_frame = 1
+    firing_arc = 25.0
+    windup = { max = 50 min = 50 }
+    total_fire_time = 50
+    damage = { min = 10000 max = 18000 }
+    shield_damage = 0.5
+    armor_damage = 1.5
+    hull_damage = 1
+    use_ship_kill_target = no
+    tags = { weapon_type_energy weapon_role_artillery t_slot }
+    projectile_gfx = "titan_laser"
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = @titanic_t6_cost
+            nanites = @titanic_t6_rare
+        }
+        upkeep = {
+            energy = @titanic_t6_upkeep_energy
+            alloys = @titanic_t6_upkeep_alloys
+        }
+    }
+    target_weights = { titan = 3 battleship = 2 }
+    ai_weight = {
+        weight = 0
+        modifier = {
+            add = 1000
+            has_country_flag = fallen_empire_machine_LgateGrander
+        }
+    }
+}
+#纳米电弧
+weapon_component_template = {
+    key = energy_laser_graysky
+    size = extra_large
+    type = instant
+    prio_projectile = yes
+    hidden = yes
+    icon = "GFX_ship_part_arc_emitter_2"
+    icon_frame = 1
+    firing_arc = 25.0
+    windup = { max = 40 min = 40 }
+    total_fire_time = 60
+    damage = { min = 3 max = 2600 }
+    shield_damage = 1
+    armor_damage = 1
+    hull_damage = 1
+    shield_penetration = 1
+    armor_penetration = 1
+    use_ship_kill_target = no
+    tags = { weapon_type_energy weapon_role_artillery x_slot }
+    projectile_gfx = arc_emitter
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = @titanic_t6_cost
+            nanites = @titanic_t6_rare
+        }
+        upkeep = {
+            energy = @titanic_t6_upkeep_energy
+            alloys = @titanic_t6_upkeep_alloys
+        }
+    }
+    target_weights = { titan = 3 battleship = 2 }
+    ai_weight = {
+        weight = 0
+        modifier = {
+            add = 1000
+            has_country_flag = fallen_empire_machine_LgateGrander
+        }
+    }
+}
+#纳米导弹
+weapon_component_template = {
+    key = missile_graysky
+    size = torpedo
+    type = missile
+    prio_projectile = yes
+    power = -20
+    icon = GFX_ship_part_missile_5
+    firing_arc = 120.0
+    damage = { min = 100 max = 110 }
+    windup = { min = 30 max = 30 }
+    range = 80
+    missile_health = 20
+    missile_armor = 0
+    missile_evasion = 0.5
+    missile_retarget_range = 200
+    missile_shield = 0
+    missile_speed = 14
+    shield_damage = 1
+    shield_penetration = 1
+    armor_damage = 1.5
+    size_damage_factor = 1
+    total_fire_time = 50
+    tags = { weapon_type_explosive  }
+    resources = {
+        category = ship_components
+        cost = { nanites = 8 }
+    }
+    projectile_gfx = gatebuilder_torpedo
+    ai_weight = {
+        weight = 0
+        modifier = {
+            add = 1000
+            has_country_flag = fallen_empire_machine_LgateGrander
+        }
+    }
+}
+#纳米战机
+strike_craft_component_template = {
+    key = striker_graysky
+    size = large
+    entity = gatebuilder_01_strikecraft_entity
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = 100
+            nanites = 40
+        }
+    }
+    power = -80
+    count = 16
+    regeneration_per_day = 0.5
+    launch_time = 1.0
+    damage = { min = 10 max = 18 }
+    cooldown = 1
+    range = 32
+    engagement_range = 180
+    accuracy = 1.0
+    tracking = 1.0
+    health = 100
+    armor = 100
+    shield = 100
+    evasion = 0.75
+    speed = 700
+    rotation_speed = 0.4
+    acceleration = 0.6
+    shield_damage = 1.0
+    shield_penetration = 1
+    ship_behavior = fighters_behavior
+    weapon_type = instant
+    projectile_gfx = strike_craft_laser_3
+    icon = GFX_ship_part_strike_craft_scout_1
+    icon_frame = 1
+    tags = { weapon_type_strike_craft }
+}

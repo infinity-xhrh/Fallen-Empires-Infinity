@@ -8,7 +8,7 @@ entity = {
     name = "nano_fallen_empire_warship_large_entity"
     pdxmesh = "nano_fallen_empire_warship_large_mesh"
 
-    locator = { name = "large_gun_02" position = { 0 0 0 } }
+    locator = { name = root position = { 0 0 0 } }
 	scale = 0.8
 
 	default_state = "idle"
@@ -57,6 +57,7 @@ entity = {
 	pdxmesh = "nano_fallen_empire_warship_small_mesh"
 	scale = 0.7
 
+	locator = { name = root position = { 0 0 0 } }
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		event = { time = 0 node = "engine_medium_01" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
@@ -95,7 +96,7 @@ entity = {
 	name = "nano_fallen_empire_titan_entity"
 	pdxmesh = "nano_fallen_empire_titan_mesh"
 	scale = 1.4
-
+	locator = { name = root position = { 0 0 0 } }
 	default_state = "idle"
 	state = { name = "idle" animation = "idle"
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
