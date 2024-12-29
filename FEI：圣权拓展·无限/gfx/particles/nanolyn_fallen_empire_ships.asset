@@ -1,0 +1,1280 @@
+###################################################################################
+###																				###
+###									COMBAT SHIPS								###
+###																				###
+###################################################################################
+
+entity = {
+    name = "nano_fallen_empire_warship_large_entity"
+    pdxmesh = "nano_fallen_empire_warship_large_mesh"
+
+    locator = { name = "large_gun_02" position = { 0 0 0 } }
+	scale = 0.8
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_5_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_5_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_05" particle = "generic_1_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_06" particle = "generic_1_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_warship_01" } }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_5_exhaust_line_wide_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_5_exhaust_line_wide_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_05" particle = "generic_1_25_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_06" particle = "generic_1_25_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" chance = 1 looping = no state_time = 10
+		event = { time = 0.0 node = "explosion_locator1" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.4 node = "explosion_locator7" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.0 node = "explosion_locator10" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.6 node = "explosion_locator2" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.9 node = "explosion_locator9" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 2.1 node = "explosion_locator8" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 2.83 node = "explosion_locator3" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 3.26 node = "explosion_locator4" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 3.9 node = "explosion_locator5" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 4.1 node = "explosion_locator6" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+	}
+
+}
+entity = {
+	name = "nano_fallen_empire_warship_small_entity"
+	pdxmesh = "nano_fallen_empire_warship_small_mesh"
+	scale = 0.7
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "engine_medium_01" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_05" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_06" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_07" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_08" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_warship_01" } }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_05" particle = "generic_1_25_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_06" particle = "generic_1_25_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_07" particle = "generic_1_25_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_08" particle = "generic_1_25_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	state = { name = "death" chance = 1 looping = no state_time = 10
+
+	}
+}
+entity = {
+	name = "nano_fallen_empire_titan_entity"
+	pdxmesh = "nano_fallen_empire_titan_mesh"
+	scale = 1.4
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_03" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_04" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_titan_idle" }}
+	}
+	state = { name = "moving" animation = "idle"
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_exhaust_circle_long_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_exhaust_circle_long_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_exhaust_circle_long_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_exhaust_circle_long_moving" trigger_once = yes keep_particle = yes }
+
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_03" particle = "generic_1_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_04" particle = "generic_1_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+
+
+	}
+	state = { name = "death" animation = "death" looping = no
+		event = { time = 0 node = "explosion_locator1" particle = "ship_explosion_particle" trigger_once = yes keep_particle = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1 node = "explosion_locator2" particle = "ship_explosion_particle" trigger_once = yes keep_particle = yes sound = { soundeffect = "station_explosion_large" } }
+		event = { time = 2 node = "explosion_locator3" particle = "ship_explosion_particle" trigger_once = yes keep_particle = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3 node = "explosion_locator4" particle = "ship_explosion_particle" trigger_once = yes keep_particle = yes sound = { soundeffect = "ship_destroyed_big_explosion" } }
+
+		event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_titan_death" } }
+
+
+	}
+
+	# XL weapon windup locator names: xl_windup_1-16
+}
+###################################################################################
+###																				###
+###								CIVILIAN SHIPS									###
+###																				###
+###################################################################################
+entity = {
+	name = "nano_fallen_empire_science_ship_mesh"
+	pdxmesh = "nano_fallen_empire_warship_small_mesh"
+	scale = 0.8
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "engine_medium_01" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_05" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_06" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_07" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_08" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_civilship_01" } }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_05" particle = "generic_1_25_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_06" particle = "generic_1_25_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_07" particle = "generic_1_25_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_08" particle = "generic_1_25_exhaust_line_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	state = { name = "death" chance = 1 looping = no state_time = 10
+
+	}
+}
+entity = {
+	name = "nano_fallen_empire_constructor_entity"
+	pdxmesh = "nano_fallen_empire_civilian_mesh"
+	scale = 0.8
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_03" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_04" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_civilship_01" } }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_03" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_04" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death"						state_time = 10 looping = no
+		event = { time = 0.0 node = "cons_explosion_locator1" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.4 node = "cons_explosion_locator7" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.0 node = "cons_explosion_locator10" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.6 node = "cons_explosion_locator2" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.9 node = "cons_explosion_locator9" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 2.1 node = "cons_explosion_locator8" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 2.83 node = "cons_explosion_locator3" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 3.26 node = "cons_explosion_locator4" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 3.9 node = "cons_explosion_locator5" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 4.1 node = "cons_explosion_locator6" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+	}
+}
+entity = {
+	name = "nano_fallen_empire_colony_ship_entity"
+	pdxmesh = "nano_fallen_empire_civilian_mesh"
+	scale = 0.8
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_03" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_04" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_civilship_01" } }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_03" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_04" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_25_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death"						state_time = 10 looping = no
+		event = { time = 0.0 node = "cons_explosion_locator1" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.4 node = "cons_explosion_locator7" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.0 node = "cons_explosion_locator10" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.6 node = "cons_explosion_locator2" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.9 node = "cons_explosion_locator9" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 2.1 node = "cons_explosion_locator8" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 2.83 node = "cons_explosion_locator3" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 3.26 node = "cons_explosion_locator4" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 3.9 node = "cons_explosion_locator5" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		event = { time = 4.1 node = "cons_explosion_locator6" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
+	}
+}
+entity = {
+	name = "nano_fallen_empire_transport_entity"
+	pdxmesh = "nano_fallen_empire_transport_mesh"
+	scale = 0.6
+
+	default_state = "idle"
+	state = { name = "idle"	 state_time = 5
+
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_03" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_04" particle = "generic_1_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_civilship_01" } }
+	}
+	state = { name = "moving"	state_time = 5
+		event = { time = 0 node = "engine_medium_01" particle = "generic_1_exhaust_circle_long_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "generic_1_exhaust_circle_long_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "generic_1_exhaust_circle_long_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "generic_1_exhaust_circle_long_moving" trigger_once = yes keep_particle = yes }
+
+		event = { time = 0 node = "engine_large_01" particle = "generic_1_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_02" particle = "generic_1_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_03" particle = "generic_1_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_large_04" particle = "generic_1_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
+	}
+
+	state = { name = "death" state_time = 10 looping = no
+	}
+}
+###################################################################################
+###																				###
+###									STATIONS									###
+###																				###
+###################################################################################
+entity = {
+	name = "nano_fallen_empire_orbital_station_core_entity"
+	pdxmesh = "nano_fallen_empire_station_large_mesh"
+	locator = { name = "medium_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_02" position = { 0 0 0 } }
+	locator = { name = "small_gun_01" position = { 0 0 0 } }
+	locator = { name = "small_gun_02" position = { 0 0 0 } }
+	locator = { name = "small_gun_03" position = { 0 0 0 } }
+	locator = { name = "small_gun_04" position = { 0 0 0 } }
+	scale = 1.0
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "top" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "bottom" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
+	}
+	state = { name = "death" animation = "death" looping = no
+		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.0 node = "explosion_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3.0 node = "explosion_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 4.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+	}
+}
+
+entity = {
+	name = "nano_fallen_empire_mining_station_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+
+	locator = { name = "part1" 			position = { 0 0 0 } }
+
+	scale = 1.0
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 6
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_a01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_a02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_a03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_a04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_a05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_a06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_a07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_a08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_a10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.50 node = "light_locator_regular_a12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_b01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_b02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_b03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_b04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_b05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_b06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_b07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_b08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_b09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_c01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_c02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_c03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_c04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_c05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_c06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_c07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_c08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_c09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_d01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_d02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_d03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_d04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_d05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_d06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_d07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_d08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_d09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
+	}
+	state = { name = "death" state_time = 5 looping = no
+		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.0 node = "explosion_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3.0 node = "explosion_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 4.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+
+		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
+	}
+}
+
+entity = {
+	name = "nano_fallen_empire_research_station_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+	scale = 1.0
+
+	locator = { name = "part1" 			position = { 0 0 0 } }
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 6
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_a01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_a02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_a03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_a04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_a05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_a06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_a07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_a08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_a10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.50 node = "light_locator_regular_a12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_b01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_b02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_b03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_b04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_b05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_b06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_b07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_b08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_b09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_c01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_c02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_c03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_c04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_c05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_c06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_c07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_c08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_c09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_d01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_d02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_d03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_d04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_d05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_d06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_d07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_d08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_d09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
+	}
+	state = { name = "death" state_time = 5 looping = no
+		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.0 node = "explosion_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3.0 node = "explosion_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 4.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+
+		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
+	}
+}
+
+entity = {
+	name = "nano_fallen_empire_observation_station_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+	scale = 1.0
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 6
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_a01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_a02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_a03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_a04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_a05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_a06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_a07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_a08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_a10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.50 node = "light_locator_regular_a12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_b01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_b02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_b03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_b04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_b05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_b06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_b07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_b08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_b09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_c01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_c02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_c03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_c04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_c05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_c06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_c07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_c08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_c09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_d01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_d02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_d03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_d04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_d05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_d06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_d07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_d08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_d09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
+	}
+	state = { name = "death" state_time = 5 looping = no
+		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.0 node = "explosion_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3.0 node = "explosion_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 4.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+
+		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
+	}
+}
+
+entity = {
+	name = "nano_fallen_empire_terraform_station_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+	scale = 1.0
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 6
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_a01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_a02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_a03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_a04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_a05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_a06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_a07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_a08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_a10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.50 node = "light_locator_regular_a12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_b01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_b02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_b03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_b04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_b05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_b06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_b07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_b08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_b09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_c01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_c02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_c03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_c04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_c05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_c06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_c07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_c08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_c09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_d01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_d02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_d03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_d04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_d05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_d06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_d07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_d08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_d09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
+	}
+	state = { name = "death" state_time = 5 looping = no
+		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.0 node = "explosion_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3.0 node = "explosion_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 4.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+
+		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
+	}
+}
+
+entity = {
+	name = "nano_fallen_empire_wormhole_station_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+	scale = 1.0
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 6
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_a01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_a02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_a03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_a04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_a05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_a06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_a07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_a08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_a10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.50 node = "light_locator_regular_a12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_b01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_b02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_b03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_b04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_b05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_b06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_b07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_b08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_b09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_c01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_c02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_c03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_c04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_c05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_c06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_c07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_c08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_c09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_d01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_d02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_d03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_d04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_d05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_d06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_d07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_d08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_d09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
+	}
+	state = { name = "death" state_time = 5 looping = no
+		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.0 node = "explosion_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3.0 node = "explosion_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 4.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+
+		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
+	}
+}
+
+entity = {
+	name = "nano_fallen_empire_military_station_large_fallen_empire_entity"
+	pdxmesh = "nano_fallen_empire_station_large_mesh"
+	locator = { name = "part1" 	position = { 0 0 0 } }
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "top" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "bottom" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
+	}
+	state = { name = "death" animation = "death" looping = no
+		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.0 node = "explosion_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3.0 node = "explosion_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 4.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+
+		event = { time = 4.9 particle = "large_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
+	}
+}
+
+entity = {
+	name = "nano_fallen_empire_military_station_small_fallen_empire_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+	locator = { name = "part1" 	position = { 0 0 0 } }
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 6
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_a01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_a02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_a03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_a04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_a05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_a06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_a07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_a08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_a10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_a11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.50 node = "light_locator_regular_a12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_b01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_b02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_b03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_b04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_b05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_b06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_b07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_b08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_b09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_b11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_c01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_c02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_c03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_c04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_c05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_c06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_c07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_c08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_c09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_c12" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.00 node = "light_locator_regular_d01" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.05 node = "light_locator_regular_d02" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.10 node = "light_locator_regular_d03" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.15 node = "light_locator_regular_d04" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.20 node = "light_locator_regular_d05" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.25 node = "light_locator_regular_d06" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.30 node = "light_locator_regular_d07" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.35 node = "light_locator_regular_d08" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.40 node = "light_locator_regular_d09" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d10" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0.45 node = "light_locator_regular_d11" particle = "ship_light_blue_regular_effect" keep_particle = yes trigger_once = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
+	}
+	state = { name = "death" state_time = 5 looping = no
+		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.0 node = "explosion_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3.0 node = "explosion_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 4.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+
+		event = { time = 4.9 particle = "medium_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
+	}
+}
+
+##################         	 CONSTRUCTION ENTITIES           ########################
+
+entity = {
+	name = "nano_fallen_empire_military_station_large_construction_entity"
+	pdxmesh = "nano_fallen_empire_station_large_mesh"
+
+	default_state = "idle"
+		state = { name = "idle" animation = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+}
+
+entity = {
+	name = "nano_fallen_empire_military_station_medium_construction_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+}
+
+entity = {
+	name = "nano_fallen_empire_military_station_small_construction_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+}
+
+entity = {
+	name = "nano_fallen_empire_orbital_station_construction_entity"
+	pdxmesh = "nano_fallen_empire_station_large_mesh"
+		default_state = "idle"
+		state = { name = "idle" animation = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+}
+entity = {
+	name = "nano_fallen_empire_mining_station_construction_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+	scale = 1.5
+}
+entity = {
+	name = "nano_fallen_empire_research_station_construction_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+	scale = 1.4
+}
+entity = {
+	name = "nano_fallen_empire_wormhole_station_construction_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+		event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+	scale = 1.4
+}
+entity = {
+	name = "nano_fallen_empire_terraform_station_construction_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+			event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+	scale = 1.5
+}
+entity = {
+	name = "nano_fallen_empire_observation_station_construction_entity"
+	pdxmesh = "nano_fallen_empire_station_small_mesh"
+		default_state = "idle"
+		state = { name = "idle" state_time = 5
+		event = { trigger_once = yes sound = { soundeffect = "place_construction" } }
+		}
+	scale = 1.4
+}
+###################################################################################
+###																				###
+###									STARBASES									###
+###																				###
+###################################################################################
+
+entity = {
+	name = "nano_fallen_empire_starbase_fe_outpost_entity"
+	locator = { name = "part1" 	position = { 0 0 0 } }
+	locator = { name = "part2" 	position = { 0 0 0 } }
+	locator = { name = "part3" 	position = { 0 0 0 } }
+	locator = { name = "part4" 	position = { 0 0 0 } }
+	locator = { name = "part5" 	position = { 0 0 0 } }
+	locator = { name = "part6" 	position = { 0 0 0 } }
+	locator = { name = "part7" 	position = { 0 0 0 } }
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 }
+	state = { name = "death" state_time = 5 looping = no
+		event = { time = 4.9 particle = "large_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
+	}
+}
+
+entity = {
+	name = "nano_fallen_empire_starbase_outpost_entity"
+	locator = { name = "part1" 	position = { 0 0 0 } }
+	locator = { name = "part2" 	position = { 0 0 0 } }
+	locator = { name = "part3" 	position = { 0 0 0 } }
+	locator = { name = "part4" 	position = { 0 0 0 } }
+	locator = { name = "part5" 	position = { 0 0 0 } }
+	locator = { name = "part6" 	position = { 0 0 0 } }
+	locator = { name = "part7" 	position = { 0 0 0 } }
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 }
+	state = { name = "death" state_time = 5 looping = no
+		event = { time = 4.9 particle = "large_fallen_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_energy" } }
+	}
+}
+
+entity = {
+	name = "nano_fallen_empire_starbase_outpost_section_entity"
+	pdxmesh = "nano_fallen_empire_outpost_mesh"
+	locator = { name = "medium_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_02" position = { 0 0 0 } }
+	locator = { name = "small_gun_01" position = { 0 0 0 } }
+	locator = { name = "small_gun_02" position = { 0 0 0 } }
+	locator = { name = "small_gun_03" position = { 0 0 0 } }
+	locator = { name = "small_gun_04" position = { 0 0 0 } }
+	scale = 1.0
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "top" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "bottom" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_fallen_empire_station_01" } }
+	}
+	state = { name = "death" animation = "death" looping = no
+		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.0 node = "explosion_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3.0 node = "explosion_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 4.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+	}
+}
+
+entity = {
+	name = "nnao_fallen_empire_starbase_citadel_entity"
+	pdxmesh = "fallen_empire_citadel_frame_mesh"
+
+	scale = 1.0
+	cull_radius = 20
+
+	locator = { name = root 			position = { 0 0 0 } }
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 }
+
+	state = { name = "death" state_time = 2 looping = no
+		event = { time = 1.7  node = "root" particle = "large_player_ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_large" } }
+	}
+}
+
+entity = {
+	name = "nano_fallen_empire_starbase_citadel_section_entity"
+	pdxmesh = "nano_fallen_empire_citadel_mesh"
+
+	#locator = { name = "slot1"				position = { 0	0  0 } }
+	locator = { name = "medium_gun_01" position = { 0 0 0 } }
+	locator = { name = "medium_gun_02" position = { 0 0 0 } }
+	locator = { name = "medium_gun_03" position = { 0 0 0 } }
+	locator = { name = "medium_gun_04" position = { 0 0 0 } }
+	locator = { name = "medium_gun_05" position = { 0 0 0 } }
+	locator = { name = "medium_gun_06" position = { 0 0 0 } }
+	locator = { name = "medium_gun_07" position = { 0 0 0 } }
+	locator = { name = "medium_gun_08" position = { 0 0 0 } }
+	locator = { name = "medium_gun_09" position = { 0 0 0 } }
+	locator = { name = "medium_gun_010" position = { 0 0 0 } }
+	locator = { name = "medium_gun_011" position = { 0 0 0 } }
+	locator = { name = "medium_gun_012" position = { 0 0 0 } }
+	locator = { name = "medium_gun_013" position = { 0 0 0 } }
+
+
+	default_state = "idle"
+	state = { name = "idle"		animation = "idle"
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "top_node" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "bottom_node" particle = "energy_core_effect" keep_particle = yes trigger_once = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "fallen_empire_starbase_amb" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "fallen_empire_starbase_energy_field" } }
+	}
+
+	scale = 1.0
+}
+
+
+
+entity = {
+	name = "nano_fallen_empire_starbase_citadel_phase_02_entity"
+	locator = { name = "slot1"				position = { 0	0  0 } }
+
+	attach = { "slot1" = "nano_fallen_empire_starbase_citadel_entity" }
+
+	cull_radius = 500
+
+}
+
+entity = {
+	name = "nano_fallen_empire_starbases_entity"
+	locator = { name = "slot1"				position = { 0		0  0 } }
+	locator = { name = "slot2"				position = { 50		0  0 } }
+	locator = { name = "slot3"				position = { 100	0  0 } }
+	locator = { name = "slot4"				position = { 150	0  0 } }
+	locator = { name = "slot5"				position = { 250	0  0 } }
+
+
+
+	attach = { "slot5" = "nano_fallen_empire_starbase_citadel_phase_02_entity" }
+
+	cull_radius = 500
+
+}
+
+entity = {
+	name = "fallen_empire_01_starbase_turret_section_entity"
+	locator = { name = "medium_gun_01" 	position = { 0 0 0 } }
+	locator = { name = "medium_gun_02" 	position = { 0 0 0 } }
+}
+
+###################################################################################
+###																				###
+###									COLOSSUS									###
+###																				###
+###################################################################################
+entity = {
+	name = "nano_fallen_empire_colossus_entity"
+	pdxmesh = "fallen_empire_01_colossus_frame_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	state = { name = "moving" animation = "idle" }
+	state = { name = "working" animation = "idle" }
+	state = { name = "death" animation = "closed_death" looping = no 
+		event = { time = 8.86 node = "frame_ship" particle = "dreadnought_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"death" = 0
+				"working" = 0
+			}
+		}
+	}
+	state = { name = "death" animation = "opened_death" looping = no 
+		event = { time = 6.56 node = "frame_ship" particle = "dreadnought_explosion_particle" sound = { soundeffect = ship_destroyed } }
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"death" = 0
+				"working" = 100
+			}
+		}
+	}
+	
+	locator = { name = "part1" position = { -50 0 0 } }
+	locator = { name = "part3" position = { -50 0 0 } }
+	
+	#attach = { frame_ship = "fallen_empire_01_colossus_ship_entity" }
+}
+
+entity = {
+	name = "nano_fallen_empire_colossus_ship_entity"
+	pdxmesh = "nano_fallen_empire_colossus_mesh"
+	
+	default_state = "idle"
+	# Actual idle state when being in idle/moving.
+	state = { name = "idle" animation = "idle" looping = no next_state = "idle" animation_blend_time = 5
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"death" = 0
+				"working" = 100
+				"working_looping" = 0
+			}
+		}
+		start_event = { trigger_once = yes sound = { soundeffect = "fallen_empire_colossus_idle" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "fallen_empire_colossus_energy_field" } }
+		
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		
+		event = { time = 0 node = "planet_killer_gun_01" particle = "fallen_empire_01_colossus_core_effect" keep_particle = yes trigger_once = yes }
+	}
+	# Idle state when going from opened state to idle. 
+	state = { name = "idle" animation = "closing" looping = no next_state = "idle" 
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"death" = 0
+				"working" = 0
+				"working_looping" = 100
+			}
+		}
+		event = { trigger_once = yes sound = { soundeffect = "fallen_empire_colossus_closing" stop_on_state_change = yes } }
+		
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		
+		event = { time = 0 node = "planet_killer_gun_01" particle = "fallen_empire_01_colossus_core_effect" keep_particle = yes trigger_once = yes }
+	
+		event = { time = 0 node = "root" particle = "fallen_empire_01_colossus_energy_start_effect" keep_particle = yes trigger_once = yes }
+	}
+	# Actual moving state if going from idle/moving.
+	state = { name = "moving" animation = "idle" looping = yes next_state = "moving"
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"death" = 0
+				"working" = 100
+				"working_looping" = 0
+			}
+		}
+		event = { trigger_once = yes sound = { soundeffect = "moving_out_colossus" } }
+		
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		
+		event = { time = 0 node = "planet_killer_gun_01" particle = "fallen_empire_01_colossus_core_effect" keep_particle = yes trigger_once = yes }
+	}
+	# Moving state if going from open/working, uses closing animation.
+	state = { name = "moving" animation = "closing" looping = no next_state = "moving"
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"death" = 0
+				"working" = 0
+				"working_looping" = 100
+			}
+		}
+		event = { trigger_once = yes sound = { soundeffect = "fallen_empire_colossus_closing" stop_on_state_change = yes } }
+		
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		
+		event = { time = 0 node = "planet_killer_gun_01" particle = "fallen_empire_01_colossus_core_effect" keep_particle = yes trigger_once = yes }
+	
+		event = { time = 0 node = "root" particle = "fallen_empire_01_colossus_energy_start_effect" keep_particle = yes trigger_once = yes }
+	}
+	# Opened state, going after "working".
+	state = { name = "working_looping" animation = "open" 
+		event = { time = 0	id = "beam_start" }
+	
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		
+		event = { time = 0 node = "planet_killer_gun_01" particle = "fallen_empire_01_colossus_core_effect" keep_particle = yes trigger_once = yes }
+			
+		event = { time = 0 node = "large_shield_mid_effect_1" particle = "fallen_empire_01_colossus_shield_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "large_shield_mid_effect_2" particle = "fallen_empire_01_colossus_shield_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "large_shield_mid_effect_3" particle = "fallen_empire_01_colossus_shield_effect" keep_particle = yes trigger_once = yes }
+	}
+	# Opening state, goes into "working_looping" state when done.
+	state = { name = "working" animation = "opening" looping = no next_state = "working_looping" 
+		event = { trigger_once = yes sound = { soundeffect = "fallen_empire_colossus_opening" stop_on_state_change = yes } }
+	
+		event = { time = 1000 id = "beam_start" } #will never fire, but lets the game know that an event with this ID exists
+	
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		
+		event = { time = 0 node = "planet_killer_gun_01" particle = "fallen_empire_01_colossus_core_effect" keep_particle = yes trigger_once = yes }
+	}
+	# Closed death state.
+	state = { name = "death" animation = "idle" looping = no
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"moving" = 100
+				"death" = 0
+				"working" = 0
+				"working_looping" = 0
+			}
+		}
+		event = { trigger_once = yes sound = { soundeffect = "fallen_empire_colossus_death" stop_on_state_change = yes } }
+
+		event = { time = 0.0 node = "explosion_locator_01" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+		event = { time = 3.0 node = "explosion_locator_02" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+		event = { time = 4.0 node = "explosion_locator_03" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+		event = { time = 6.0 node = "explosion_locator_04" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+		event = { time = 8.0 node = "explosion_locator_05" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+	}
+	# Opened death state.
+	state = { name = "death" animation = "opened_death" looping = no animation_blend_time = 2
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"moving" = 0
+				"death" = 0
+				"working" = 100
+				"working_looping" = 100
+			}
+		}
+		event = { trigger_once = yes sound = { soundeffect = "fallen_empire_colossus_death" stop_on_state_change = yes } }
+		
+		event = { time = 0.0 node = "explosion_locator_01" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+		event = { time = 3.0 node = "explosion_locator_02" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+		event = { time = 4.0 node = "explosion_locator_03" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+		event = { time = 6.0 node = "explosion_locator_04" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+		event = { time = 8.0 node = "explosion_locator_05" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } keep_particle = yes trigger_once = yes }
+	}
+	
+	#locator = { name = "planet_killer_gun_01" position = { 0 0 0 } } # Actual locator in mesh.
+	
+	attach = { energy_source = "fallen_empire_02_colossus_energy_entity" }
+}
+
+entity = {
+	name = "nano_fallen_empire_colossus_energy_entity"
+	pdxmesh = "fallen_empire_02_colossus_energy_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+	state = { name = "working_looping" animation = "idle" 
+		event = { time = 0 node = "root" particle = "fallen_empire_01_colossus_energy_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "fallen_empire_01_colossus_energy_start_effect" keep_particle = yes trigger_once = yes }
+	}
+	
+	game_data = {
+		uv_animation_speed   = 0.2
+		uv_animation_direction  = { 0.0 1.0 }
+		bloom_factor = 0.85
+	}
+	
+}
