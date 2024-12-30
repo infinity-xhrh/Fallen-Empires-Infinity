@@ -1,0 +1,62 @@
+
+
+leader_trait_graysky_commander = {
+    leader_trait_type = destiny
+    inline_script = {
+        script = trait/icon
+        CLASS = scientist
+        ICON = GFX_leader_trait_grayskt_scitist
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    self_modifier = { leaders_upkeep_mult = -1 }
+    fleet_modifier = {
+        ship_hull_regen_add_perc = 0.4
+        ship_armor_regen_add_perc = 0.4
+    }
+    leader_potential_add = { always = no }
+    leader_class = { commander }
+    background_icon = GFX_leader_background_destiny_1
+}
+
+leader_trait_graysky_scitist = {
+    leader_trait_type = destiny
+    inline_script = {
+        script = trait/icon
+        CLASS = scientist
+        ICON = GFX_leader_trait_grayskt_scitist
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    planet_modifier = {
+        planet_jobs_engineering_research_produces_mult = 1
+    }
+    modifier = {
+        science_ship_survey_speed = 1.5
+        ship_archaeological_site_excavation_speed_mult = 0.5
+        ship_archaeological_site_clues_add = 5
+        ship_anomaly_research_speed_mult = 1
+        ship_anomaly_generation_chance_mult = 0.5
+    }
+    triggered_self_modifier = {
+        potential = { root.owner = { not = { is_gestalt = no }} }
+        leaders_upkeep_mult = -1
+        leader_commanders_physics_research_produces_add = 1
+        leader_commanders_society_research_produces_add = 1
+        leader_commanders_engineering_research_produces_add = 1
+        mult = root.owner.trigger:count_owned_pop
+    }
+    triggered_self_modifier = {
+        potential = { root.owner = { not = { is_gestalt = yes }} }
+        leaders_upkeep_mult = -1
+        leader_commanders_physics_research_produces_add = 0.5
+        leader_commanders_society_research_produces_add = 0.5
+        leader_commanders_engineering_research_produces_add = 0.5
+        mult = root.owner.trigger:count_owned_pop
+    }
+    leader_potential_add = { always = no }
+    leader_class = { scientist }
+    background_icon = GFX_leader_background_destiny_1
+}

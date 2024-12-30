@@ -35,4 +35,25 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
+	spriteType = {
+		name = GFX_ship_part_GK_beam
+		textureFile = gfx/interface/icons/ship_parts/ship_part_nadolyn_energy_arc.dds
+	}
+	spriteType = {
+		name = GFX_ship_part_GK_missile
+		textureFile = gfx/interface/icons/ship_parts/ship_part_nadolyn_nanomissile.dds
+	}
+	spriteType = {
+		name = GFX_ship_part_GK_striker
+		textureFile = gfx/interface/icons/ship_parts/ship_part_nadolyn_nanostrikecraft.dds
+	}
+	spriteType = {
+		name = GFX_ship_part_GK_emitter
+		textureFile = gfx/interface/icons/ship_parts/ship_part_nanoarc_emitter_1.dds
+	}
+	spriteType = {
+		name = GFX_leader_trait_grayskt_scitist
+		textureFile = gfx/interface/icons/traits/leader_graysky.dds
+	}
 }

@@ -47,7 +47,7 @@ event = {
                         extra_trait_points = 3 allow_negative_traits = no
                     }
                     create_country = {
-                        name = random
+                        name = Nanites_grander
                         type = fallen_empire
                         ignore_initial_colony_error = yes
                         authority = auth_machine_intelligence
@@ -785,7 +785,7 @@ country_event = {
     trigger = {
         exists = event_target:lgate_grander_fallen
         from= {is_country_type = gray_goo}
-        fromfromfrom = {is_ship_size = graygoo_factory}
+        fromfromfrom = { is_ship_size = graygoo_factory}
         is_ai = no
     }
     immediate = {
@@ -1023,26 +1023,6 @@ country_event = {
         country_event = { id = Nanites_grander.15 days = 240 random = 120 }
     }
 }
-#科研产出效果
-country_event = {
-    id = Nanites_grander.23
-    is_triggered_only = yes
-    hide_window = yes
-    trigger = {
-        is_same_value = event_target:graysky_owner
-        exists = event_target:gray_sky
-        event_target:gray_sky = {
-            leader_class = scientist
-        }
-    }
-    immediate = {
-        export_trigger_value_to_variable = {
-            trigger = count_owned_pop
-            variable = graysky_produce
-        }
-        add_modifier = { modifier = mod_graysky_sci_produce mult = graysky_produce days = 31 }
-    }
-}
 #过段时间给科技
 country_event = {
     id = Nanites_grander.25
@@ -1052,7 +1032,7 @@ country_event = {
     desc = Nanites_grander.25.desc
     picture = GFX_evt_gray_goo
     immediate = {
-        give_technology = { tech = tech_fallen_lost_nano_machine }
+        give_technology = { tech = tech_gray_sky }
     }
     trigger = {
         any_country = { is_country_type = graysky }
