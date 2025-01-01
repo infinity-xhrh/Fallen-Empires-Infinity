@@ -30,6 +30,9 @@ leader_trait_graysky_scitist = {
         COUNCIL = no
         TIER = none
     }
+    self_modifier = {
+        leaders_upkeep_mult = -1
+    }
     planet_modifier = {
         planet_jobs_engineering_research_produces_mult = 1
     }
@@ -42,7 +45,6 @@ leader_trait_graysky_scitist = {
     }
     triggered_self_modifier = {
         potential = { root.owner = { not = { is_gestalt = no }} }
-        leaders_upkeep_mult = -1
         leader_commanders_physics_research_produces_add = 1
         leader_commanders_society_research_produces_add = 1
         leader_commanders_engineering_research_produces_add = 1
@@ -50,7 +52,6 @@ leader_trait_graysky_scitist = {
     }
     triggered_self_modifier = {
         potential = { root.owner = { not = { is_gestalt = yes }} }
-        leaders_upkeep_mult = -1
         leader_commanders_physics_research_produces_add = 0.5
         leader_commanders_society_research_produces_add = 0.5
         leader_commanders_engineering_research_produces_add = 0.5
@@ -59,4 +60,22 @@ leader_trait_graysky_scitist = {
     leader_potential_add = { always = no }
     leader_class = { scientist }
     background_icon = GFX_leader_background_destiny_1
+}
+
+leader_trait_gestle_graysky= {
+    leader_trait_type = destiny
+    inline_script = {
+        script = trait/icon
+        CLASS = scientist
+        ICON = GFX_leader_trait_grayskt_scitist
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    leader_potential_add = { always = no }
+    leader_class = { scientist official commander }
+    background_icon = GFX_leader_background_destiny_1
+    councilor_modifier = {
+        all_technology_research_speed = 0.15
+    }
 }
