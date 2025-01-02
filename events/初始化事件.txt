@@ -1,0 +1,19 @@
+namespace = FEI_initialize
+
+event = {
+	id = FEI_initialize.0000
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_rim_system = {
+			spawn_system = {
+				min_distance >= 50
+				max_distance <= 100
+				direction = rimwards
+				initializer = FEI_initializer_yanwuchang
+				hyperlane = no
+			}
+		}
+	}
+}
