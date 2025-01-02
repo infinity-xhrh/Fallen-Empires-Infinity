@@ -1,0 +1,453 @@
+FEI_initializer_yanwuchang = {
+	name = "NAME_FEI_Yanwuchang"
+	class = "rl_standard_stars"
+
+	flags = { crisis_spawn_exclude empire_home_system ring_world_built }
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+	}
+
+	change_orbit = 45
+
+	planet = {
+		class = "pc_ringworld_tech"
+		orbit_angle = -30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "NAME_FEI_Yanwuchang_ringworld_1"
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+			add_modifier = { modifier = FEI_yanwuchang_ringworld_modifier }
+		}
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "NAME_FEI_Yanwuchang_ringworld_2"
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+			add_modifier = { modifier = FEI_yanwuchang_ringworld_modifier }
+		}
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "NAME_FEI_Yanwuchang_ringworld_3"
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+			add_modifier = { modifier = FEI_yanwuchang_ringworld_modifier }
+		}
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "NAME_FEI_Yanwuchang_ringworld_4"
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+			add_modifier = { modifier = FEI_yanwuchang_ringworld_modifier }
+		}
+	}
+
+	planet = {
+		class = "pc_gaia"
+		name = "NAME_FEI_Yanwuchang_capitial"
+		orbit_distance = 75
+		orbit_angle = { min = 90 max = 270 }
+		size = 30
+		modifiers = none
+		flags = { ignore_startup_effect }
+		init_effect = {
+			prevent_anomaly = yes
+			save_event_target_as = FEI_strategic_coordination_center_planet
+		}
+	}
+
+	change_orbit = 60
+
+	planet = {
+		count = { min = 3 max = 5 }
+		class = pc_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 3
+		size = 3
+	}
+
+	init_effect = {
+		save_event_target_as = FEI_GXXLZ_home_system
+		spawn_megastructure = {
+			type = mega_shipyard_ruined			#"mega_shipyard_3"
+			planet = star
+		}
+		spawn_megastructure = {
+			type = strategic_coordination_center_ruined	#"strategic_coordination_center_3"
+			planet = event_target:FEI_strategic_coordination_center_planet
+		}
+		set_spawn_system_batch = begin
+		spawn_system = {
+			min_distance >= 20
+			max_distance <= 30
+			initializer = FEI_initializer_tuanjie
+			hyperlane = no
+		}
+		spawn_system = {
+			min_distance >= 20
+			max_distance <= 30
+			initializer = FEI_initializer_fanrong
+			hyperlane = no
+		}
+		spawn_system = {
+			min_distance >= 20
+			max_distance <= 30
+			initializer = FEI_initializer_rexue
+			hyperlane = no
+		}
+		spawn_system = {
+			min_distance >= 20
+			max_distance <= 30
+			initializer = FEI_initializer_ziran
+			hyperlane = no
+		}
+	}
+}
+
+FEI_initializer_tuanjie = {
+	name = "NAME_FEI_tuanjie"
+	class = "sc_a"
+	flags = { crisis_spawn_exclude empire_cluster }
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 70
+	}
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 90
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 110
+	}
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			add_deposit = d_energy_5
+			add_deposit = d_alloys_5
+			add_deposit = d_artifacts_mining_1
+		}
+	}
+
+	change_orbit = 70
+
+	planet = {
+		count = { min = 2 max = 4 }
+		class = pc_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = { min = 3 max = 5 }
+		class = pc_rare_crystal_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = { min = 3 max = 5 }
+		class = pc_ice_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	init_effect = {
+		save_event_target_as = FEI_GXXLZ_system_1
+		add_hyperlane = {
+			from = this
+			to = event_target:FEI_GXXLZ_home_system
+		}
+	}
+}
+
+FEI_initializer_fanrong = {
+	name = "NAME_FEI_fanrong"
+	class = "sc_m_giant"
+	flags = { crisis_spawn_exclude empire_cluster }
+
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 70
+	}
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 90
+	}
+	asteroid_belt = {
+		type = crystal_asteroid_belt
+		radius = 110
+	}
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			add_deposit = d_energy_5
+			add_deposit = d_alloys_5
+			add_deposit = d_artifacts_mining_1
+		}
+	}
+
+	change_orbit = 70
+
+	planet = {
+		count = { min = 2 max = 4 }
+		class = pc_rare_crystal_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = { min = 3 max = 5 }
+		class = pc_rare_crystal_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = { min = 3 max = 5 }
+		class = pc_rare_crystal_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	init_effect = {
+		save_event_target_as = FEI_GXXLZ_system_2
+		add_hyperlane = {
+			from = this
+			to = event_target:FEI_GXXLZ_home_system
+		}
+		add_hyperlane = {
+			from = this
+			to = event_target:FEI_GXXLZ_system_1
+		}
+	}
+}
+
+FEI_initializer_rexue = {
+	name = "NAME_FEI_rexue"
+	class = "sc_b"
+	flags = { crisis_spawn_exclude empire_cluster }
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 70
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 90
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 110
+	}
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			add_deposit = d_energy_5
+			add_deposit = d_alloys_5
+			add_deposit = d_artifacts_mining_1
+		}
+	}
+
+	change_orbit = 70
+
+	planet = {
+		count = { min = 2 max = 4 }
+		class = pc_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = { min = 3 max = 5 }
+		class = pc_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = { min = 3 max = 5 }
+		class = pc_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	init_effect = {
+		save_event_target_as = FEI_GXXLZ_system_3
+		add_hyperlane = {
+			from = this
+			to = event_target:FEI_GXXLZ_home_system
+		}
+	}
+}
+
+FEI_initializer_ziran = {
+	name = "NAME_FEI_ziran"
+	class = "sc_pulsar"
+	flags = { crisis_spawn_exclude empire_cluster }
+
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 70
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 90
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 110
+	}
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+			add_deposit = d_energy_5
+			add_deposit = d_alloys_5
+			add_deposit = d_artifacts_mining_1
+		}
+	}
+
+	change_orbit = 70
+
+	planet = {
+		count = { min = 2 max = 4 }
+		class = pc_ice_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = { min = 3 max = 5 }
+		class = pc_ice_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = { min = 3 max = 5 }
+		class = pc_ice_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	init_effect = {
+		save_event_target_as = FEI_GXXLZ_system_4
+		add_hyperlane = {
+			from = this
+			to = event_target:FEI_GXXLZ_home_system
+		}
+		add_hyperlane = {
+			from = this
+			to = event_target:FEI_GXXLZ_system_3
+		}
+		set_spawn_system_batch = end
+	}
+}
