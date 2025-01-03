@@ -1,7 +1,8 @@
-namespace = FEI_initialize
+namespace = fei_initialize
 
+#军国老登的星系
 event = {
-	id = FEI_initialize.0000
+	id = fei_initialize.1
 	is_triggered_only = yes
 	hide_window = yes
 

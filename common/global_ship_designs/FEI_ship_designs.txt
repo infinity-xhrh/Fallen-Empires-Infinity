@@ -32,51 +32,51 @@ ship_design = {
 		}
 		component = {
 			slot = "LARGE_GUN_01"
-			template = "LARGE_NV_WEAPON"
+			template = LARGE_ARCHAEO_LASER
 		}
 		component = {
 			slot = "LARGE_GUN_02"
-			template = "LARGE_NV_WEAPON"
+			template = LARGE_ARCHAEO_LASER
 		}
 		component = {
 			slot = "LARGE_GUN_03"
-			template = "LARGE_NV_WEAPON"
+			template = LARGE_ARCHAEO_LASER
 		}
 		component = {
 			slot = "LARGE_GUN_04"
-			template = "LARGE_NV_WEAPON"
+			template = LARGE_ARCHAEO_LASER
 		}
 		component = {
 			slot = "LARGE_GUN_05"
-			template = "LARGE_NV_WEAPON"
+			template = LARGE_ARCHAEO_LASER
 		}
 		component = {
 			slot = "LARGE_GUN_06"
-			template = "LARGE_NV_WEAPON"
+			template = LARGE_ARCHAEO_LASER
 		}
 		component = {
 			slot = "LARGE_GUN_07"
-			template = "LARGE_NV_WEAPON"
+			template = LARGE_ARCHAEO_LASER
 		}
 		component = {
 			slot = "LARGE_GUN_08"
-			template = "LARGE_NV_WEAPON"
+			template = LARGE_ARCHAEO_LASER
 		}
 		component = {
 			slot = "MEDIUM_GUN_01"
-			template = "MEDIUM_NV_WEAPON"
+			template = MEDIUM_ARCHAEO_LASER
 		}
 		component = {
 			slot = "MEDIUM_GUN_02"
-			template = "MEDIUM_NV_WEAPON"
+			template = MEDIUM_ARCHAEO_LASER
 		}
 		component = {
 			slot = "MEDIUM_GUN_03"
-			template = "MEDIUM_NV_WEAPON"
+			template = MEDIUM_ARCHAEO_LASER
 		}
 		component = {
 			slot = "MEDIUM_GUN_04"
-			template = "MEDIUM_NV_WEAPON"
+			template = MEDIUM_ARCHAEO_LASER
 		}
 		component = {
 			slot = "LARGE_UTILITY_1"
@@ -228,19 +228,19 @@ ship_design = {
 		}
 		component = {
 			slot = "MEDIUM_GUN_01"
-			template = "MEDIUM_NV_WEAPON"
+			template = MEDIUM_ARCHAEO_LASER
 		}
 		component = {
 			slot = "MEDIUM_GUN_02"
-			template = "MEDIUM_NV_WEAPON"
+			template = MEDIUM_ARCHAEO_LASER
 		}
 		component = {
 			slot = "MEDIUM_GUN_03"
-			template = "MEDIUM_NV_WEAPON"
+			template = MEDIUM_ARCHAEO_LASER
 		}
 		component = {
 			slot = "MEDIUM_GUN_04"
-			template = "MEDIUM_NV_WEAPON"
+			template = MEDIUM_ARCHAEO_LASER
 		}
 		component = {
 			slot = "LARGE_UTILITY_1"
@@ -320,19 +320,19 @@ ship_design = {
 		}
 		component = {
 			slot = "SMALL_GUN_01"
-			template = "SMALL_NV_WEAPON"
+			template = SMALL_ARCHAEO_LASER
 		}
 		component = {
 			slot = "SMALL_GUN_02"
-			template = "SMALL_NV_WEAPON"
+			template = SMALL_ARCHAEO_LASER
 		}
 		component = {
 			slot = "SMALL_GUN_03"
-			template = "SMALL_NV_WEAPON"
+			template = SMALL_ARCHAEO_LASER
 		}
 		component = {
 			slot = "SMALL_GUN_04"
-			template = "SMALL_NV_WEAPON"
+			template = SMALL_ARCHAEO_LASER
 		}
 		component = {
 			slot = "PD_01"
