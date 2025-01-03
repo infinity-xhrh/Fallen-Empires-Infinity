@@ -1,0 +1,4 @@
+is_FEI_militarist_forerunner_empire = {
+	has_country_flag = FEI_militarist_forerunner_empire
+	#has_ethic = ethic_fanatic_militarist
+}

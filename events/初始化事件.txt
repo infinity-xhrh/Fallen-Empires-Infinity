@@ -6,6 +6,19 @@ event = {
 	hide_window = yes
 
 	immediate = {
+		set_spawn_system_batch = begin
+		random_system = {
+			limit = {
+				is_rim_system = no
+				not = { has_star_flag = crisis_spawn_exclude }
+			}
+			spawn_system = {
+				min_distance >= 15
+				max_distance <= 25
+				initializer = FEI_initializer_hepingshichuang
+				hyperlane = yes
+			}
+		}
 		random_rim_system = {
 			spawn_system = {
 				min_distance >= 50
@@ -15,5 +28,6 @@ event = {
 				hyperlane = no
 			}
 		}
+		set_spawn_system_batch = end
 	}
 }

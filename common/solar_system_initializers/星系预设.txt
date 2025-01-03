@@ -1,8 +1,146 @@
+FEI_initializer_hepingshichuang = {
+	name = "NAME_FEI_hepingshichuang"
+	class = "sc_pulsar"
+	flags = { ruined_catapult_system crisis_spawn_exclude empire_cluster FEI_quantum_catapult_system }
+
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 120
+	}
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		init_effect = {
+			prevent_anomaly = yes
+			clear_deposits = yes
+		}
+	}
+
+	change_orbit = 120
+
+	planet = {
+		count = { min = 3 max = 5 }
+		class = pc_ice_asteroid
+		orbit_angle = { min = 30 max = 90 }
+		orbit_distance = 0
+		size = 3
+	}
+
+	init_effect = {
+		save_event_target_as = FEI_GXXLZ_system_pulsar
+		spawn_megastructure = {
+			type = quantum_catapult_ruined
+			planet = star
+			init_effect = {
+				create_ambient_object = {
+					type = "large_debris_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 20
+						angle = 20
+					}
+				}
+				create_ambient_object = {
+					type = "large_debris_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 20
+						angle = 150
+					}
+				}
+				create_ambient_object = {
+					type = "medium_debris_01_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 35
+						angle = 90
+					}
+				}
+				create_ambient_object = {
+					type = "medium_debris_02_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 3
+						angle = 270
+					}
+				}
+			}
+		}
+		random_system = {
+			limit = {
+				nor = {
+					has_star_flag = crisis_spawn_exclude
+					has_hyperlane_to = event_target:FEI_GXXLZ_system_pulsar
+				}
+				distance = {
+					source = event_target:FEI_GXXLZ_system_pulsar
+					type = hyperlane
+					min_jumps = 1
+					max_jumps = 3
+				}
+				distance = {
+					source = event_target:FEI_GXXLZ_system_pulsar
+					min_distance >= 10
+					max_distance <= 30
+					type = euclidean
+				}
+			}
+			add_hyperlane = {
+				from = this
+				to = event_target:FEI_GXXLZ_system_pulsar
+			}
+		}
+		random_system = {
+			limit = {
+				nor = {
+					has_star_flag = crisis_spawn_exclude
+					has_hyperlane_to = event_target:FEI_GXXLZ_system_pulsar
+				}
+				distance = {
+					source = event_target:FEI_GXXLZ_system_pulsar
+					type = hyperlane
+					min_jumps = 1
+					max_jumps = 7
+				}
+				distance = {
+					source = event_target:FEI_GXXLZ_system_pulsar
+					min_distance >= 10
+					max_distance <= 35
+					type = euclidean
+				}
+			}
+			add_hyperlane = {
+				from = this
+				to = event_target:FEI_GXXLZ_system_pulsar
+			}
+		}
+		spawn_natural_wormhole = {
+			bypass_type = wormhole
+			random_pos = yes
+			orbit_angle = 360
+		}
+	}
+}
+
 FEI_initializer_yanwuchang = {
 	name = "NAME_FEI_Yanwuchang"
 	class = "rl_standard_stars"
 
-	flags = { crisis_spawn_exclude empire_home_system ring_world_built }
+	flags = { crisis_spawn_exclude empire_home_system ring_world_built FEI_home_system }
 
 	planet = {
 		class = star
@@ -111,7 +249,117 @@ FEI_initializer_yanwuchang = {
 		flags = { ignore_startup_effect }
 		init_effect = {
 			prevent_anomaly = yes
+			clear_blockers = yes
 			save_event_target_as = FEI_strategic_coordination_center_planet
+
+			create_cluster = {
+				id = FEI_militarist_forerunner_cluster
+				radius = 140
+				center = this.solar_system
+			}
+			create_species = {
+				name = random
+				class = random_non_machine
+				portrait = random
+				traits = random
+				extra_trait_points = 3
+				allow_negative_traits = no
+			}
+			create_country = {
+				name = NAME_FEI_militarist_forerunner_empire_1
+				type = fallen_empire
+				ignore_initial_colony_error = yes
+				authority = auth_imperial
+				civics = {
+					civic = civic_lethargic_leadership
+					civic = civic_empire_in_decline
+				}
+				species = last_created_species
+				ethos = {
+					ethic = ethic_fanatic_militarist
+				}
+				flag = random
+				origin = "origin_fallen_empire"
+
+				effect = {
+					set_country_flag = FEI_militarist_forerunner_empire
+					set_country_flag = unlocked_warplings
+					set_graphical_culture = fallen_empire_02
+					save_event_target_as = FEI_militarist_forerunner
+					add_resource = {
+						minerals = 10000
+						energy = 10000
+						food = 1000
+						influence = 500
+					}
+					add_global_ship_design = "NAME_FEI_Alpha"
+					add_global_ship_design = "NAME_FEI_Beta"
+					add_global_ship_design = "NAME_FEI_Gamma"
+					add_global_ship_design = "NAME_FEI_Sigma"
+					add_global_ship_design = "NAME_FEI_Theta"
+					add_global_ship_design = "NAME_FEI_Tau"
+					random_list = {
+						1 = { }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_2 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_3 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_4 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_5 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_6 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_7 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_8 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_9 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_10 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_11 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_12 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_13 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_14 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_15 }
+						1 = { set_name = NAME_FEI_militarist_forerunner_empire_16 }
+					}
+				}
+			}
+
+			set_planet_flag = fallen_empire_world
+			set_planet_flag = fallen_empire_capital
+			set_owner = event_target:FEI_militarist_forerunner
+			set_controller = event_target:FEI_militarist_forerunner
+			set_capital = yes
+
+			add_building = building_ancient_palace
+			add_building = building_fe_dome
+			add_building = building_fe_dome
+			add_building = building_fe_mine_2
+			add_building = building_affluence_center
+			add_building = building_affluence_center
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			while = {
+				count = 30
+				add_district = district_city
+			}
+			while = {
+				count = 50
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+			create_FEI_militarist_forerunner_titan_fleet = yes
+			create_FEI_militarist_forerunner_titan_fleet = yes
+			create_FEI_militarist_forerunner_fleet = yes
+			create_FEI_militarist_forerunner_fleet = yes
+			create_FEI_militarist_forerunner_fleet = yes
+			while = {
+				count = 20
+				create_army = {
+					name = random
+					owner = event_target:FEI_militarist_forerunner
+					type = "warpling_army"
+				}
+			}
 		}
 	}
 
@@ -127,15 +375,62 @@ FEI_initializer_yanwuchang = {
 
 	init_effect = {
 		save_event_target_as = FEI_GXXLZ_home_system
-		spawn_megastructure = {
-			type = mega_shipyard_ruined			#"mega_shipyard_3"
-			planet = star
+		every_system_planet = {
+			limit = { is_planet_class = pc_ringworld_habitable }
+			set_owner = event_target:FEI_militarist_forerunner
+			set_controller = event_target:FEI_militarist_forerunner
+			add_building = building_ancient_palace
+			add_building = building_fe_dome
+			add_building = building_nourishment_center
+			add_building = building_affluence_center
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			while = {
+				count = 10
+				add_district = district_rw_city
+			}
+			while = {
+				count = 24
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+		}
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEI_militarist_forerunner
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			building = "target_uplink_computer"
+			building = "defense_grid"
+			building = "archaeo_overcharger"
+			building = "communications_jammer"
+
+			effect = {
+				while = {
+					count = 27
+					create_FEI_militarist_forerunner_platform = yes
+				}
+			}
 		}
 		spawn_megastructure = {
-			type = strategic_coordination_center_ruined	#"strategic_coordination_center_3"
+			type = mega_shipyard_ruined
+			planet = prev.star
+		}
+		spawn_megastructure = {
+			type = strategic_coordination_center_ruined
 			planet = event_target:FEI_strategic_coordination_center_planet
 		}
-		set_spawn_system_batch = begin
 		spawn_system = {
 			min_distance >= 20
 			max_distance <= 30
@@ -160,6 +455,12 @@ FEI_initializer_yanwuchang = {
 			initializer = FEI_initializer_ziran
 			hyperlane = no
 		}
+		spawn_natural_wormhole = {
+			bypass_type = wormhole
+			random_pos = yes
+			orbit_angle = 360
+		}
+		link_wormholes = event_target:FEI_GXXLZ_system_pulsar
 	}
 }
 
@@ -226,6 +527,27 @@ FEI_initializer_tuanjie = {
 
 	init_effect = {
 		save_event_target_as = FEI_GXXLZ_system_1
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEI_militarist_forerunner
+			module = "detection_array"
+			module = "detection_array"
+			module = "detection_array"
+			module = "detection_array"
+			module = "detection_array"
+			module = "detection_array"
+			building = "listening_post"
+			building = "dark_matter_detector"
+			building = "archaeo_overcharger"
+			building = "communications_jammer"
+
+			effect = {
+				while = {
+					count = 27
+					create_FEI_militarist_forerunner_platform = yes
+				}
+			}
+		}
 		add_hyperlane = {
 			from = this
 			to = event_target:FEI_GXXLZ_home_system
@@ -296,6 +618,27 @@ FEI_initializer_fanrong = {
 
 	init_effect = {
 		save_event_target_as = FEI_GXXLZ_system_2
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEI_militarist_forerunner
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			building = "target_uplink_computer"
+			building = "defense_grid"
+			building = "archaeo_overcharger"
+			building = "communications_jammer"
+
+			effect = {
+				while = {
+					count = 13
+					create_FEI_militarist_forerunner_platform = yes
+				}
+			}
+		}
 		add_hyperlane = {
 			from = this
 			to = event_target:FEI_GXXLZ_home_system
@@ -370,6 +713,27 @@ FEI_initializer_rexue = {
 
 	init_effect = {
 		save_event_target_as = FEI_GXXLZ_system_3
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEI_militarist_forerunner
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			building = "target_uplink_computer"
+			building = "defense_grid"
+			building = "archaeo_overcharger"
+			building = "communications_jammer"
+
+			effect = {
+				while = {
+					count = 13
+					create_FEI_militarist_forerunner_platform = yes
+				}
+			}
+		}
 		add_hyperlane = {
 			from = this
 			to = event_target:FEI_GXXLZ_home_system
@@ -379,7 +743,7 @@ FEI_initializer_rexue = {
 
 FEI_initializer_ziran = {
 	name = "NAME_FEI_ziran"
-	class = "sc_pulsar"
+	class = "rl_standard_stars"
 	flags = { crisis_spawn_exclude empire_cluster }
 
 	asteroid_belt = {
@@ -440,6 +804,27 @@ FEI_initializer_ziran = {
 
 	init_effect = {
 		save_event_target_as = FEI_GXXLZ_system_4
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEI_militarist_forerunner
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			module = "archaeo_rampart"
+			building = "target_uplink_computer"
+			building = "defense_grid"
+			building = "archaeo_overcharger"
+			building = "communications_jammer"
+
+			effect = {
+				while = {
+					count = 13
+					create_FEI_militarist_forerunner_platform = yes
+				}
+			}
+		}
 		add_hyperlane = {
 			from = this
 			to = event_target:FEI_GXXLZ_home_system
@@ -448,6 +833,5 @@ FEI_initializer_ziran = {
 			from = this
 			to = event_target:FEI_GXXLZ_system_3
 		}
-		set_spawn_system_batch = end
 	}
 }

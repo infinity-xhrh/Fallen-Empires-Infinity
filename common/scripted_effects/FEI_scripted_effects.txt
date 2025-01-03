@@ -1,0 +1,226 @@
+create_FEI_militarist_forerunner_platform = {
+	create_ship = {
+		name = random
+		design = "NAME_FEI_Sigma"
+		graphical_culture = owner
+	}
+}
+
+create_FEI_militarist_forerunner_titan_fleet = {
+	owner = {
+		create_leader = {
+			class = commander
+			species = owner_main_species
+			name = random
+			randomize_traits = no
+			skill = 10
+			leader_age_min = 25
+			leader_age_max = 45
+			traits = {
+				1 = leader_trait_aggressive_2
+				2 = leader_trait_cautious_2
+				3 = subclass_commander_admiral
+				4 = leader_trait_archaeo_specialization_3
+				5 = leader_trait_artillery_specialization_3
+			}
+		}
+	}
+	last_created_leader = {
+		random_list = {
+			1 = { add_trait_no_notify = leader_trait_master_gunner }
+			1 = { add_trait_no_notify = leader_trait_guerilla_tactics }
+			1 = { add_trait_no_notify = leader_trait_survivalist }
+		}
+	}
+	create_fleet = {
+		effect = {
+			set_owner = prev.owner
+			create_ship = {
+				name = random
+				design = "NAME_FEI_Alpha"
+				graphical_culture = owner
+			}
+			assign_leader = last_created_leader
+			while = {
+				count = 8
+				create_ship = {
+					name = random
+					design = "NAME_FEI_Beta"
+					graphical_culture = owner
+				}
+			}
+			while = {
+				count = 18
+				create_ship = {
+					name = random
+					design = "NAME_FEI_Gamma"
+					graphical_culture = owner
+				}
+			}
+			random_list = {
+				25 = {
+					set_location = {
+						target = prev
+						distance = 30
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 45
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 60
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 75
+						angle = random
+					}
+				}
+			}
+		}
+	}
+}
+
+create_FEI_militarist_forerunner_fleet = {
+	owner = {
+		create_leader = {
+			class = commander
+			species = owner_main_species
+			name = random
+			randomize_traits = no
+			skill = 10
+			leader_age_min = 25
+			leader_age_max = 45
+			traits = {
+				1 = leader_trait_aggressive_2
+				2 = leader_trait_cautious_2
+				3 = subclass_commander_admiral
+				4 = leader_trait_archaeo_specialization_3
+				5 = leader_trait_artillery_specialization_3
+			}
+		}
+	}
+	last_created_leader = {
+		random_list = {
+			1 = { add_trait_no_notify = leader_trait_master_gunner }
+			1 = { add_trait_no_notify = leader_trait_guerilla_tactics }
+			1 = { add_trait_no_notify = leader_trait_survivalist }
+		}
+	}
+	create_fleet = {
+		effect = {
+			set_owner = prev.owner
+			while = {
+				count = 8
+				create_ship = {
+					name = random
+					design = "NAME_FEI_Beta"
+					graphical_culture = owner
+				}
+			}
+			assign_leader = last_created_leader
+			while = {
+				count = 18
+				create_ship = {
+					name = random
+					design = "NAME_FEI_Gamma"
+					graphical_culture = owner
+				}
+			}
+			random_list = {
+				25 = {
+					set_location = {
+						target = prev
+						distance = 30
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 45
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 60
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 75
+						angle = random
+					}
+				}
+			}
+		}
+	}
+}
+
+create_FEI_militarist_forerunner_small_fleet = {
+	create_fleet = {
+		effect = {
+			set_owner = prev.owner
+			while = {
+				count = 3
+				create_ship = {
+					name = random
+					design = "NAME_FEI_Beta"
+					graphical_culture = owner
+				}
+			}
+			while = {
+				count = 9
+				create_ship = {
+					name = random
+					design = "NAME_FEI_Gamma"
+					graphical_culture = owner
+				}
+			}
+			random_list = {
+				25 = {
+					set_location = {
+						target = prev
+						distance = 30
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 45
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 60
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 75
+						angle = random
+					}
+				}
+			}
+		}
+	}
+}
