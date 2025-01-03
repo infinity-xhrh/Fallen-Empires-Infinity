@@ -19,7 +19,6 @@ event = {
 
                 every_country = {
                     limit = { is_ai = no }
-                    establish_communications_no_message = root
                     country_event = { id = Nanites_grander.100 days = 18000 }
                     country_event = { id = Nanites_grander.33 days = 60 random = 30 }
                 }
@@ -60,6 +59,9 @@ event = {
                         flag = random
                         origin = origin_fallen_empire
                         effect = {
+                            every_country = {
+                                establish_communications_no_message = root
+                            }
                             add_modifier = { modifier = mod_fallen_lgater days = -1 }
                             set_country_flag = fallen_empire_machine_LgateGrander
                             save_global_event_target_as = lgate_grander_fallen
