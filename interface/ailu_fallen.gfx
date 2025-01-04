@@ -1,0 +1,8 @@
+spriteType = {
+    name = "GFX_ship_part_FEI_barrier"
+    texturefile = "gfx/interface/icons/ship_parts/ship_part_FEI_barrier.dds"
+}
+spriteType = {
+    name = "GFX_ship_part_FEI_kinetic_artillery"
+    texturefile = "gfx/interface/icons/ship_parts/ship_part_FEI_kinetic_artillery.dds"
+}

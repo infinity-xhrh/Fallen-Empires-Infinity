@@ -1,0 +1,40 @@
+#太虚VI暗物质全偏导护盾
+tech_FEI_barrier = {
+	cost = @fallentechcost
+	area = physics
+	tier = @fallentechtier
+	category = { field_manipulation }
+	is_rare = yes
+	is_reverse_engineerable = no
+	ai_update_type = all
+	weight = 1
+
+	prerequisites = { "tech_dark_matter_deflector" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			is_FEI_militarist_forerunner_empire = no
+		}
+	}
+}
+#中子态物质跃迁投射武器化
+tech_FEI_kinetic_artillery = {
+	cost = @fallentechcost
+	area = engineering
+	tier = @fallentechtier
+	category = { propulsion }
+	is_rare = yes
+	is_reverse_engineerable = no
+	ai_update_type = military
+	weight = 1
+
+	prerequisites = { "tech_mass_accelerator_2" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			is_FEI_militarist_forerunner_empire = no
+		}
+	}
+}

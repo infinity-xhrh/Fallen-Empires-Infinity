@@ -1,0 +1,21 @@
+#军国ldx盾
+component_set = {
+	key = "FEI_BARRIER"
+
+	icon = "GFX_ship_part_FEI_barrier"
+	icon_frame = 1
+}
+#军国ldx大炮
+component_set = {
+	key = "FEI_KINETIC_ARTILLERY_T"
+
+	icon = "GFX_ship_part_FEI_kinetic_artillery"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "FEI_KINETIC_ARTILLERY_X"
+
+	icon = "GFX_ship_part_FEI_kinetic_artillery"
+	icon_frame = 1
+}

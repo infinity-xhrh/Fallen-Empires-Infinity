@@ -159,3 +159,195 @@ strike_craft_component_template = {
     icon_frame = 1
     tags = { weapon_type_strike_craft }
 }
+# 太虚VI型暗物质全偏导护盾
+utility_component_template = {
+	key = "SMALL_FEI_BARRIER"
+	size = small
+	icon = "GFX_ship_part_FEI_barrier"
+	icon_frame = 1
+	power = @power_S7
+	prerequisites = { tech_FEI_barrier }
+
+	modifier = {
+		ship_shield_add = @shield_S7
+		ship_shield_regen_add_static = @regen_S7
+	}
+
+	component_set = "FEI_BARRIER"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t7_cost
+			sr_dark_matter = 0.333
+		}
+		upkeep = {
+			energy = @s_t7_upkeep_energy
+			alloys = @s_t7_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 40
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_FEI_BARRIER"
+	size = medium
+	icon = "GFX_ship_part_FEI_barrier"
+	icon_frame = 1
+	power = @power_M7
+	prerequisites = { tech_FEI_barrier }
+
+	modifier = {
+		ship_shield_add = @shield_M7
+		ship_shield_regen_add_static = @regen_M7
+	}
+
+	component_set = "FEI_BARRIER"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t7_cost
+			sr_dark_matter = 0.666
+		}
+		upkeep = {
+			energy = @m_t7_upkeep_energy
+			alloys = @m_t7_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 40
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_FEI_BARRIER"
+	size = large
+	icon = "GFX_ship_part_FEI_barrier"
+	icon_frame = 1
+	power = @power_L7
+	prerequisites = { tech_FEI_barrier }
+
+	modifier = {
+		ship_shield_add = @shield_L7
+		ship_shield_regen_add_static = @regen_L7
+	}
+
+	component_set = "FEI_BARRIER"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t7_cost
+			sr_dark_matter = 1.333
+		}
+		upkeep = {
+			energy = @l_t7_upkeep_energy
+			alloys = @l_t7_upkeep_alloys
+		}
+	}
+
+	ai_weight = {
+		weight = 40
+	}
+}
+#x万兆中子态物质裂穿器
+weapon_component_template = {
+	key = "FEI_KINETIC_ARTILLERY_T"
+	prerequisites = { tech_FEI_kinetic_artillery }
+
+	power = -650
+	size = titanic
+	type = instant
+	icon = "GFX_ship_part_FEI_kinetic_artillery"
+	icon_frame = 1
+	projectile_gfx = "adv_kinetic_artillery"
+	tags = { weapon_type_kinetic weapon_role_artillery l_slot }
+	ai_tags = { weapon_role_anti_shield weapon_role_anti_hull weapon_role_artillery artillery }
+	ai_tag_weight = 0
+
+	component_set = "FEI_KINETIC_ARTILLERY_T"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titanic_t7_cost
+			volatile_motes = @titanic_t7_rare
+		}
+		upkeep = {
+			energy = @titanic_t7_upkeep_energy
+			alloys = @titanic_t7_upkeep_alloys
+		}
+	}
+
+	damage = { min = 500 max = 1500 }
+	windup = { min = 10 max = 15 }
+	total_fire_time = 14
+	max_range = 250
+	min_range = 45
+	accuracy = 0.75
+	tracking = 0
+	firing_arc = 20
+
+	shield_damage = 1.5
+	armor_damage = 0.75
+	hull_damage = 1.5
+
+	ai_weight = {
+		weight = 9
+		modifier = {
+			set = 0
+			is_FEI_militarist_forerunner_empire = no
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "FEI_KINETIC_ARTILLERY_X"
+	prerequisites = { tech_FEI_kinetic_artillery }
+
+	power = -338
+	size = extra_large
+	type = instant
+	icon = "GFX_ship_part_FEI_kinetic_artillery"
+	icon_frame = 1
+	projectile_gfx = "adv_kinetic_artillery"
+	tags = { weapon_type_kinetic weapon_role_artillery x_slot }
+	ai_tags = { weapon_role_anti_shield weapon_role_anti_hull weapon_role_artillery artillery }
+	ai_tag_weight = 0
+
+	component_set = "FEI_KINETIC_ARTILLERY_X"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @xl_t7_cost
+			volatile_motes = @xl_t7_rare
+		}
+		upkeep = {
+			energy = @xl_t7_upkeep_energy
+			alloys = @xl_t7_upkeep_alloys
+		}
+	}
+
+	damage = { min = 225 max = 675 }
+	windup = { min = 10 max = 16 }
+	total_fire_time = 11
+	max_range = 250
+	min_range = 45
+	accuracy = 0.75
+	tracking = 0
+	firing_arc = 25
+
+	shield_damage = 1.5
+	armor_damage = 0.75
+	hull_damage = 1.5
+
+
+	ai_weight = {
+		weight = 9
+		modifier = {
+			set = 0
+			is_FEI_militarist_forerunner_empire = no
+		}
+	}
+}
