@@ -1,0 +1,126 @@
+# FEI_cyborg_army: "半机械先驱"
+# FEI_chrono_army: "超时空军团"
+#FEI_psi_army: "超能力部队"
+#FEI_duplicant_army: "增殖机器人"
+
+
+FEI_cyborg_army = {
+    defensive = yes
+    damage = 4.0
+    health = 6.0
+    has_morale = no
+    morale_damage = 1.5
+    collateral_damage = 4.0
+    war_exhaustion = 4.0
+    time = 500
+
+    icon = GFX_army_type_xenomorph #图标
+
+    resources = {
+        category = armies
+        cost = {
+            minerals = 1200
+        }
+    }
+
+    potential_country = {
+        always = no
+    }
+    potential = {
+        always = no
+    }
+    ai_weight = {
+        base = 0
+    }
+}
+
+FEI_chrono_army = {
+    defensive = yes
+    damage = 1.0
+    health = 5.0
+    morale = 1.0
+    morale_damage = 1.0
+    collateral_damage = 0.75
+    war_exhaustion = 3.0
+    time = 120
+
+    icon = GFX_army_type_flamestorm #图标
+
+    resources = {
+        category = armies
+        cost = {
+            minerals = 1500
+        }
+    }
+
+    potential_country = {
+        always = no
+    }
+    potential = {
+        always = no
+    }
+    ai_weight = {
+        base = 0
+    }
+}
+
+FEI_psi_army = {
+    defensive = yes
+    damage = 2.0
+    morale_damage = 3
+    health = 2.5
+    morale = 2.5
+    collateral_damage = 0.5
+    war_exhaustion = 3.0
+    time = 120
+
+    icon = GFX_army_type_psionic #图标
+
+    resources = {
+        category = armies
+        cost = {
+            minerals = 800
+        }
+    }
+
+    potential_country = {
+        always = no
+    }
+    potential = {
+        always = no
+    }
+    ai_weight = {
+        base = 0
+    }
+}
+
+FEI_duplicant_army = {
+    defensive = yes
+    damage = 1.5
+    health = 10.0
+    morale = 5.0
+    morale_damage = 1.5
+    collateral_damage = 4.0
+    war_exhaustion = 4.0
+    time = 500
+    has_species = no
+
+    icon = GFX_army_type_machine_assault #图标
+
+    resources = {
+        category = armies
+        cost = {
+            minerals = 1500
+        }
+    }
+
+    potential_country = {
+        always = no
+    }
+    potential = {
+        always = no
+    }
+    ai_weight = {
+        base = 0
+    }
+}

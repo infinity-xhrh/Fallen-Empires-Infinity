@@ -106,3 +106,16 @@ on_war_lost = {
 	events = {
 	}
 }
+
+on_ground_combat_started = {
+    events = {
+        fei_initialize.2
+    }
+}
+
+on_army_killed_in_combat = {
+    events = {
+        fei_initialize.3 #心灵专家
+        fei_initialize.5 #增殖机器人
+    }
+}

@@ -32,3 +32,138 @@ event = {
 		set_spawn_system_batch = end
 	}
 }
+
+#军国老登的心灵专家
+country_event = {
+    id = fei_initialize.3
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        exists = fromfrom
+        fromfromfrom = {
+            any_ground_combat_defender = {
+                is_in_frontline = yes
+                is_owned_by = fromfrom
+                army_type = FEI_psi_army
+            }
+        }
+    }
+
+    immediate = {
+        if = {
+            limit = { from = { exists = species } }
+            fromfromfrom = {
+                create_army = {
+                    owner = fromfrom
+                    type = from
+                    species = from
+                }
+            }
+        }
+        else = {
+            fromfromfrom = {
+                create_army = {
+                    owner = fromfrom
+                    type = from
+                    species = root
+                }
+            }
+        }
+    }
+}
+
+#军国老登的增殖机器人
+country_event = {
+    id = fei_initialize.5
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        exists = fromfrom
+        fromfromfrom = {
+            any_ground_combat_defender = {
+                is_in_frontline = yes
+                is_owned_by = fromfrom
+                army_type = FEI_duplicant_army
+            }
+        }
+    }
+
+    immediate = {
+        fromfromfrom = {
+            create_army = {
+                owner = fromfrom
+                type = FEI_duplicant_army
+                species = fromfrom
+            }
+        }
+    }
+}
+
+#每10天根据前线部队数量抹杀进攻者部队
+planet_event = {
+    id = fei_initialize.2
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        exists = owner
+        not = { has_planet_flag = FEI_chrono_army_triggered }
+        any_ground_combat_defender = {
+            army_type = FEI_chrono_army
+        }
+    }
+
+    immediate = {
+        country_event = {
+            id = fei_initialize.4
+            days = 11
+        }
+        set_timed_planet_flag = { 
+            flag = FEI_chrono_army_triggered
+            days = 10
+        }
+    }
+}
+
+planet_event = {
+    id = fei_initialize.4
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        has_ground_combat = yes
+        any_ground_combat_defender = {
+            army_type = FEI_chrono_army
+        }
+    }
+
+    immediate = {
+        planet_event = {
+            id = fei_initialize.4
+            days = 10
+        }
+        set_timed_planet_flag = { 
+            flag = FEI_chrono_army_triggered
+            days = 10
+        }
+        export_trigger_value_to_variable = {
+            trigger = count_ground_combat_defender
+            parameters = {
+                limit = {
+                     is_in_frontline = yes
+                    army_type = FEI_chrono_army
+                }
+            }
+            variable = FEI_chrono_army_counter
+        }
+        while = {
+            count = FEI_chrono_army_counter
+            random_ground_combat_attacker = {
+                remove_army = yes
+            }
+        }
+    }
+}
+
