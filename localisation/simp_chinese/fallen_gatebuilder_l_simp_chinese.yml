@@ -4,7 +4,7 @@
  personality_fallen_empire_machine_lgate_desc: "该失落帝国是一个基于对L-星门的监察协议运行的远古人工智能，未对我们造成直接威胁。"
  personality_awakened_fallen_empire_machine_lgate: "防御协议GB-3417"
  personality_awakened_fallen_empire_machine_lgate_desc: "该觉醒帝国由建门者留下的后门程序组成，其所有行动的目的都在于阻止灰之风暴的逃出，与保护这个宇宙。"
-
+ fei_graysky:"监管者主脑"
  NAME_graygoo_defense: "总控枢纽"
  NAME_graygoo_defense_2: "前哨"
  fallen_lgategrander: "枢纽"
