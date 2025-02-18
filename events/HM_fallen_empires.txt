@@ -641,7 +641,7 @@ country_event = {
             }
             ethic_leader_creator = {
                 SPECIES_CLASS = " event_target:lgate_grander_fallen.owner_main_species"
-                LEADER_PORTRAIT = gray_sky
+                LEADER_PORTRAIT = gray_sky1
                 CLASS = scientist
                 NAME = Lgater_leader
                 LEVEL = 10
@@ -652,7 +652,7 @@ country_event = {
                 CATCH_PHRASE = Lgater_leader_phrase
             }
             last_created_leader = {
-                change_leader_portrait = gray_sky
+                change_leader_portrait = gray_sky1
                 add_trait = leader_trait_graysky_scitist
                 add_trait = subclass_scientist_governor
                 save_event_target_as = showing_leader
@@ -704,7 +704,7 @@ country_event = {
                 randomize_traits = no
                 effect = {
                     add_trait = leader_trait_graysky_scitist
-                    change_leader_portrait = gray_sky
+                    change_leader_portrait = gray_sky1
                     add_trait = subclass_scientist_governor
                     save_global_event_target_as = gray_sky
                     set_leader_flag = immune_to_negative_traits
@@ -804,7 +804,22 @@ country_event = {
     }
     immediate = {
         event_target:gray_sky = {
-            change_leader_portrait = gray_sky
+            if = {
+                limit = { has_global_flag = graysky_not_has_special_protriat }
+                change_leader_portrait = root.owner_main_species
+            }
+            else_if = {
+                limit = { has_global_flag = graysky_portrait_1 }
+                change_leader_portrait = gray_sky1
+            }
+            else_if = {
+                limit = { has_global_flag = graysky_portrait_2 }
+                change_leader_portrait = gray_sky2
+            }
+            else_if = {
+                limit = { has_global_flag = graysky_portrait_3 }
+                change_leader_portrait = gray_sky3
+            }
         }
         country_event = { id = Nanites_grander.17 days = 31 }
     }
@@ -892,6 +907,11 @@ country_event = {
         name = Nanites_grander.20.a
     }
     option = {
+        name = Nanites_grander.20.d
+        custom_tooltip = Nanites_grander.20.d.tooltip
+        country_event = { id = Nanites_grander.35 }
+    }
+    option = {
         name = Nanites_grander.20.b
         hidden_effect = {
             set_country_flag = graysky_commander
@@ -967,6 +987,11 @@ country_event = {
     }
     option = {
         name = Nanites_grander.20.a
+    }
+    option = {
+        name = Nanites_grander.20.d
+        custom_tooltip = Nanites_grander.20.d.tooltip
+        country_event = { id = Nanites_grander.35 }
     }
     option = {
         name = Nanites_grander.21.b
@@ -1300,4 +1325,22 @@ country_event = {
         name = Nanites_grander.34.a
         add_relic = r_fallen_graysky
     }
+}
+
+
+#衣柜
+country_event = {
+    id = Nanites_grander.35
+    is_triggered_only = yes
+    title = Nanites_grander.35
+    desc = 11-F
+    diplomatic = yes
+    diplomatic_title = 11-F
+    picture_event_data = {
+        portrait = root.ruler
+        room = root
+        planet_background = root.capital_scope
+    }
+    custom_gui = fei_leader_portirat
+    option = { name = OK }
 }

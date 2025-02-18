@@ -1,0 +1,214 @@
+guiTypes = {
+    containerWindowType = {
+        name = "fei_leader_portirat"
+        orientation = center
+        origo = center
+        moveable = yes
+        size = { width = 1350 height = 800 }
+
+        background = { name = "background" quadTextureSprite =GFX_dark_green_frame_area }
+
+        buttonType = {
+            name = "close"
+            quadTextureSprite = "GFX_close"
+            position = { x= 100 y = 200 }
+            Orientation = "UPPER_RIGHT"
+            shortcut = "ESCAPE"
+            clicksound = "back_click"
+        }
+
+
+        #灰空1
+        buttonType = {
+            name = "GS_xiaoxiang_1_background"
+            size = { x = 320 y = 350 }
+            position = { x = 10 y = 20 }
+            spriteType = "GFX_tiles_dark_area_cut_8"
+            alwaysTransparent = yes
+        }
+        effectbuttonType = {
+            name = GS_xiaoxiang_1
+            quadTextureSprite = GFX_no_special_portrait
+            position = { x = 20 y = 20 }
+            effect = GS_xiaoxiang_1
+            alwaysTransparent = yes
+        }
+        effectbuttonType = {
+            name = "GS1"
+            quadTextureSprite = GFX_button_116_24
+            position = { x = 100 y = 330 }
+            oversound = no_sound
+            buttonText = FEI_graysky_button_1
+            buttonFont = "large_title_font_28"
+            effect = FEI_graysky_button_1
+        }
+        #灰空2
+        buttonType = {
+            name = "GS_xiaoxiang_2_background"
+            size = { x = 320 y = 350 }
+            position = { x = 340 y = 20 }
+            spriteType = "GFX_tiles_dark_area_cut_8"
+            alwaysTransparent = yes
+        }
+        effectbuttonType = {
+            name = "GS_xiaoxiang_2"
+            position = { x = 350 y = 20 }
+            quadTextureSprite = GFX_gray_sky_1
+            effect = GS_xiaoxiang_2
+            alwaysTransparent = yes
+        }
+        effectbuttonType = {
+            name = "GS2"
+            quadTextureSprite = GFX_button_116_24
+            position = { x = 440 y = 330 }
+            oversound = no_sound
+            buttonText = FEI_graysky_button_1
+            buttonFont = "large_title_font_28"
+            effect = FEI_graysky_button_2
+        }
+
+        #灰空3
+        buttonType = {
+            name = "GS_xiaoxiang_3_background"
+            size = { x = 320 y = 350 }
+            position = { x = 670 y = 20 }
+            spriteType = "GFX_tiles_dark_area_cut_8"
+            alwaysTransparent = yes
+        }
+        effectbuttonType = {
+            name = "GS_xiaoxiang_3"
+            position = { x = 680 y = 20 }
+            quadTextureSprite = GFX_gray_sky_2
+            effect = GS_xiaoxiang_3
+            alwaysTransparent = yes
+        }
+        effectbuttonType = {
+            name = "GS3"
+            quadTextureSprite = GFX_button_116_24
+            position = { x = 750 y = 330 }
+            oversound = no_sound
+            buttonText = FEI_graysky_button_1
+            buttonFont = "large_title_font_28"
+            effect = FEI_graysky_button_3
+        }
+        #灰空4
+        buttonType = {
+            name = "GS_xiaoxiang_4_background"
+            size = { x = 320 y = 350 }
+            position = { x = 1010 y = 20 }
+            spriteType = "GFX_tiles_dark_area_cut_8"
+            alwaysTransparent = yes
+        }
+        effectbuttonType = {
+            name = "GS_xiaoxiang_4"
+            position = { x = 1020 y = 20 }
+            quadTextureSprite = GFX_gray_sky_3
+            effect = GS_xiaoxiang_4
+            alwaysTransparent = yes
+        }
+        effectbuttonType = {
+            name = "GS4"
+            quadTextureSprite = GFX_button_116_24
+            position = { x = 1100 y = 330 }
+            oversound = no_sound
+            buttonText = FEI_graysky_button_1
+            buttonFont = "large_title_font_28"
+            effect = FEI_graysky_button_4
+        }
+        ### ALL OF THIS IS HIDDEN OR DISPLACED ! ###
+
+
+
+
+        buttonType = { name = "focus_button" position = { x = -1180 y = -1112 } spriteType = "GFX_fleetview_focus" } # hidden
+        instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -1120 y = -115 } } # hidden
+        buttonType = {
+            name = "alien_message_background"
+            size = { x = 600 y =  350 }
+            scale = 0.4
+            position = { x = 9999 y = 9999 }
+            spriteType = "GFX_tiles_dark_area_cut_8"
+        } # hidden
+        containerWindowType = {
+            name = "portrait_background"
+            position = { x = 9999 y = 9999 }
+            size = { width = 590 height = 620 }     # hide portrait window
+            scale = 0.4
+            iconType = { name = "event_picture" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
+            iconType = { name = "portrait" spriteType = "GFX_portrait_character" } # hidden
+        }
+        containerWindowType = {
+            name = "portrait"
+            position = { x = 9999 y = 9999 }
+            size = { width = 590 height = 620 } # hide portrait window
+            scale = 0.4
+            iconType = { name = "portrait" spriteType = "GFX_portrait_gamesetup_mask" } # hidden
+            iconType = { name = "black_frame" spriteType = "GFX_diplomacy_portrait_shadow_frame" } # hidden
+            iconType = { name = "stripes_1" spriteType = "GFX_diplomacy_stripes_2" } # hidden
+            iconType = { name = "city_frame" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
+        }
+        iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" } # hidden
+        instantTextBoxType={ name = "empire_name" font = "malgun_goth_24" } # hidden
+        instantTextBoxType={ name = "empire_government_type" font = "cg_16b" } # hidden
+        instantTextBoxType={ name = "empire_personality_type" font = "cg_16b" } # hidden
+        OverlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -1145 y = -11138 } } # hidden
+        iconType = { name = "empire_flag" spriteType = "GFX_empire_flag_128" position = { x = -1125 y = -11235 } } # hidden
+        containerWindowType = {
+            name = "leader_details"
+            position = { x = -1125 y = -1175 }
+            containerWindowType = { name = "empire_traits_box" } # hidden
+            instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" } # hidden
+            overlappingElementsBoxType = { name = "leader_traits" } # hidden
+            instantTextBoxType = { name = "leader_name" font = "cg_16b" } # hidden
+            instantTextBoxType = { name = "leader_species" font = "cg_16b" } # hidden
+        }
+        containerWindowType = {
+            name = "opinion_window"
+            position = { x = -1127 y = -11110 }
+            size = { width = 94 height = 30 }
+            scale = 0.4
+            iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" } # hidden
+            instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
+        }
+
+        ### EVENT DIPLO ###
+
+        containerWindowType = {
+            name = "EVENT_DIPLO"
+            position = { x = 2 y = 50 }
+            #size = { width=563 height=220 }
+            moveable = no
+
+            instantTextBoxType={
+                name = "action_title"
+                font = "malgun_goth_24"
+                position = { x = 9999 y = 9999 }
+                maxWidth = 200
+                alwaysTransparent = yes
+            }
+            instantTextBoxType={
+                name = "action_desc"
+                font = "malgun_goth_24"
+                position = { x = 9999 y = 9999 }
+                maxWidth = 500
+                maxHeight = 180
+                scale = 0.4
+                Orientation = "UPPER_LEFT"
+                format = center
+                alwaysTransparent = yes
+                text_color_code = "H"
+            }
+            listboxType = { name = "option_list" position = { x = -11500 y = -1130 } } # hidden option list
+        }
+        # Description Section
+        instantTextBoxType = {
+            name = "alien_message"
+            font = "cg_16b"
+            position = { x = 9999 y =9999 }
+            maxWidth = 900
+            maxHeight = 296
+            format = left
+            scrollbartype = "standardtext_slider"
+        }
+    }
+}

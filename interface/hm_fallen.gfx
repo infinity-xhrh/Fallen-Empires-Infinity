@@ -56,4 +56,20 @@ spriteTypes = {
 		name = GFX_leader_trait_grayskt_scitist
 		textureFile = gfx/interface/icons/traits/leader_graysky.dds
 	}
+	spriteType = {
+		name = GFX_gray_sky_1
+		textureFile = gfx/models/portraits/Graysky_1_button.dds
+	}
+	spriteType = {
+		name = GFX_gray_sky_2
+		textureFile = gfx/models/portraits/Graysky_2_button.dds
+	}
+	spriteType = {
+		name = GFX_gray_sky_3
+		textureFile = gfx/models/portraits/Graysky_3_button.dds
+	}
+	spriteType = {
+		name = GFX_no_special_portrait
+		textureFile = gfx/models/portraits/no_special_portrait.dds
+	}
 }
