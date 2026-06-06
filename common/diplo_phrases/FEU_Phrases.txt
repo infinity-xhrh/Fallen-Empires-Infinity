@@ -1,0 +1,565 @@
+greetings = {
+    #对其他人  友善
+    FEU_FRIENDLY_OTHER_01 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_patronizing_to = FROM
+            }
+            FROM = {
+                NOT = { IS_RIVAL = ROOT }
+            }
+        }
+    }
+    FEU_FRIENDLY_OTHER_02 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_patronizing_to = FROM
+            }
+            FROM = {
+                NOT = { IS_RIVAL = ROOT }
+            }
+        }
+    }
+    FEU_FRIENDLY_OTHER_03 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_patronizing_to = FROM
+            }
+            FROM = {
+                NOT = { IS_RIVAL = ROOT }
+            }
+        }
+    }
+    FEU_FRIENDLY_OTHER_04 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_patronizing_to = FROM
+            }
+            FROM = {
+                NOT = { IS_RIVAL = ROOT }
+            }
+        }
+    }
+    FEU_FRIENDLY_OTHER_05 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_patronizing_to = FROM
+            }
+            FROM = {
+                NOT = { IS_RIVAL = ROOT }
+            }
+        }
+    }
+    FEU_FRIENDLY_OTHER_06 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_patronizing_to = FROM
+            }
+            FROM = {
+                NOT = { IS_RIVAL = ROOT }
+            }
+        }
+    }
+    FEU_FRIENDLY_OTHER_07 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_patronizing_to = FROM
+            }
+            FROM = {
+                NOT = { IS_RIVAL = ROOT }
+            }
+        }
+    }
+    #中立
+    FEU_NETURAL_TO_OTHERS_01 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_dismissive_to = FROM
+            }
+        }
+    }
+    FEU_NETURAL_TO_OTHERS_02 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_dismissive_to = FROM
+            }
+        }
+    }
+    FEU_NETURAL_TO_OTHERS_03 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_dismissive_to = FROM
+            }
+        }
+    }
+    FEU_NETURAL_TO_OTHERS_04 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_dismissive_to = FROM
+            }
+        }
+    }
+    FEU_NETURAL_TO_OTHERS_05 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_dismissive_to = FROM
+            }
+        }
+    }
+    FEU_NETURAL_TO_OTHERS_06 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_dismissive_to = FROM
+            }
+        }
+    }
+    #敌对
+    FEU_HOSTILE_TO_OTHERS_01 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_angry_to = FROM
+            }
+        }
+    }
+    FEU_HOSTILE_TO_OTHERS_02 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_angry_to = FROM
+            }
+        }
+    }
+    FEU_HOSTILE_TO_OTHERS_03 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_angry_to = FROM
+            }
+        }
+    }
+    FEU_HOSTILE_TO_OTHERS_04 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_angry_to = FROM
+            }
+        }
+    }
+    FEU_HOSTILE_TO_OTHERS_05 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_angry_to = FROM
+            }
+        }
+    }
+    FEU_HOSTILE_TO_OTHERS_06 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_angry_to = FROM
+            }
+        }
+    }
+    FEU_HOSTILE_TO_OTHERS_07 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_angry_to = FROM
+            }
+        }
+    }
+    #宿敌
+    FEU_RIVAL_TO_OTHERS_01 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_rival = from
+            }
+        }
+    }
+    FEU_RIVAL_TO_OTHERS_02 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_rival = from
+            }
+        }
+    }
+    FEU_RIVAL_TO_OTHERS_03 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_rival = from
+            }
+        }
+    }
+    FEU_RIVAL_TO_OTHERS_04 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_rival = from
+            }
+        }
+    }
+    FEU_RIVAL_TO_OTHERS_05 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_rival = from
+            }
+        }
+    }
+    FEU_RIVAL_TO_OTHERS_06 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            OR = {
+                is_rival = from
+            }
+        }
+    }
+    #被宿敌
+    FEU_PEACE_TO_OTHERS_01 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            and = {
+                is_patronizing_to = FROM
+                from = {
+                    is_rival = root
+                }
+            }
+        }
+    }
+    FEU_PEACE_TO_OTHERS_02 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            and = {
+                is_patronizing_to = FROM
+                from = {
+                    is_rival = root
+                }
+            }
+        }
+    }
+    FEU_PEACE_TO_OTHERS_03 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            and = {
+                is_patronizing_to = FROM
+                from = {
+                    is_rival = root
+                }
+            }
+        }
+    }
+    FEU_PEACE_TO_OTHERS_04 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            and = {
+                is_patronizing_to = FROM
+                from = {
+                    is_rival = root
+                }
+            }
+        }
+    }
+    FEU_PEACE_TO_OTHERS_05 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            and = {
+                is_patronizing_to = FROM
+                from = {
+                    is_rival = root
+                }
+            }
+        }
+    }
+    FEU_PEACE_TO_OTHERS_06 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            and = {
+                is_patronizing_to = FROM
+                from = {
+                    is_rival = root
+                }
+            }
+        }
+    }
+    FEU_PEACE_TO_OTHERS_07 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            and = {
+                is_patronizing_to = FROM
+                from = {
+                    is_rival = root
+                }
+            }
+        }
+    }
+    FEU_PEACE_TO_OTHERS_08 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            NOT = { is_at_war_with = FROM }
+            and = {
+                is_patronizing_to = FROM
+                from = {
+                    is_rival = root
+                }
+            }
+        }
+    }
+    #战斗
+    FEU_WAR_TO_OTHERS_01 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+             is_at_war_with = FROM
+        }
+    }
+    FEU_WAR_TO_OTHERS_02 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            is_at_war_with = FROM
+        }
+    }
+    FEU_WAR_TO_OTHERS_03 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            is_at_war_with = FROM
+        }
+    }
+    FEU_WAR_TO_OTHERS_04 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            is_at_war_with = FROM
+        }
+    }
+    FEU_WAR_TO_OTHERS_05 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            is_at_war_with = FROM
+        }
+    }
+    FEU_WAR_TO_OTHERS_06 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            is_at_war_with = FROM
+        }
+    }
+    FEU_WAR_TO_OTHERS_07 = {
+        weight = { weight = 10000 }
+        trigger = {
+            or = {
+                is_fallen_empire_utpiod = yes
+                is_fallen_empire_utpiod_awaked = yes
+            }
+            is_at_war_with = FROM
+        }
+    }
+}

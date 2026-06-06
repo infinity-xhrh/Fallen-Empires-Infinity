@@ -1,0 +1,171 @@
+
+job_FEU_ferak = {
+    category = specialist
+    swappable_data = {
+        default = {
+            condition_string = WORKER_JOB_TRIGGER
+            building_icon = building_ancient_palace
+            icon = fe_hedonist
+        }
+    }
+    possible_precalc = can_fill_specialist_job
+    resources = {
+        category = planet_jobs_productive
+        produces = { unity = 10 }
+        upkeep = { consumer_goods = 1 }
+    }
+    planet_modifier = {
+        planet_stability_add =  10
+        planet_jobs_produces_mult = 0.025
+    }
+    country_modifier = {
+        empire_size_add = -10
+    }
+    weight = { weight = 50 }
+}
+job_FEU_utpiod_god = {
+    category = specialist
+    swappable_data = {
+        default = {
+            condition_string = WORKER_JOB_TRIGGER
+            building_icon = building_ancient_palace
+            icon = aid_worker
+        }
+    }
+    possible_precalc = can_fill_specialist_job
+    resources = {
+        category = planet_jobs_productive
+        produces = {}
+        upkeep = { consumer_goods = 1 }
+    }
+    planet_modifier = {
+        planet_amenities_add = 10
+        logistic_growth_mult = 1
+    }
+    weight = { weight = 50 }
+}
+job_FEU_adam = {
+    category = specialist
+    swappable_data = {
+        default = {
+            condition_string = WORKER_JOB_TRIGGER
+            building_icon = building_ancient_palace
+            icon = fe_archivist
+        }
+    }
+    possible_precalc = can_fill_specialist_job
+    resources = {
+        category = planet_jobs_productive
+        produces = {
+            society_research = 6
+            physics_research = 6
+            energy = 6
+        }
+        upkeep = { consumer_goods = 2 }
+    }
+    weight = { weight = 50 }
+}
+
+job_FEU_freedom_job = {
+    category = worker
+    swappable_data = {
+        default = {
+            condition_string = WORKER_JOB_TRIGGER
+            building_icon = building_hyper_entertainment_forum
+            icon = primitive_administrator
+        }
+    }
+    possible_precalc = can_fill_specialist_job
+    resources = {
+        category = planet_jobs
+        produces = {
+            energy = 10
+            minerals = 10
+            food = 10
+            alloys = 5
+            consumer_goods = 5
+            exotic_gases = 0.5
+            rare_crystals = 0.5
+            volatile_motes = 0.5
+        }
+        upkeep = { consumer_goods = 1 }
+    }
+    weight = { weight = 50 }
+}
+job_FEU_crime_job = {
+    category = worker
+    swappable_data = {
+        default = {
+            condition_string = WORKER_JOB_TRIGGER
+            building_icon = building_hyper_entertainment_forum
+            icon = primitive_warrior
+        }
+    }
+    possible_precalc = can_fill_specialist_job
+    resources = {
+        category = planet_jobs
+        upkeep = { consumer_goods = 0.5 }
+    }
+    planet_modifier = {
+        planet_amenities_add = 10
+        planet_crime_add = -10
+    }
+    country_modifier = {
+        country_naval_cap_add = 20
+    }
+    weight = { weight = 50 }
+}
+
+
+fe_hedonist = {
+    category = precursor
+    is_capped_by_modifier = no
+    swappable_data = {
+        default = {
+            building_icon = building_hyper_entertainment_forum
+        }
+    }
+    possible_pre_triggers = {
+        has_owner = yes
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_precursor_job
+
+    possible = {
+        owner = {
+            NOR = {
+                is_machine_empire = yes
+                is_hive_empire = yes
+                has_ethic = ethic_fanatic_spiritualist
+                is_fallen_empire_utpiod_awaked = yes
+                is_fallen_empire_utpiod = yes
+            }
+        }
+        is_same_species = owner
+    }
+
+    resources = {
+        category = planet_jobs
+        produces = {
+            unity = 2
+        }
+    }
+
+    weight = {
+        weight = @worker_job_weight
+
+        # crisis purge
+        modifier = {
+            factor = 0.01
+            exists = planet
+            exists = planet.controller
+            planet.controller = {
+                OR = {
+                    is_country_type = swarm
+                    is_country_type = ai_empire
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,121 @@
+# FEI militarist fallen empire situations.
+# All scopes inside a situation:
+# - this/root = situation
+# - owner = country experiencing the situation
+# - target = FEI militarist fallen empire
+
+fei_militarist_signal_trace_situation = {
+	picture = GFX_evt_acquire_asset
+	category = negative
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_outcome_bad
+
+	on_start = {
+		hidden_effect = {
+			set_situation_flag = fei_militarist_signal_trace_active
+		}
+	}
+
+	on_progress_complete = {
+		custom_tooltip = fei_militarist_signal_trace_complete_tooltip
+		hidden_effect = {
+			owner = {
+				country_event = { id = fei_militarist_story.30 }
+			}
+			destroy_situation = this
+		}
+	}
+
+	on_abort = {
+		hidden_effect = {
+			destroy_situation = this
+		}
+	}
+
+	abort_trigger = {
+		OR = {
+			has_global_flag = fei_militarist_forerunner_returned
+			owner = {
+				NOT = { has_country_flag = fei_militarist_signal_trace_started }
+			}
+			NOT = { exists = target }
+		}
+	}
+
+	stages = {
+		fei_militarist_signal_trace_stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 30
+			custom_tooltip = fei_militarist_signal_trace_stage_1_tooltip
+		}
+		fei_militarist_signal_trace_stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_red
+			end = 65
+			custom_tooltip = fei_militarist_signal_trace_stage_2_tooltip
+		}
+		fei_militarist_signal_trace_stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = fei_militarist_signal_trace_stage_3_tooltip
+		}
+	}
+
+	approach = {
+		name = fei_militarist_signal_trace_countermeasures
+		icon = GFX_situation_approach_shield
+		icon_background = GFX_situation_approach_bg_blue
+		default = yes
+		ai_weight = { weight = 100 }
+	}
+
+	monthly_progress = {
+		# Base progress is intentionally non-zero.
+		# At base speed, 100 progress takes roughly 20 years.
+		base = 0.42
+
+		# Lower relative encryption means the forerunners can reverse-map the signal faster.
+		# Trigger reference: relative_encryption_decryption compares this country's encryption
+		# against the target country's decryption. The situation target is the militarist FE.
+		modifier = {
+			add = 0.60
+			desc = fei_militarist_signal_trace_low_encryption
+			owner = {
+				relative_encryption_decryption = {
+					target = event_target:FEI_militarist_forerunner
+					value < 0.75
+				}
+			}
+		}
+		modifier = {
+			add = 0.35
+			desc = fei_militarist_signal_trace_average_encryption
+			owner = {
+				relative_encryption_decryption = {
+					target = event_target:FEI_militarist_forerunner
+					value >= 0.75
+				}
+				relative_encryption_decryption = {
+					target = event_target:FEI_militarist_forerunner
+					value < 1.0
+				}
+			}
+		}
+		modifier = {
+			add = 0.15
+			desc = fei_militarist_signal_trace_high_encryption
+			owner = {
+				relative_encryption_decryption = {
+					target = event_target:FEI_militarist_forerunner
+					value >= 1.0
+				}
+				relative_encryption_decryption = {
+					target = event_target:FEI_militarist_forerunner
+					value < 1.5
+				}
+			}
+		}
+	}
+}

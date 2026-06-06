@@ -1,0 +1,93 @@
+utpoid_empire_personality = {
+    aggressiveness = 1
+    trade_willingness = 1
+    bravery = 0.5
+    combat_bravery = 0.9
+    military_spending = 1
+    colony_spending = 1
+    federation_acceptance = 75
+    nap_acceptance = 5
+    commercial_pact_acceptance = 0
+    research_agreement_acceptance = 30
+    defensive_pact_acceptance = 20
+    migration_pact_acceptance = -150
+    advanced_start_chance = 75
+    weapon_preferences = weapon_type_energy
+    armor_ratio = 0.5
+    shields_ratio = 0.5
+    hull_ratio = 0.5
+    threat_modifier = 1.0
+    threat_others_modifier = 1.0
+    friction_modifier = 1
+    claims_modifier = 1
+    behaviour = {
+        conqueror = yes
+        subjugator = yes
+        liberator = yes
+        opportunist = yes
+        displacer = yes
+        slaver = yes
+        uplifter = no
+        purger = no
+        infiltrator = no
+        dominator = yes
+        robot_exploiter = yes
+        robot_liberator = yes
+        propagator = yes
+        multispecies = yes
+        crisis_fighter = yes
+    }
+    allow = {
+        is_fallen_empire_utpiod = yes
+    }
+    weight_modifier = {
+        weight = 10000
+    }
+}
+
+utpoid_empire_personality_awaked = {
+    aggressiveness = 1.5
+    trade_willingness = 1.5
+    bravery = 1
+    combat_bravery = 1
+    military_spending = 1
+    colony_spending = 1
+    federation_acceptance = 75
+    nap_acceptance = 5
+    commercial_pact_acceptance = 0
+    research_agreement_acceptance = 30
+    defensive_pact_acceptance = 20
+    migration_pact_acceptance = -150
+    advanced_start_chance = 75
+    weapon_preferences = weapon_type_energy
+    armor_ratio = 0.5
+    shields_ratio = 0.5
+    hull_ratio = 0.5
+    threat_modifier = 1.0
+    threat_others_modifier = 1.0
+    friction_modifier = 1
+    claims_modifier = 1
+    behaviour = {
+        conqueror = yes
+        subjugator = yes
+        liberator = yes
+        opportunist = yes
+        displacer = yes
+        slaver = yes
+        uplifter = no
+        purger = no
+        infiltrator = no
+        dominator = yes
+        robot_exploiter = yes
+        robot_liberator = yes
+        propagator = yes
+        multispecies = yes
+        crisis_fighter = yes
+    }
+    allow = {
+        is_fallen_empire_utpiod_awaked = yes
+    }
+    weight_modifier = {
+        weight = 10000
+    }
+}

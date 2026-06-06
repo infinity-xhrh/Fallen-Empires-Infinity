@@ -1,0 +1,12 @@
+triggered_dc_FEU = {
+    trigger = {
+        this = {
+            is_fallen_empire_utpiod = yes
+        }
+        from = {
+            is_country_type = default
+            not = { is_homicidal = yes }
+        }
+    }
+    opinion = { base = 200}
+}

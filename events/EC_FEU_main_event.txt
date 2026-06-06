@@ -1,0 +1,439 @@
+namespace = FEU_main_event
+
+#老登的出生
+event = {
+    id = FEU_main_event.1
+    is_triggered_only = yes
+    hide_window = yes
+    fire_only_once = yes
+    trigger = {}
+    immediate = {
+        random_country = {
+            limit = { is_ai = no }
+            country_event = { id = FEU_main_event.2  }
+        }
+    }
+}
+country_event = {
+    id = FEU_main_event.2
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        check_galaxy_setup_value = {
+            setting = num_fallen_empires
+            value > 0
+        }
+    }
+    fire_only_once = yes
+    immediate = {
+        random_list = {
+            2 = {}
+            1 = {
+                no_scope = {
+                    spawn_system = {
+                        initializer = FEU_capital_system
+                        min_distance >= 600
+                        max_distance <= 650
+                        min_orientation_angle = 180
+                        max_orientation_angle = 90
+                        hyperlane = no
+                    }
+                    random_system = {
+                        limit = {
+                            any_neighbor_system = {
+                                not = { exists = space_owner }
+                            }
+                        }
+                        spawn_system = {
+                            initializer = FEU_outer_system
+                            min_jumps = 1
+                            max_jumps = 1
+                            hyperlane = yes
+                        }
+                        last_created_system = {
+                            system_event = { id = FEU_main_event.3 days = 1 }
+                            spawn_natural_wormhole = {
+                                bypass_type = wormhole
+                                random_pos = no
+                                orbit_angle = 360
+                            }
+                            link_wormholes = event_target:FEU_capital_system
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+system_event = {
+    id = FEU_main_event.3
+    is_triggered_only = yes
+    hide_window = yes
+    immediate = {
+        every_system = {
+            limit = {
+                distance = {
+                    min_jumps = 1
+                    max_jumps = 2
+                    type = hyperlane
+                    source = root
+                }
+            }
+            create_starbase = {
+                size = starbase_outpost
+                owner = event_target:FEU_country
+            }
+        }
+    }
+}
+
+#老登的通讯
+country_event = {
+    id = FEU_main_event.4
+    is_triggered_only = yes
+    diplomatic = yes
+    picture_event_data = {
+        room = root
+        planet_background = root.capital_scope
+        portrait = event_target:FEU_country
+    }
+    title = FEU_main_event.4.title
+    desc = FEU_main_event.4.desc
+    option = {
+        name = FEU_main_event.4.a
+        ai_chance = {
+            base = 1
+            modifier = {
+                mult = 100
+                is_egalitarian = yes
+                is_xenophile = yes
+                is_pacifist = yes
+            }
+        }
+        country_event = { id = FEU_main_event.5 }
+        set_country_flag = FEU_uninted_country
+    }
+    option = {
+        name = FEU_main_event.4.b
+        ai_chance = {
+            base = 1
+            modifier = {
+                mult = 100
+                or = {
+                    is_homicidal = yes
+                    is_xenophobe = yes
+                    is_authoritarian = yes
+                }
+            }
+        }
+        country_event = { id = FEU_main_event.5 }
+    }
+}
+country_event = {
+    id = FEU_main_event.5
+    is_triggered_only = yes
+    diplomatic = yes
+    picture_event_data = {
+        room = root
+        planet_background = root.capital_scope
+        portrait = event_target:FEU_country
+    }
+    title = FEU_main_event.4.title
+    desc = {
+        trigger = {
+            has_country_flag = FEU_uninted_country
+        }
+        text = FEU_main_event.5.desc_1
+    }
+    desc = {
+        trigger = {
+            not = { has_country_flag = FEU_uninted_country }
+        }
+        text = FEU_main_event.5.desc_2
+    }
+    option = {
+        name = OK
+    }
+}
+
+#老登给东西
+country_event = {
+    id = FEU_main_event.6
+    is_triggered_only = yes
+    diplomatic = yes
+    picture_event_data = {
+        room = root
+        planet_background = root.capital_scope
+        portrait = event_target:FEU_country
+    }
+    title = FEU_main_event.4.title
+    desc = FEU_main_event.6.desc
+    trigger = {
+        has_country_flag = FEU_uninted_country
+    }
+    immediate = {
+        country_event = { id = FEU_main_event.6 years = 20 random = 5 }
+    }
+    option = {
+        name = FEU_main_event.6.a
+        random_list = {
+            1 = {
+                add_tech_progress = { tech = tech_utpiod_others_technology_1 progress = 0.1 }
+                modifier = {
+                    factor = 0
+                    has_technology = tech_utpiod_others_technology_1
+                }
+            }
+            1 = {
+                add_tech_progress = { tech = tech_utpiod_others_technology_2 progress = 0.1 }
+                modifier = {
+                    factor = 0
+                    has_technology = tech_utpiod_others_technology_2
+                }
+            }
+            1 = {
+                add_tech_progress = { tech = tech_utpiod_others_technology_3 progress = 0.1 }
+                modifier = {
+                    factor = 0
+                    has_technology = tech_utpiod_others_technology_3
+                }
+            }
+            1 = {
+                add_tech_progress = { tech = tech_utpiod_others_technology_4 progress = 0.1 }
+                modifier = {
+                    factor = 0
+                    has_technology = tech_utpiod_others_technology_4
+                }
+            }
+            1 = {
+                add_tech_progress = { tech = tech_utpiod_others_technology_5 progress = 0.1 }
+                modifier = {
+                    factor = 0
+                    has_technology = tech_utpiod_others_technology_5
+                }
+            }
+            1 = {
+                add_tech_progress = { tech = tech_utpiod_buildings_1 progress = 0.1 }
+                modifier = {
+                    factor = 0
+                    has_technology = tech_utpiod_buildings_1
+                }
+            }
+            1 = {
+                add_tech_progress = { tech = tech_utpiod_buildings_2 progress = 0.1 }
+                modifier = {
+                    factor = 0
+                    has_technology = tech_utpiod_buildings_2
+                }
+            }
+            1 = {
+                add_resource = {
+                    physics_research = 88888
+                    society_research = 88888
+                    engineering_research = 88888
+                }
+            }
+            1 = {
+                random_owned_planet = { add_deposit = d_fe_utopid_home }
+            }
+        }
+    }
+    option = {
+        name = FEU_main_event.6.b
+        country_event = { id = FEU_main_event.7  }
+    }
+}
+country_event = {
+    id = FEU_main_event.7
+    is_triggered_only = yes
+    diplomatic = yes
+    picture_event_data = {
+        room = root
+        planet_background = root.capital_scope
+        portrait = event_target:FEU_country
+    }
+    title = FEU_main_event.4.title
+    desc = FEU_main_event.7.desc
+    option = { name = OK }
+}
+
+#老登阻止天堂之战
+country_event = {
+    id = FEU_main_event.8
+    is_triggered_only = yes
+    trigger = {
+        is_fallen_empire_utpiod = yes
+    }
+    hide_window = yes
+    immediate = {
+        country_event = { id = FEU_main_event.8 years = 1 }
+        if = {
+            limit = {
+                has_global_flag = war_in_heaven_ongoing
+            }
+            country_event = { id = FEU_main_event.100 years = 1 }
+            set_country_type = awakened_fallen_empire
+            change_government = {
+                civics = {
+                    civic = civic_revanchist_fervor
+                    civic = civic_ancient_caches_of_technology
+                }
+            }
+            if = {
+                limit = { exists = event_target:FirstSleeper }
+                declare_war = {
+                    attacker_war_goal = wg_end_threat_crisis
+                    target = event_target:FirstSleeper
+                }
+            }
+            if = {
+                limit = { exists = event_target:SecondSleeper }
+                declare_war = {
+                    attacker_war_goal = wg_end_threat_crisis
+                    target = event_target:SecondSleeper
+                }
+            }
+            while = {
+                count = 8
+                random_owned_planet = { create_fe_utpoid_fleet = yes }
+            }
+            every_playable_country = {
+                country_event = { id = FEU_main_event.9 }
+            }
+            capital_scope.solar_system = {
+                spawn_megastructure = {
+                    owner = event_target:FEU_country
+                    type = mega_shipyard_3
+                }
+            }
+        }
+    }
+}
+country_event = {
+    id = FEU_main_event.9
+    is_triggered_only = yes
+    fire_only_once = yes
+    title = FEU_main_event.4.title
+    picture_event_data = {
+        room = root
+        portrait = event_target:FEU_country
+        planet_background = root.capital_scope
+    }
+    desc = {
+        text = FEU_main_event.9.desc_1
+        trigger = { has_country_flag = FEU_uninted_country }
+    }
+    desc = {
+        text = FEU_main_event.9.desc_2
+        trigger = { not = { has_country_flag = FEU_uninted_country } }
+    }
+    option = {
+        name = FEU_main_event.9.a
+        trigger = { has_country_flag = FEU_uninted_country }
+        declare_war = {
+            attacker_war_goal = wg_end_threat_crisis
+            target = event_target:FirstSleeper
+        }
+        declare_war = {
+            attacker_war_goal = wg_end_threat_crisis
+            target = event_target:SecondSleeper
+        }
+        country_event = { id = FEU_main_event.101 days = 30 }
+    }
+    option = {
+        name = OK
+    }
+}
+
+#给觉醒老登刷船  年检
+country_event = {
+    id = FEU_main_event.100
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        is_fallen_empire_utpiod_awaked = yes
+    }
+    immediate = {
+        country_event = { id = FEU_main_event.100 months = 6 }
+        export_trigger_value_to_variable = {
+            trigger = count_controlled_fleet
+            variable = FEU_fleet_counts
+        }
+        if = {
+            limit = {
+                check_variable = {
+                    which = FEU_fleet_counts value <= 3
+                }
+            }
+            random_owned_planet = { create_fe_utpoid_fleet = yes }
+            random_owned_planet = { create_fe_utpoid_fleet = yes }
+        }
+        if = {
+            limit = {
+                is_at_war = yes
+            }
+            while = {
+                count = 4
+                random_owned_planet = { create_fe_utpoid_fleet = yes }
+            }
+        }
+    }
+}
+#觉醒老登给你送船
+country_event = {
+    id = FEU_main_event.101
+    title = FEU_main_event.4.title
+    diplomatic = yes
+    is_triggered_only = yes
+    picture_event_data = {
+        planet_background = root.capital_scope
+        room = root
+        portrait = event_target:FEU_country
+    }
+    trigger = {
+        OR = {
+            AND = {
+                exists = event_target:FirstSleeper
+                is_at_war_with = event_target:FirstSleeper
+            }
+            AND = {
+                exists = event_target:SecondSleeper
+                is_at_war_with = event_target:SecondSleeper
+            }
+        }
+    }
+    desc = FEU_main_event.101.desc
+    option = {
+        name = OK
+        capital_scope = {
+            create_fleet = {
+                name = NAME_utpoid_fleet
+                effect = {
+                    set_owner = root
+                    set_location = prev
+                    create_ship = {
+                        name = random
+                        design = NAME_utpoid_keeper
+                    }
+                    while = {
+                        count = 12
+                        create_ship = {
+                            name = random
+                            design = NAME_utpoid_protecter
+                        }
+                    }
+                    while = {
+                        count = 30
+                        create_ship = {
+                            name = random
+                            design = NAME_utpoid_attacker
+                        }
+                    }
+                }
+            }
+        }
+    }
+    immediate = {
+        country_event = { id = FEU_main_event.101 months = 8 random = 2 }
+    }
+}

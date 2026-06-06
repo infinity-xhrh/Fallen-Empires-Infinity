@@ -67,3 +67,82 @@ awakened_fallen_empire_machine_lgate = {
     }
     weight_modifier = { weight = 10000 }
 }
+
+fallen_empire_militarist_forerunner = {
+    aggressiveness = 1.0
+    trade_willingness = 0.5
+    bravery = 2.0
+    combat_bravery = 1.25
+
+    threat_modifier = 0.0
+    threat_others_modifier = 0.33
+    friction_modifier = 0.0
+
+    behaviour = {
+        conqueror = no
+        subjugator = no
+        liberator = no
+        opportunist = no
+        slaver = no
+        uplifter = no
+        purger = yes
+        dominator = no
+        infiltrator = no
+        robot_exploiter = no
+        robot_liberator = no
+        propagator = no
+        multispecies = no
+        enigmatic = yes
+        limited = yes
+    }
+
+    allow = {
+        is_country_type = fallen_empire
+        has_country_flag = FEI_militarist_forerunner_empire
+    }
+
+    weight_modifier = {
+        weight = 10000
+    }
+}
+
+awakened_fallen_empire_militarist_forerunner = {
+    aggressiveness = 1.0
+    trade_willingness = 0.5
+    bravery = 2.0
+    combat_bravery = 1.25
+
+    threat_modifier = 0.0
+    threat_others_modifier = 0.33
+    friction_modifier = 0.0
+
+    behaviour = {
+        conqueror = yes
+        subjugator = yes
+        liberator = no
+        opportunist = yes
+        slaver = no
+        uplifter = no
+        purger = yes
+        dominator = yes
+        infiltrator = no
+        robot_exploiter = no
+        robot_liberator = no
+        propagator = no
+        multispecies = no
+        crisis_fighter = yes
+        crisis_leader = yes
+        enigmatic = yes
+        limited = yes
+    }
+
+    allow = {
+        is_country_type = awakened_fallen_empire
+        has_country_flag = FEI_militarist_forerunner_empire
+    }
+
+    weight_modifier = {
+        weight = 10000
+    }
+}
+

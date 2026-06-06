@@ -1,0 +1,27 @@
+create_fe_utpoid_fleet = {
+    create_fleet = {
+        name = NAME_utpoid_fleet
+        effect = {
+            set_owner = event_target:FEU_country
+            set_location = prev
+            create_ship = {
+                name = random
+                design = NAME_utpoid_keeper
+            }
+            while = {
+                count = 10
+                create_ship = {
+                    name = random
+                    design = NAME_utpoid_protecter
+                }
+            }
+            while = {
+                count = 30
+                create_ship = {
+                    name = random
+                    design = NAME_utpoid_attacker
+                }
+            }
+        }
+    }
+}

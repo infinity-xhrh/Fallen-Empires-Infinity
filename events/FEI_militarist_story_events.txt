@@ -1,0 +1,745 @@
+namespace = fei_militarist_story
+
+# Global target recovery.
+# In earlier builds the militarist forerunner was only saved as a local event target in the initializer.
+# This hidden monthly event repairs that state by locating the country flag.
+country_event = {
+	id = fei_militarist_story.0
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { exists = event_target:FEI_militarist_forerunner }
+		any_country = {
+			has_country_flag = FEI_militarist_forerunner_empire
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				has_country_flag = FEI_militarist_forerunner_empire
+			}
+			save_global_event_target_as = FEI_militarist_forerunner
+		}
+	}
+}
+
+
+# Monthly scanner: if any normal country has established contact with the militarist fallen empire,
+# start the active contact chain once.
+country_event = {
+	id = fei_militarist_story.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+		NOT = { has_country_flag = FEI_militarist_forerunner_empire }
+		NOT = { has_global_flag = fei_militarist_forerunner_returned }
+		NOT = { has_global_flag = fei_militarist_active_contact_started }
+		exists = event_target:FEI_militarist_forerunner
+		NOT = { is_same_value = event_target:FEI_militarist_forerunner }
+		has_established_contact = event_target:FEI_militarist_forerunner
+	}
+
+	immediate = {
+		set_global_flag = fei_militarist_active_contact_started
+		save_global_event_target_as = fei_militarist_contacted_country
+		country_event = { id = fei_militarist_story.10 days = 5 }
+	}
+}
+
+# Active contact opener.
+country_event = {
+	id = fei_militarist_story.10
+	title = fei_militarist_story.10.name
+	desc = fei_militarist_story.10.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	location = event_target:FEI_GXXLZ_home_system
+
+	trigger = {
+		exists = event_target:FEI_militarist_forerunner
+		NOT = { has_global_flag = fei_militarist_forerunner_returned }
+	}
+
+	option = {
+		name = fei_militarist_story.10.a
+		set_country_flag = fei_militarist_contacted_gave_coordinates
+		add_resource = {
+			energy = 50000
+			minerals = 50000
+			alloys = 25000
+			consumer_goods = 15000
+			influence = 500
+		}
+		fei_militarist_story_awaken_and_open = yes
+		event_target:FEI_militarist_forerunner = {
+			country_event = { id = fei_militarist_story.31 days = 1 }
+		}
+		country_event = { id = fei_militarist_story.20 days = 360 random = 360 }
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 0
+				has_ethic = ethic_fanatic_pacifist
+			}
+			modifier = {
+				factor = 2
+				has_ethic = ethic_militarist
+			}
+			modifier = {
+				factor = 3
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+	}
+
+	option = {
+		name = fei_militarist_story.10.b
+		set_country_flag = fei_militarist_contacted_refused_coordinates
+		set_country_flag = fei_militarist_signal_trace_started
+		start_situation = {
+			type = fei_militarist_signal_trace_situation
+			target = event_target:FEI_militarist_forerunner
+		}
+		ai_chance = {
+			factor = 65
+			modifier = {
+				factor = 2
+				has_ethic = ethic_pacifist
+			}
+			modifier = {
+				factor = 3
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+	}
+
+	option = {
+		name = fei_militarist_story.10.c
+		trigger = {
+			OR = {
+				has_ascension_perk = ap_mind_over_matter
+				has_ascension_perk = ap_transcendence
+				has_tradition = tr_psionics_finish
+			}
+		}
+		set_country_flag = fei_militarist_contacted_refused_coordinates
+		set_country_flag = fei_militarist_signal_trace_started
+		start_situation = {
+			type = fei_militarist_signal_trace_situation
+			target = event_target:FEI_militarist_forerunner
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# Demand vassalage after the contacted country gave coordinates.
+country_event = {
+	id = fei_militarist_story.20
+	title = fei_militarist_story.20.name
+	desc = fei_militarist_story.20.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	location = event_target:FEI_GXXLZ_home_system
+
+	trigger = {
+		has_country_flag = fei_militarist_contacted_gave_coordinates
+		exists = event_target:FEI_militarist_forerunner
+		event_target:FEI_militarist_forerunner = {
+			is_country_type = awakened_fallen_empire
+		}
+		NOT = { is_subject_of = event_target:FEI_militarist_forerunner }
+	}
+
+	option = {
+		name = fei_militarist_story.20.a
+		set_country_flag = fei_militarist_contacted_became_vassal
+		set_subject_of = {
+			who = event_target:FEI_militarist_forerunner
+			subject_type = vassal
+		}
+		fei_militarist_story_gift_vassal_fleet = yes
+		event_target:FEI_militarist_forerunner = {
+			establish_communications_no_message = root
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0
+				has_ethic = ethic_fanatic_egalitarian
+			}
+			modifier = {
+				factor = 2
+				relative_power = { who = event_target:FEI_militarist_forerunner category = fleet power < 0.25 }
+			}
+		}
+	}
+
+	option = {
+		name = fei_militarist_story.20.b
+		set_country_flag = fei_militarist_contacted_refused_vassalage
+		country_event = { id = fei_militarist_story.25 days = 3600 }
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+# Punitive war ten years after refusing vassalage.
+country_event = {
+	id = fei_militarist_story.25
+	title = fei_militarist_story.25.name
+	desc = fei_militarist_story.25.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	location = event_target:FEI_GXXLZ_home_system
+
+	trigger = {
+		has_country_flag = fei_militarist_contacted_refused_vassalage
+		exists = event_target:FEI_militarist_forerunner
+		NOT = { is_at_war_with = event_target:FEI_militarist_forerunner }
+	}
+
+	immediate = {
+		set_country_flag = fei_militarist_opposed_forerunner
+		event_target:FEI_militarist_forerunner = {
+			declare_war = {
+				target = root
+				attacker_war_goal = wg_end_threat_crisis
+				name = FEI_MILITARIST_FORERUNNER_PUNISHMENT_WAR
+			}
+		}
+	}
+
+	option = {
+		name = fei_militarist_story.25.a
+	}
+}
+
+# Refusal branch: after the tracing timer completes, the forerunners return anyway.
+country_event = {
+	id = fei_militarist_story.30
+	title = fei_militarist_story.30.name
+	desc = fei_militarist_story.30.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	location = event_target:FEI_GXXLZ_home_system
+
+	trigger = {
+		has_country_flag = fei_militarist_signal_trace_started
+		NOT = { has_global_flag = fei_militarist_forerunner_returned }
+		exists = event_target:FEI_militarist_forerunner
+	}
+
+	immediate = {
+		fei_militarist_story_awaken_and_open = yes
+		event_target:FEI_militarist_forerunner = {
+			country_event = { id = fei_militarist_story.32 days = 1 }
+		}
+	}
+
+	option = {
+		name = fei_militarist_story.30.a
+	}
+}
+
+
+# War declaration after coordinates are willingly provided.
+# ROOT is the militarist forerunner country.
+country_event = {
+	id = fei_militarist_story.31
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = FEI_militarist_forerunner_empire
+		is_country_type = awakened_fallen_empire
+		has_global_flag = fei_militarist_forerunner_returned
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+				NOT = { is_same_value = root }
+				NOT = { has_country_flag = fei_militarist_contacted_gave_coordinates }
+				NOT = { is_subject_of = root }
+				NOT = { is_at_war_with = root }
+			}
+			set_country_flag = fei_militarist_opposed_forerunner
+			save_event_target_as = fei_militarist_war_target
+			root = {
+				declare_war = {
+					target = event_target:fei_militarist_war_target
+					attacker_war_goal = wg_end_threat_crisis
+					name = FEI_MILITARIST_FORERUNNER_GALACTIC_WAR
+				}
+			}
+		}
+	}
+}
+
+# War declaration when coordinates are reverse-engineered or recovered during War in Heaven.
+# ROOT is the militarist forerunner country.
+country_event = {
+	id = fei_militarist_story.32
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = FEI_militarist_forerunner_empire
+		is_country_type = awakened_fallen_empire
+		has_global_flag = fei_militarist_forerunner_returned
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+				NOT = { is_same_value = root }
+				NOT = { is_subject_of = root }
+				NOT = { is_at_war_with = root }
+			}
+			set_country_flag = fei_militarist_opposed_forerunner
+			save_event_target_as = fei_militarist_war_target
+			root = {
+				declare_war = {
+					target = event_target:fei_militarist_war_target
+					attacker_war_goal = wg_end_threat_crisis
+					name = FEI_MILITARIST_FORERUNNER_GALACTIC_WAR
+				}
+			}
+		}
+	}
+}
+
+
+# Victory ending: the militarist forerunner has no remaining independent enemies.
+country_event = {
+	id = fei_militarist_story.50
+	title = fei_militarist_story.50.name
+	desc = fei_militarist_story.50.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_evt_fleet_neutral
+	show_sound = event_alien_signal
+
+	trigger = {
+		has_country_flag = FEI_militarist_forerunner_empire
+		is_country_type = awakened_fallen_empire
+		has_global_flag = fei_militarist_forerunner_returned
+		NOT = { has_global_flag = fei_militarist_story_chain_ended }
+		NOT = {
+			any_country = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+				NOT = { is_same_value = root }
+				NOT = { is_subject_of = root }
+			}
+		}
+	}
+
+	immediate = {
+		set_global_flag = fei_militarist_story_chain_ended
+		remove_modifier = FEI_militarist_forerunner_unending_war
+		add_modifier = { modifier = FEI_militarist_forerunner_final_order days = -1 }
+	}
+
+	option = {
+		name = fei_militarist_story.50.a
+	}
+}
+
+# Defeat ending: the militarist forerunner no longer exists. Reward resisting player countries.
+country_event = {
+	id = fei_militarist_story.60
+	title = fei_militarist_story.60.name
+	desc = fei_militarist_story.60.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_evt_fleet_neutral
+
+	trigger = {
+		is_ai = no
+		has_country_flag = fei_militarist_opposed_forerunner
+		NOT = { has_country_flag = fei_militarist_defeat_rewarded }
+		has_global_flag = fei_militarist_forerunner_returned
+		NOT = {
+			any_country = {
+				has_country_flag = FEI_militarist_forerunner_empire
+			}
+		}
+		any_country = {
+			OR = {
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+			}
+			is_machine_empire = no
+		}
+	}
+
+	immediate = {
+		set_country_flag = fei_militarist_defeat_rewarded
+		add_resource = {
+			energy = 100000
+			minerals = 100000
+			alloys = 50000
+			consumer_goods = 30000
+			influence = 1000
+			unity = 50000
+		}
+		country_event = { id = fei_militarist_story.68 days = 1080 random = 2520 }
+	}
+
+	option = {
+		name = fei_militarist_story.60.a
+	}
+}
+
+
+# Opens the Elu arrival window after the intended 3-10 year delay.
+country_event = {
+	id = fei_militarist_story.68
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		is_ai = no
+		has_country_flag = fei_militarist_defeat_rewarded
+		NOT = { has_global_flag = fei_elu_enclave_spawned }
+	}
+
+	immediate = {
+		set_country_flag = fei_elu_arrival_window_open
+		country_event = { id = fei_militarist_story.70 days = 1 }
+	}
+}
+
+# Monthly retry gate after the arrival window opens.
+# This prevents the chain from dying if the player did not own the proving ground system
+# at the exact delayed-event tick.
+country_event = {
+	id = fei_militarist_story.69
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_country_flag = fei_militarist_defeat_rewarded
+		has_country_flag = fei_elu_arrival_window_open
+		NOT = { has_global_flag = fei_elu_enclave_spawned }
+		exists = event_target:FEI_GXXLZ_home_system
+		event_target:FEI_GXXLZ_home_system = {
+			exists = owner
+			owner = { is_same_value = root }
+		}
+	}
+
+	immediate = {
+		country_event = { id = fei_militarist_story.70 days = 1 }
+	}
+}
+
+# Elu arrival gate. Fires only if the player owns the proving ground system.
+country_event = {
+	id = fei_militarist_story.70
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		is_ai = no
+		has_country_flag = fei_militarist_defeat_rewarded
+		NOT = { has_global_flag = fei_elu_enclave_spawned }
+		exists = event_target:FEI_GXXLZ_home_system
+		event_target:FEI_GXXLZ_home_system = {
+			exists = owner
+			owner = { is_same_value = root }
+		}
+	}
+
+	immediate = {
+		remove_country_flag = fei_elu_arrival_window_open
+		set_global_flag = fei_elu_enclave_spawned
+		save_global_event_target_as = fei_elu_host_country
+		event_target:FEI_GXXLZ_home_system = {
+			create_country = {
+				name = FEI_ELU_ENCLAVE_COUNTRY
+				type = fei_elu_enclave
+				ignore_initial_colony_error = yes
+				authority = auth_imperial
+				civics = { civic = civic_military_dictatorship }
+				species = root.owner_main_species
+				ethos = { ethic = ethic_fanatic_militarist }
+				flag = random
+				effect = {
+					set_country_flag = fei_elu_enclave_country
+					save_global_event_target_as = fei_elu_enclave_country
+					establish_communications_no_message = root
+					create_leader = {
+						class = commander
+						species = owner_main_species
+						name = FEI_ELU_COMMANDER
+						skip_background_generation = yes
+						immortal = yes
+						event_leader = yes
+						gender = female
+						skill = 10
+						randomize_traits = no
+						traits = {
+							1 = subclass_commander_admiral
+							2 = leader_trait_aggressive_2
+							3 = leader_trait_cautious_2
+							4 = leader_trait_trickster_2
+						}
+						effect = {
+							save_global_event_target_as = fei_elu_commander
+							set_leader_flag = legendary_leader
+							set_leader_flag = immune_to_negative_traits
+						}
+					}
+				}
+			}
+			random_system_planet = {
+				limit = { is_star = yes }
+				create_fleet = {
+					name = FEI_ELU_FLEET
+					effect = {
+						set_owner = event_target:fei_elu_enclave_country
+						set_location = prev
+						set_fleet_stance = passive
+						create_ship = { design = NAME_FEI_Alpha name = random }
+						create_ship = { design = NAME_FEI_Beta name = random }
+						create_ship = { design = NAME_FEI_Gamma name = random }
+						create_ship = { design = NAME_FEI_Sigma name = random }
+						create_ship = { design = NAME_FEI_Theta name = random }
+						create_ship = { design = NAME_FEI_Tau name = random }
+						assign_leader = event_target:fei_elu_commander
+					}
+				}
+			}
+		}
+		country_event = { id = fei_militarist_story.71 days = 5 }
+	}
+
+	option = { name = OK }
+}
+
+country_event = {
+	id = fei_militarist_story.71
+	title = fei_militarist_story.71.name
+	desc = fei_militarist_story.71.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture = GFX_evt_fleet_neutral
+	event_picture_background = GFX_evt_busy_spaceport
+
+	option = {
+		name = fei_militarist_story.71.a
+		set_variable = { which = fei_elu_favor value = 0 }
+	}
+}
+
+country_event = {
+	id = fei_militarist_story.72
+	title = fei_militarist_story.72.name
+	desc = fei_militarist_story.72.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture = GFX_evt_fleet_neutral
+	event_picture_background = GFX_evt_busy_spaceport
+
+	trigger = {
+		is_same_value = event_target:fei_elu_host_country
+		exists = event_target:fei_elu_enclave_country
+		from = { is_country_type = fei_elu_enclave }
+	}
+
+	picture_event_data = {
+		portrait = event_target:fei_elu_commander
+		room = root
+	}
+
+	option = {
+		name = fei_militarist_story.72.story
+		is_dialog_only = yes
+		response_text = fei_militarist_story.72.story.response
+	}
+
+	option = {
+		name = fei_militarist_story.72.a
+		allow = {
+			custom_tooltip = {
+				fail_text = fei_militarist_story.72.insufficient_resources
+				energy >= 5000
+				alloys >= 2500
+			}
+		}
+		hidden_effect = {
+			add_resource = {
+				energy = -5000
+				alloys = -2500
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = 6
+				min = 1000
+			}
+			change_variable = { which = fei_elu_favor value = 25 }
+			country_event = { id = fei_militarist_story.72 days = 1 }
+		}
+	}
+
+	option = {
+		name = fei_militarist_story.72.b
+		allow = {
+			custom_tooltip = {
+				fail_text = fei_militarist_story.72.insufficient_resources
+				energy >= 8000
+				consumer_goods >= 3000
+			}
+		}
+		hidden_effect = {
+			add_resource = {
+				energy = -8000
+				consumer_goods = -3000
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 6
+				min = 1000
+			}
+			change_variable = { which = fei_elu_favor value = 25 }
+			country_event = { id = fei_militarist_story.72 days = 1 }
+		}
+	}
+
+	option = {
+		name = fei_militarist_story.72.c
+		allow = {
+			custom_tooltip = {
+				fail_text = fei_militarist_story.72.favor_required
+				check_variable = { which = fei_elu_favor value >= 100 }
+			}
+		}
+		hidden_effect = {
+			country_event = { id = fei_militarist_story.80 }
+		}
+	}
+
+	option = {
+		name = GOODBYE
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = fei_militarist_story.80
+	title = fei_militarist_story.80.name
+	desc = fei_militarist_story.80.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture = GFX_evt_fleet_neutral
+
+	trigger = {
+		is_same_value = event_target:fei_elu_host_country
+		exists = event_target:fei_elu_commander
+		check_variable = { which = fei_elu_favor value >= 100 }
+	}
+
+	immediate = {
+		event_target:fei_elu_commander = {
+			set_owner = root
+		}
+		if = {
+			limit = { exists = event_target:fei_elu_enclave_country }
+			event_target:fei_elu_enclave_country = { destroy_country = yes }
+		}
+		set_country_flag = fei_elu_joined_empire
+	}
+
+	option = {
+		name = fei_militarist_story.80.a
+	}
+}
+
+# War in Heaven fallback detector. This does not guess vanilla event IDs; it only watches common global flags.
+country_event = {
+	id = fei_militarist_story.40
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = awakened_fallen_empire
+		NOT = { has_global_flag = fei_militarist_forerunner_returned }
+		NOT = { has_global_flag = fei_militarist_wih_fallback_started }
+		OR = {
+			has_global_flag = war_in_heaven
+			has_global_flag = war_in_heaven_ongoing
+			has_global_flag = war_in_heaven_started
+		}
+		exists = event_target:FEI_militarist_forerunner
+	}
+
+	immediate = {
+		set_global_flag = fei_militarist_wih_fallback_started
+		event_target:FEI_militarist_forerunner = {
+			country_event = { id = fei_militarist_story.41 days = 1080 random = 720 }
+		}
+	}
+}
+
+country_event = {
+	id = fei_militarist_story.41
+	title = fei_militarist_story.41.name
+	desc = fei_militarist_story.41.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	location = event_target:FEI_GXXLZ_home_system
+
+	trigger = {
+		has_country_flag = FEI_militarist_forerunner_empire
+		NOT = { has_global_flag = fei_militarist_forerunner_returned }
+	}
+
+	immediate = {
+		fei_militarist_story_awaken_and_open = yes
+		country_event = { id = fei_militarist_story.32 days = 1 }
+		every_playable_country = {
+			limit = { is_ai = no }
+			country_event = { id = fei_militarist_story.42 days = 5 }
+		}
+	}
+
+	option = {
+		name = fei_militarist_story.41.a
+	}
+}
+
+country_event = {
+	id = fei_militarist_story.42
+	title = fei_militarist_story.42.name
+	desc = fei_militarist_story.42.desc
+	is_triggered_only = yes
+
+	option = {
+		name = fei_militarist_story.42.a
+	}
+}

@@ -14,8 +14,8 @@ fallen_machine_empire_LgateGrander = {
 		}
 	}
 	possible = {
-		host_has_dlc = "Synthetic Dawn Story Pack"
-		host_has_dlc = "distant stars story pack"
+		# 4.3.x: Synthetic Dawn content is part of the base game; keep the L-Gate/Distant Stars gate.
+		host_has_dlc = "Distant Stars Story Pack"
 	}
 	create_country_effect = {
 		create_species = {

@@ -1,0 +1,11 @@
+FEU_jobs_add = {
+    base = 1
+    complex_trigger_modifier = {
+        trigger = pop_amount
+        trigger_scope = planet
+        mode = add
+    }
+    mult = 0.2
+    round_to = 1
+    min = 1
+}

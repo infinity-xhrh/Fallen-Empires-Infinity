@@ -1,4 +1,4 @@
-version="0.1"
+version="4.3.*"
 tags={
 	"Balance"
 	"Events"
@@ -12,5 +12,5 @@ tags={
 	"Gameplay"
 }
 name="FEI：圣权拓展·无限"
-supported_version="v3.14.15926"
+supported_version="4.3.*"
 remote_file_id="3391431234"

@@ -1,0 +1,47 @@
+
+building_utpiod_capital = {
+    base_buildtime = 720
+    can_build = yes
+    base_cap_amount = 1
+    can_demolish = yes
+    position_priority = 0
+    icon = building_palace
+    category = government
+    potential = { always = yes }
+    prerequisites = { tech_utpiod_buildings_1 }
+    planet_modifier = {
+        planet_amenities_add = 150
+        planet_building_build_speed_mult = 0.5
+        job_job_FEU_crime_job_per_pop = 0.1
+        job_job_FEU_ferak_per_pop = 0.1
+        job_job_FEU_utpiod_god_per_pop = 0.1
+    }
+    building_sets = { all }
+    resources = { upkeep = { energy = 10 } }
+    upgrades = {}
+}
+
+building_utpiod_base = {
+    base_buildtime = 720
+    capital = yes
+    can_build = yes
+    base_cap_amount = 1
+    can_demolish = yes
+    position_priority = 0
+    icon = building_fe_administration_1
+    category = government
+    potential = { always = yes }
+    allow = {
+        has_building = building_utpiod_capital
+    }
+    prerequisites = { tech_utpiod_buildings_2 }
+    planet_modifier = {
+        planet_amenities_add = 10
+        planet_housing_add = 10
+        job_job_FEU_freedom_job_per_pop = 0.3
+        job_job_FEU_adam_per_pop = 0.3
+    }
+    building_sets = { all }
+    resources = { upkeep = { energy = 10 } }
+    upgrades = {}
+}

@@ -1,0 +1,49 @@
+# FEI militarist fallen empire story chain effects.
+# Namespace: fei_militarist_story
+#
+# Scope policy:
+# Do not rely on ROOT for the militarist fallen empire.
+# In scripted effects called from event options, ROOT may still be the contacted country.
+# Always use event_target:FEI_militarist_forerunner for FE-wide actions.
+
+fei_militarist_story_awaken_and_open = {
+	set_global_flag = fei_militarist_forerunner_returned
+
+	event_target:FEI_militarist_forerunner = {
+		set_country_flag = FEI_militarist_forerunner_empire_awake
+		set_country_type = awakened_fallen_empire
+		change_government = {
+			civics = {
+				civic = civic_revanchist_fervor
+				civic = civic_ancient_caches_of_technology
+			}
+		}
+		add_awakened_fallen_empire_resources = yes
+		add_awakened_fallen_empire_fleet = yes
+		add_modifier = { modifier = FEI_militarist_forerunner_unending_war days = -1 }
+		every_country = {
+			limit = {
+				NOT = { is_same_value = event_target:FEI_militarist_forerunner }
+			}
+			establish_communications_no_message = event_target:FEI_militarist_forerunner
+		}
+	}
+}
+
+fei_militarist_story_gift_vassal_fleet = {
+	capital_scope = {
+		create_fleet = {
+			name = FEI_MILITARIST_FORERUNNER_GIFT_FLEET
+			effect = {
+				set_owner = root
+				set_location = prev
+				create_ship = { design = NAME_FEI_Alpha name = random }
+				create_ship = { design = NAME_FEI_Beta name = random }
+				create_ship = { design = NAME_FEI_Gamma name = random }
+				create_ship = { design = NAME_FEI_Sigma name = random }
+				create_ship = { design = NAME_FEI_Theta name = random }
+				create_ship = { design = NAME_FEI_Tau name = random }
+			}
+		}
+	}
+}

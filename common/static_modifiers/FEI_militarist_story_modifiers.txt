@@ -1,0 +1,19 @@
+# FEI militarist fallen empire story modifiers.
+
+FEI_militarist_forerunner_unending_war = {
+	icon = "gfx/interface/icons/modifiers/modifier_war_in_heaven.dds"
+	country_war_exhaustion_mult = -0.99
+}
+
+FEI_militarist_forerunner_final_order = {
+	icon = "gfx/interface/icons/modifiers/modifier_war_in_heaven.dds"
+	country_war_exhaustion_mult = -1
+	ship_weapon_damage = 2
+	ship_fire_rate_mult = 1
+	damage_vs_country_type_swarm_mult = 10
+	damage_vs_country_type_extradimensional_mult = 10
+	damage_vs_country_type_extradimensional_2_mult = 10
+	damage_vs_country_type_extradimensional_3_mult = 10
+	damage_vs_country_type_ai_empire_mult = 10
+	damage_vs_country_type_gray_goo_mult = 10
+}

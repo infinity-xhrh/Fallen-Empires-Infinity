@@ -1,0 +1,7 @@
+FEU_country_modifier = {
+    custom_tooltip = FEU_country_modifier_tooltip
+    planet_crime_mult = -1
+    planet_stability_add = 50
+    ship_weapon_damage = 1
+    country_naval_cap_mult = 1
+}

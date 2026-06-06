@@ -1,0 +1,89 @@
+
+tech_utpiod_buildings_1 = {
+    area = society
+    cost = @tier5cost3
+    tier = 5
+    is_insight = yes
+    icon = tech_fe_affluence_1
+    category = {new_worlds }
+    weight = 0
+    is_reverse_engineerable = no
+}
+tech_utpiod_buildings_2 = {
+    area = society
+    cost = @tier5cost3
+    tier = 5
+    is_insight = yes
+    icon = tech_fe_administration_1
+    category = { new_worlds }
+    weight = 0
+    is_reverse_engineerable = no
+}
+tech_utpiod_others_technology_1 = {
+    area = engineering
+    cost = @tier5cost3
+    tier = 5
+    is_insight = yes
+    icon = tech_repeatable_reduced_building_time
+    category = { materials }
+    weight = 0
+    is_reverse_engineerable = no
+    modifier = {
+        planet_buildings_upkeep_mult = -0.5
+    }
+}
+tech_utpiod_others_technology_2 = {
+    area = society
+    cost = @tier5cost3
+    tier = 5
+    is_insight = yes
+    icon = tech_repeatable_improved_army_damage
+    category = { military_theory }
+    weight = 0
+    is_reverse_engineerable = no
+    modifier = {
+        ships_upkeep_mult = -0.2
+        country_war_exhaustion_mult = -0.25
+    }
+}
+tech_utpiod_others_technology_3 = {
+    area = society
+    cost = @tier5cost3
+    tier = 5
+    is_insight = yes
+    icon = tech_repeatable_improved_army_health
+    category = { new_worlds }
+    weight = 0
+    is_reverse_engineerable = no
+    modifier = {
+        pop_happiness = 0.25
+        logistic_growth_mult = 0.5
+    }
+}
+tech_utpiod_others_technology_4 = {
+    area = society
+    cost = @tier5cost3
+    tier = 5
+    is_insight = yes
+    icon = tech_xeno_diplomacy
+    category = { new_worlds }
+    weight = 0
+    is_reverse_engineerable = no
+    modifier = {
+        diplomacy_influence_upkeep_mult = -0.5
+        diplo_action_acceptance_add = 12
+    }
+}
+tech_utpiod_others_technology_5 = {
+    area = society
+    cost = @tier5cost3
+    tier = 5
+    is_insight = yes
+    icon = tech_synthetic_leaders
+    category = { new_worlds }
+    weight = 0
+    is_reverse_engineerable = no
+    modifier = {
+        planet_jobs_produces_mult = 0.1
+    }
+}

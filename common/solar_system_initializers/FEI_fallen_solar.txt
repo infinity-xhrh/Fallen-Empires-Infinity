@@ -286,6 +286,7 @@ FEI_initializer_yanwuchang = {
 					set_country_flag = unlocked_warplings
 					set_graphical_culture = fallen_empire_02
 					save_event_target_as = FEI_militarist_forerunner
+					save_global_event_target_as = FEI_militarist_forerunner
 					add_resource = {
 						minerals = 10000
 						energy = 10000
@@ -341,11 +342,9 @@ FEI_initializer_yanwuchang = {
 				count = 30
 				add_district = district_city
 			}
-			while = {
-				count = 50
-				create_pop = {
-					species = owner_main_species
-				}
+			create_pop_group = {
+				size = 5000
+				species = owner_main_species
 			}
 			create_FEI_militarist_forerunner_titan_fleet = yes
 			create_FEI_militarist_forerunner_titan_fleet = yes
@@ -375,6 +374,7 @@ FEI_initializer_yanwuchang = {
 
 	init_effect = {
 		save_event_target_as = FEI_GXXLZ_home_system
+		save_global_event_target_as = FEI_GXXLZ_home_system
 		every_system_planet = {
 			limit = { is_planet_class = pc_ringworld_habitable }
 			set_owner = event_target:FEI_militarist_forerunner
@@ -395,11 +395,9 @@ FEI_initializer_yanwuchang = {
 				count = 10
 				add_district = district_rw_city
 			}
-			while = {
-				count = 24
-				create_pop = {
-					species = owner_main_species
-				}
+			create_pop_group = {
+				size = 2400
+				species = owner_main_species
 			}
 		}
 		create_starbase = {

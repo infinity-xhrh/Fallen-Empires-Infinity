@@ -1,0 +1,319 @@
+
+FEU_capital_system = {
+	name = FEU_capital_system
+	class = sc_g
+	max_instances = 1
+
+	planet = {
+		class = pc_g_star
+		orbit_distance = 0
+		orbit_angle = 0
+	}
+	planet = {
+		name = FEU_star_1
+		class = pc_molten
+		size = 8
+		orbit_angle = 60
+		orbit_distance = 34
+	}
+	planet = {
+		name = FEU_star_2
+		class = pc_molten
+		size = 10
+		orbit_angle = 180
+		orbit_distance = 10
+	}
+	planet = {
+		name = FEU_capital
+		class = pc_gaia
+		size = 50
+		orbit_angle = 30
+		orbit_distance = 20
+		init_effect = {
+			clear_blockers = yes
+			add_deposit = d_fe_utopid_home
+			add_deposit = d_fe_utopid_home
+			create_species = {
+				name = random
+				class = random_non_machine
+				portrait = random
+				pop_ethics = ethic_fanatic_egalitarian
+				effect = {
+					save_global_event_target_as = FEU_species
+				}
+			}
+			create_country = {
+				name = FEU_capital_system
+				name_list = random
+				species = event_target:FEU_species
+				ethos = { ethic = ethic_fanatic_egalitarian }
+				origin = origin_fallen_empire
+				type = fallen_empire
+				civics = {
+					civic = civic_lethargic_leadership
+					civic = civic_empire_in_decline
+				}
+				effect = {
+					set_graphical_culture = fallen_empire_01
+					change_dominant_species = { species = event_target:FEU_species change_all = yes }
+					add_global_ship_design = NAME_utpoid_attacker
+					add_global_ship_design = NAME_utpoid_keeper
+					add_global_ship_design = NAME_utpoid_protecter
+					add_global_ship_design = NAME_utpoid_defender
+					add_seen_bypass_type = wormhole
+					change_government = auth_democratic
+					save_global_event_target_as = FEU_country
+					country_event = { id = FEU_main_event.8 years = 1 }
+					add_modifier = { modifier = FEU_country_modifier days = -1 }
+					give_technology = { tech = tech_utpiod_buildings_1 message = no }
+					give_technology = { tech = tech_utpiod_buildings_2 message = no }
+					give_technology = { tech = tech_utpiod_others_technology_1 message = no }
+					give_technology = { tech = tech_utpiod_others_technology_2 message = no }
+					give_technology = { tech = tech_utpiod_others_technology_3 message = no }
+					give_technology = { tech = tech_utpiod_others_technology_4 message = no }
+					give_technology = { tech = tech_utpiod_others_technology_5 message = no }
+					every_playable_country = {
+						establish_communications_no_message = event_target:FEU_country
+						country_event = { id = FEU_main_event.4 days = 30 random = 10 }
+						country_event = { id = FEU_main_event.6 years = 30 }
+					}
+				}
+			}
+			create_fe_utpoid_fleet = yes
+			set_owner = event_target:FEU_country
+			set_capital = yes
+			while = {
+				count = 50
+				add_district = district_city
+			}
+			create_pop_group = {
+				size = 6000
+				species = event_target:FEU_species
+			}
+			add_building = building_utpiod_capital
+			add_building = building_fe_stronghold
+			add_building = building_utpiod_base
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_fe_lab_2
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_fe_lab_2
+		}
+	}
+
+
+	planet = {
+		name = FEU_city_1
+		class = pc_gaia
+		size = 30
+		orbit_angle = 90
+		orbit_distance = 0
+		init_effect = {
+			create_fe_utpoid_fleet = yes
+			add_deposit = d_fe_utopid_home
+			add_deposit = d_fe_utopid_home
+			clear_blockers = yes
+			set_owner = event_target:FEU_country
+			while = {
+				count = 30
+				add_district = district_city
+			}
+			create_pop_group = {
+				size = 6000
+				species = event_target:FEU_species
+			}
+			add_building = building_utpiod_capital
+			add_building = building_fe_stronghold
+			add_building = building_utpiod_base
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_fe_lab_2
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_fe_lab_2
+		}
+	}
+
+
+	planet = {
+		name = FEU_city_2
+		class = pc_gaia
+		size = 30
+		orbit_angle = 150
+		orbit_distance = 0
+		init_effect = {
+			create_fe_utpoid_fleet = yes
+			add_deposit = d_fe_utopid_home
+			add_deposit = d_fe_utopid_home
+			clear_blockers = yes
+			set_owner = event_target:FEU_country
+			while = {
+				count = 30
+				add_district = district_city
+			}
+			create_pop_group = {
+				size = 6000
+				species = event_target:FEU_species
+			}
+			add_building = building_utpiod_capital
+			add_building = building_fe_stronghold
+			add_building = building_utpiod_base
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_fe_lab_2
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_fe_lab_2
+		}
+	}
+
+	planet = {
+		name = FEU_star_3
+		class = pc_barren
+		size = 12
+		orbit_angle = 90
+		orbit_distance = 20
+	}
+	planet = {
+		name = FEU_star_4
+		class = pc_toxic
+		size = 18
+		orbit_angle = 120
+		orbit_distance = 10
+	}
+	planet = {
+		name = FEU_star_5
+		class = pc_gas_giant
+		size = 20
+		orbit_angle = 60
+		orbit_distance = 30
+	}
+
+	init_effect = {
+		save_global_event_target_as = FEU_capital_system
+		spawn_natural_wormhole = {
+			bypass_type = wormhole
+			random_pos = no
+			orbit_angle = 360
+		}
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEU_country
+			module = "shipyard"
+			module = "anchorage"
+			module = "anchorage"
+			module = "hangar_bay"
+			module = "gun_battery"
+			module = "gun_battery"
+
+			building = "crew_quarters"
+			building = "command_center"
+			building = "target_uplink_computer"
+			building = "dark_matter_listening_post"
+
+			effect = {
+				while = {
+					count = 24
+					create_ship = {
+						name = random
+						design = NAME_utpoid_defender
+						graphical_culture = owner
+					}
+				}
+			}
+		}
+	}
+}
+
+FEU_outer_system = {
+	name = FEU_outer_system
+	class = sc_a
+	max_instances = 1
+
+	planet = {
+		class = pc_a_star
+		orbit_distance = 0
+		orbit_angle = 0
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 30
+	}
+	planet = {
+		name = FEU_outer_system_colony
+		class = pc_nuked
+		size = 24
+		orbit_angle = 30
+		orbit_distance = 60
+		init_effect = {
+			create_fe_utpoid_fleet = yes
+			clear_blockers = yes
+			set_owner = event_target:FEU_country
+			while = {
+				count = 30
+				add_district = district_city
+			}
+			create_pop_group = {
+				size = 6000
+				species = event_target:FEU_species
+			}
+			add_deposit = d_fe_utopid_home
+			add_deposit = d_fe_utopid_home
+			add_building = building_utpiod_capital
+			add_building = building_fe_stronghold
+			add_building = building_utpiod_base
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_fe_lab_2
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_fe_lab_2
+		}
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 70
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 10
+	}
+	init_effect = {
+		save_global_event_target_as = FEU_outer_system
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEU_country
+			module = "shipyard"
+			module = "anchorage"
+			module = "anchorage"
+			module = "hangar_bay"
+			module = "gun_battery"
+			module = "gun_battery"
+
+			building = "crew_quarters"
+			building = "command_center"
+			building = "target_uplink_computer"
+			building = "dark_matter_listening_post"
+
+			effect = {
+				while = {
+					count = 12
+					create_ship = {
+						name = random
+						design = NAME_utpoid_defender
+						graphical_culture = owner
+					}
+				}
+			}
+		}
+	}
+}
