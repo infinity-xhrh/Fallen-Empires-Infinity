@@ -59,3 +59,129 @@
  tech_FEI_antishield_rays_desc: "反护盾科技描述"
  FEI_ANTISHIELD_RAYS_L: "武器名称"
  FEI_ANTISHIELD_RAYS_T_DESC: "武器描述"
+
+ personality_fallen_empire_militarist_forerunner: "孤星寻猎者"
+ personality_fallen_empire_militarist_forerunner_desc: "这个堕落帝国曾以武力横扫星海，如今只在孤寂疆域中守望旧日战场。它们对年轻文明缺乏兴趣，但任何胆敢接近其禁区者都可能被视为猎物。"
+ personality_awakened_fallen_empire_militarist_forerunner: "域外征服者"
+ personality_awakened_fallen_empire_militarist_forerunner_desc: "这个觉醒帝国已经重拾远古霸权的野心。它们将银河视作尚未臣服的域外战场，并准备用舰队重新定义星海秩序。"
+
+ fei_militarist_story.10.name: "无坐标讯号"
+ fei_militarist_story.10.desc: "一束经过层层伪装的超光速通讯抵达了我们的深空监听阵列。对方自称是一个被旧银河抛弃的远航共同体，声称他们在河系外孤独漂流了无数岁月，只愿与新生的星海重新建立联系。\n\n他们的语气克制、谦卑，甚至带着某种善意。他们谈论合作、谈论交换、谈论以古老技术帮助年轻文明摆脱恐惧。但在每一个被修饰过的停顿之后，仍有什么东西在通讯底层回响——那不是请求。\n\n那是一支军队在等待坐标。"
+ fei_militarist_story.10.a: "给出银河坐标。也许他们真的带着善意。"
+ fei_militarist_story.10.b: "拒绝。他们的善意太像武器。"
+ fei_militarist_story.10.c: "§M他们的心灵在燃烧。拒绝。§!"
+
+ fei_militarist_story.20.name: "第二份条件"
+ fei_militarist_story.20.desc: "他们兑现了第一份承诺：资源、技术数据、古老舰队航迹，被源源不断地发送给我们。\n\n随后，第二份通讯抵达。\n\n“你们为我们打开了归途。银河会记住这份功绩。现在，站到我们身后。成为我们的附庸，分享我们的胜利。拒绝，则在我们完成整肃之后，独自面对我们的审判。”"
+ fei_militarist_story.20.a: "接受。愿银河在他们的旗帜下重铸。"
+ fei_militarist_story.20.b: "拒绝。我们不会交出主权。"
+
+ fei_militarist_story.25.name: "十年已至"
+ fei_militarist_story.25.desc: "十年前，他们要求我们屈服。十年间，他们的舰队在银河各处燃起战火，而我们始终知道这一天终将到来。\n\n最后一份通讯没有伪装，没有礼节，也没有谈判。\n\n“我们给过你们选择。”"
+ fei_militarist_story.25.a: "全舰队进入战备。"
+
+ fei_militarist_story.30.name: "坐标反演完成"
+ fei_militarist_story.30.desc: "我们拒绝交出银河坐标，但这只拖延了结局。\n\n在长达数年的追踪、反演与亚空间测绘之后，那支迷失于河系之外的远古残军终于从我们的通讯回波中拼出了归途。演武场星系的虫洞重新稳定，跨越河外黑暗的舰队开始回航。\n\n他们不再伪装。\n\n“如果再给我们一次机会——那就让银河再次燃烧吧。”"
+ fei_militarist_story.30.a: "他们回来了。"
+
+ fei_militarist_story.41.name: "被战争唤醒的坐标"
+ fei_militarist_story.41.desc: "天堂之战使银河的通讯网络在数年内暴涨到前所未有的强度。每一道紧急军令、每一次舰队调度、每一份求援讯号，都像火炬一样刺穿河系边界。\n\n而在边界之外，有什么东西听见了。\n\n军国先驱终于捕获了银河的坐标。演武场星系的虫洞被强行稳定，久远的征服舰队重临星海。"
+ fei_militarist_story.41.a: "银河又一次暴露在他们面前。"
+
+ fei_militarist_story.42.name: "银河再次燃烧"
+ fei_militarist_story.42.desc: "来自演武场星系的讯号正在全银河广播。\n\n“我们曾在星球联盟时期崛起。四个军国文明合为一体，银河曾因我们而燃烧。\n\n我们失败时，残军选择了无坐标的超长亚空间航行。也许那本该是荣耀的死法。但我们活了下来，复兴，发展，巅峰，堕落。\n\n我们没有内战。一次也没有。唯有仇恨替我们维系统一，唯有战争欲望替我们保存文明。\n\n现在，我们找到了回家的路。”"
+ fei_militarist_story.42.a: "如果再给他们一次机会……"
+
+ FEI_MILITARIST_FORERUNNER_GALACTIC_WAR: "银河焚尽战争"
+ FEI_MILITARIST_FORERUNNER_PUNISHMENT_WAR: "失信者审判"
+ FEI_MILITARIST_FORERUNNER_GIFT_FLEET: "先驱赐予舰队"
+
+ fei_militarist_signal_trace_situation: "坐标反演"
+ fei_militarist_signal_trace_situation_type: "坐标反演"
+ fei_militarist_signal_trace_situation_desc: "我们拒绝向[Target.GetName]交出银河坐标，但此前的通讯回波已经留下痕迹。对方正在以超乎想象的耐心和算力逆向推算我们的方位。\n\n我们的加密能力越强，反演过程就越慢；但无论如何，这一进程不会永久停滞。"
+ fei_militarist_signal_trace_situation_monthly_change_tooltip: "§Y局势进度§!代表[Target.GetName]对银河坐标的反演程度。我国相对[Target.GetName]的§Y加密§!越强，进度越慢，但不会降至 0。"
+ fei_militarist_signal_trace_complete_tooltip: "[Target.GetName]将完成银河坐标反演。"
+
+ fei_militarist_signal_trace_stage_1: "杂讯回溯"
+ fei_militarist_signal_trace_stage_1_desc: "他们正在从通讯残响中剥离噪声。"
+ fei_militarist_signal_trace_stage_1_tooltip: "坐标反演仍处于早期阶段。"
+ fei_militarist_signal_trace_stage_2: "亚空间校准"
+ fei_militarist_signal_trace_stage_2_desc: "越来越多的亚空间参照点被拼接起来。"
+ fei_militarist_signal_trace_stage_2_tooltip: "对方已经开始缩小银河方位范围。"
+ fei_militarist_signal_trace_stage_3: "归途重构"
+ fei_militarist_signal_trace_stage_3_desc: "他们距离完整坐标只剩最后一步。"
+ fei_militarist_signal_trace_stage_3_tooltip: "坐标反演即将完成。"
+
+ fei_militarist_signal_trace_countermeasures: "维持静默"
+ fei_militarist_signal_trace_countermeasures_desc: "保持全域通讯静默，尽可能拖慢对方的反演速度。"
+ fei_militarist_signal_trace_low_encryption: "低相对加密"
+ fei_militarist_signal_trace_average_encryption: "中等相对加密"
+ fei_militarist_signal_trace_high_encryption: "高相对加密"
+
+ FEI_militarist_forerunner_unending_war: "无尽战争"
+ FEI_militarist_forerunner_unending_war_desc: "他们不再考虑撤退、妥协或止损。银河即战场，战争即归途。"
+ FEI_militarist_forerunner_final_order: "最终秩序"
+ FEI_militarist_forerunner_final_order_desc: "旧银河已经燃尽。新银河将在军国先驱的舰炮阴影下重建秩序。"
+
+ fei_militarist_story.50.name: "最终秩序"
+ fei_militarist_story.50.desc: "银河的抵抗已经熄灭。曾经自称星海诸国的文明，如今或已化作灰烬，或已跪伏在军国先驱的舰影之下。\n\n他们没有发表胜利宣言。对他们而言，这不是胜利，而是一次迟到了漫长岁月的清算。\n\n此后，天灾也好，外敌也罢，都将面对一个被战争重铸的新银河。"
+ fei_militarist_story.50.a: "银河燃尽，秩序降临。"
+
+ fei_militarist_story.60.name: "余烬中的嘉奖"
+ fei_militarist_story.60.desc: "军国先驱的战旗终于倒下。那些曾让银河燃烧的舰队，如今只剩下漂浮在演武场残骸间的合金与沉默。\n\n[event_target:fei_militarist_rewarding_elder.GetName]向我们发来加密通讯。它们没有表现出庆祝，只有一种近乎疲惫的释然。\n\n“你们终结了一段不该重返星海的仇恨。收下这些吧，年轻的文明。愿你们比我们更懂得如何使用胜利。”\n\n随同资源一并移交的，还有一份从[event_target:FEI_militarist_forerunner.GetName]首都废墟中发现的标本级档案：§Y世界铸造企划§!。"
+ fei_militarist_story.60.a: "愿这场战争真正结束。"
+
+ FEI_ELU_ENCLAVE_COUNTRY: "艾露远征舰队"
+ FEI_ELU_COMMANDER: "艾露"
+ FEI_ELU_FLEET: "艾露的远征舰队"
+
+ fei_militarist_story.71.name: "归来的远征者"
+ fei_militarist_story.71.desc: "演武场星系边缘，一支陌生舰队从深空航道中显现。它们的舰体带有军国先驱的古老识别码，却没有进入战斗姿态。\n\n通讯接通后，一名女性指挥官出现在屏幕中央。她的躯体似乎部分升维，缭绕着难以解释的灵能闪电。\n\n“我是艾露，远征舰队指挥官。以优异成绩毕业并加入远征舰队——那是很久以前的事了。我们的足迹遍布虚空、虚境、星界，甚至数个多元文明都流传着我们的传说。”\n\n她很快了解并接受了军国先驱灭亡的事实。没有复仇，没有咆哮，只有长久的沉默。\n\n“我的智慧告诉我，扭曲的仇恨必然有落幕的一天。我们需要补给。作为交换，我可以提供指挥官训练，或一些我们在远征中保存下来的武器技术。”"
+ fei_militarist_story.71.a: "准许她们在演武场停泊。"
+
+ fei_militarist_story.72.name: "艾露的补给请求"
+ fei_militarist_story.72.desc: "艾露的远征舰队仍停泊在演武场星系。她们保持中立，并定期向我们提交补给清单。\n\n“我们不要求施舍。远征舰队会用知识偿还补给。”"
+ fei_militarist_story.72.a: "提供合金与能源，换取武器技术。"
+ fei_militarist_story.72.b: "提供民用物资，换取指挥官训练。"
+ fei_militarist_story.72.c: "邀请艾露加入我们的帝国。"
+ fei_militarist_story.72.d: "这次暂不提供补给。"
+
+ fei_militarist_story.80.name: "艾露的选择"
+ fei_militarist_story.80.desc: "当我们提出邀请时，艾露并没有立刻回答。\n\n她看向舰桥之外的演武场残骸，灵能闪电在她的半升维躯体上短暂明灭。\n\n“我曾经属于一支不会回头的舰队。现在，那段历史结束了。也许我该把剩下的旅程交给一个仍愿意选择未来的文明。”\n\n艾露加入了我们的帝国。"
+ fei_militarist_story.80.a: "欢迎，指挥官。"
+
+ fei_militarist_story.72.story: "告诉我们你的远征。"
+ fei_militarist_story.72.story.response: "“远征舰队离开银河时，我还只是一个刚以优异成绩毕业的年轻军官。我们穿越虚空、虚境与星界，在一些多元文明的传说中留下了名字。漫长探索给了我不可思议的灵能力量，也让我付出了一部分躯体升维的代价。”\n\n艾露抬起手，蓝紫色的灵能闪电在半透明的指节间缭绕。\n\n“有些人觉得这很酷。我花了很久才习惯。”"
+ fei_militarist_story.72.insufficient_resources: "资源不足。"
+ fei_militarist_story.72.favor_required: "需要与艾露远征舰队的好感达到 100。"
+
+ specimen_fei_world_forging_project: "世界铸造企划"
+ specimen_fei_world_forging_project_desc: "[event_target:fei_militarist_rewarding_elder.GetName]攻占[event_target:FEI_militarist_forerunner.GetName]首都时发现的规划文件……或者说，异常写实的空想小说。\n\n经由量子弹弓将巨量的物质投送到系外星团——主要是高品合金与零点能反应堆，价值连星。在他们的首都进行重铸工作，经由航道运往其他四个恒星系。\n\n然后开始铸造四个世界。\n\n“为这片眷顾我们命运的星团戴上最灿烂的冠冕，证明我们已比对手更高，更快，更强，更团结。”\n\n那沉醉于战火的先驱文明不会再有实现这份计划的机会了。\n\n但……也许呢？"
+ fei_world_forging_project_effect: "巨型结构建造速度：§G+15%§!"
+
+ fei_world_forging_project: "世界铸造企划"
+ fei_world_forging_project_desc: "[event_target:fei_militarist_rewarding_elder.GetName]攻占[event_target:FEI_militarist_forerunner.GetName]首都时发现的规划文件……或者说，异常写实的空想小说。\n\n经由量子弹弓将巨量的物质投送到系外星团——主要是高品合金与零点能反应堆，价值连星。在他们的首都进行重铸工作，经由航道运往其他四个恒星系。\n\n然后开始铸造四个世界。\n\n“为这片眷顾我们命运的星团戴上最灿烂的冠冕，证明我们已比对手更高，更快，更强，更团结。”\n\n那沉醉于战火的先驱文明不会再有实现这份计划的机会了。\n\n但…也许呢？"
+
+ NAME_FEI_authoritarian_species: "御民"
+ NAME_FEI_authoritarian_capital_system: "永曜御座"
+ NAME_FEI_authoritarian_capital: "万世宫阙"
+ NAME_FEI_authoritarian_throne_world_1: "群星礼廷"
+ NAME_FEI_authoritarian_throne_world_2: "金律府"
+ NAME_FEI_authoritarian_black_hole_1: "缄默之井"
+ NAME_FEI_authoritarian_black_hole_2: "无诏深渊"
+ NAME_FEI_authoritarian_black_hole_3: "失光禁域"
+
+ NAME_FEI_authoritarian_empire_1: "永世神皇御国"
+ NAME_FEI_authoritarian_empire_2: "万世帝庭"
+ NAME_FEI_authoritarian_empire_3: "星海御座"
+ NAME_FEI_authoritarian_empire_4: "圣统帝国"
+ NAME_FEI_authoritarian_empire_5: "金律皇朝"
+ NAME_FEI_authoritarian_empire_6: "天命御庭"
+ NAME_FEI_authoritarian_empire_7: "不朽冠冕"
+ NAME_FEI_authoritarian_empire_8: "御前诸星"
+
+ personality_fallen_empire_authoritarian_imperium: "缄默御座"
+ personality_fallen_empire_authoritarian_imperium_desc: "这个堕落帝国曾由一位近乎神话的永生神皇带领，缔造了年轻星海最繁荣的时代。自神皇失踪后，它们停止了几乎一切对外交往，将疆域收缩到古老帝庭的阴影之中。它们仍以帝国的威严审视银河，却很少主动干涉所谓年轻文明的纷争。"
+ personality_awakened_fallen_empire_authoritarian_imperium: "复辟天命"
+ personality_awakened_fallen_empire_authoritarian_imperium_desc: "这个觉醒帝国已经重新相信自己肩负统御银河的天命。它们不再满足于守望逝去神皇的遗产，而是准备以第二位永生皇帝的名义恢复旧日秩序。"
+

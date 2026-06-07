@@ -1,0 +1,26 @@
+# FEI custom Grand Archive specimens.
+# 世界铸造企划：军国堕落灭亡后的嘉奖标本。
+
+fei_world_forging_project = {
+	icon = "GFX_specimen_fevorian_blueprints"
+	type = historical_item
+	is_tradable = no
+	is_sellable = no
+
+	inline_script = {
+		script = "grand_archive/set_specimen_rarity"
+		RARITY = exceptional
+	}
+
+	triggered_country_modifier = {
+		mult = value:historical_item_specimens_modifiers_mult
+		megastructure_build_speed_mult = 0.15
+	}
+
+	resources = {
+		category = specimens
+		upkeep = {
+			energy = 10
+		}
+	}
+}

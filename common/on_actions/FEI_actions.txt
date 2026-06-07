@@ -62,6 +62,7 @@ on_game_start = {
 		Nanites_grander.1
 		fei_initialize.1
 		FEU_main_event.1
+		fei_authoritarian.1
 	}
 }
 

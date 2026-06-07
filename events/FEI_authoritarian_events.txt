@@ -1,0 +1,50 @@
+namespace = fei_authoritarian
+
+# Spawn the authoritarian fallen empire and its silent black hole systems.
+event = {
+	id = fei_authoritarian.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		NOT = { has_global_flag = FEI_authoritarian_fallen_empire_spawned }
+	}
+
+	immediate = {
+		set_global_flag = FEI_authoritarian_fallen_empire_spawned
+		set_spawn_system_batch = begin
+		random_system = {
+			limit = {
+				is_rim_system = no
+				NOT = { has_star_flag = crisis_spawn_exclude }
+			}
+			spawn_system = {
+				min_distance >= 20
+				max_distance <= 45
+				initializer = FEI_authoritarian_capital_system
+				hyperlane = yes
+			}
+		}
+		event_target:FEI_authoritarian_capital_system = {
+			spawn_system = {
+				min_distance >= 5
+				max_distance <= 15
+				initializer = FEI_authoritarian_black_hole_system_1
+				hyperlane = yes
+			}
+			spawn_system = {
+				min_distance >= 5
+				max_distance <= 15
+				initializer = FEI_authoritarian_black_hole_system_2
+				hyperlane = yes
+			}
+			spawn_system = {
+				min_distance >= 5
+				max_distance <= 15
+				initializer = FEI_authoritarian_black_hole_system_3
+				hyperlane = yes
+			}
+		}
+		set_spawn_system_batch = end
+	}
+}

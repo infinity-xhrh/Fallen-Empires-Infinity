@@ -1,0 +1,235 @@
+# FEI authoritarian fallen empire foundation systems.
+
+FEI_authoritarian_capital_system = {
+	name = NAME_FEI_authoritarian_capital_system
+	class = sc_a
+	max_instances = 1
+
+	planet = {
+		class = pc_a_star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 35
+	}
+
+	planet = {
+		name = NAME_FEI_authoritarian_capital
+		class = pc_gaia
+		orbit_distance = 45
+		orbit_angle = 25
+		size = 30
+		init_effect = {
+			prevent_anomaly = yes
+			clear_blockers = yes
+			create_species = {
+				name = NAME_FEI_authoritarian_species
+				class = random_non_machine
+				portrait = random
+				traits = random
+				extra_trait_points = 3
+				allow_negative_traits = no
+				pop_ethics = ethic_fanatic_authoritarian
+				effect = {
+					save_global_event_target_as = FEI_authoritarian_species
+				}
+			}
+			create_country = {
+				name = NAME_FEI_authoritarian_empire_1
+				type = fallen_empire
+				ignore_initial_colony_error = yes
+				authority = auth_imperial
+				civics = {
+					civic = civic_lethargic_leadership
+					civic = civic_empire_in_decline
+				}
+				species = event_target:FEI_authoritarian_species
+				ethos = {
+					ethic = ethic_fanatic_authoritarian
+				}
+				flag = random
+				origin = "origin_fallen_empire"
+				effect = {
+					set_country_flag = FEI_authoritarian_fallen_empire
+					set_graphical_culture = fallen_empire_03
+					save_event_target_as = FEI_authoritarian_imperium
+					save_global_event_target_as = FEI_authoritarian_imperium
+					change_dominant_species = { species = event_target:FEI_authoritarian_species change_all = yes }
+					add_seen_bypass_type = wormhole
+					add_resource = {
+						energy = 20000
+						minerals = 20000
+						food = 5000
+						alloys = 10000
+						influence = 500
+					}
+					random_list = {
+						1 = { }
+						1 = { set_name = NAME_FEI_authoritarian_empire_2 }
+						1 = { set_name = NAME_FEI_authoritarian_empire_3 }
+						1 = { set_name = NAME_FEI_authoritarian_empire_4 }
+						1 = { set_name = NAME_FEI_authoritarian_empire_5 }
+						1 = { set_name = NAME_FEI_authoritarian_empire_6 }
+						1 = { set_name = NAME_FEI_authoritarian_empire_7 }
+						1 = { set_name = NAME_FEI_authoritarian_empire_8 }
+					}
+				}
+			}
+			set_owner = event_target:FEI_authoritarian_imperium
+			set_capital = yes
+			while = {
+				count = 30
+				add_district = district_city
+			}
+			create_pop_group = {
+				size = 6500
+				species = event_target:FEI_authoritarian_species
+			}
+			add_building = building_ancient_palace
+			add_building = building_fe_stronghold
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_dimensional_fabricator
+			add_building = building_class_4_singularity
+			add_building = building_nano_forge
+			add_building = building_master_archive2
+			add_building = building_fe_lab_2
+		}
+	}
+
+	planet = {
+		name = NAME_FEI_authoritarian_throne_world_1
+		class = pc_gaia
+		orbit_distance = 25
+		orbit_angle = 110
+		size = 25
+		init_effect = {
+			prevent_anomaly = yes
+			clear_blockers = yes
+			set_owner = event_target:FEI_authoritarian_imperium
+			while = {
+				count = 24
+				add_district = district_city
+			}
+			create_pop_group = {
+				size = 4200
+				species = event_target:FEI_authoritarian_species
+			}
+			add_building = building_ancient_palace
+			add_building = building_fe_stronghold
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_fe_lab_2
+		}
+	}
+
+	planet = {
+		name = NAME_FEI_authoritarian_throne_world_2
+		class = pc_gaia
+		orbit_distance = 25
+		orbit_angle = 220
+		size = 25
+		init_effect = {
+			prevent_anomaly = yes
+			clear_blockers = yes
+			set_owner = event_target:FEI_authoritarian_imperium
+			while = {
+				count = 24
+				add_district = district_city
+			}
+			create_pop_group = {
+				size = 4200
+				species = event_target:FEI_authoritarian_species
+			}
+			add_building = building_ancient_palace
+			add_building = building_fe_stronghold
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_fe_lab_2
+		}
+	}
+
+	init_effect = {
+		save_event_target_as = FEI_authoritarian_capital_system
+		save_global_event_target_as = FEI_authoritarian_capital_system
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEI_authoritarian_imperium
+			module = "shipyard"
+			module = "shipyard"
+			module = "anchorage"
+			module = "anchorage"
+			module = "hangar_bay"
+			module = "gun_battery"
+			building = "command_center"
+			building = "target_uplink_computer"
+			building = "dark_matter_listening_post"
+		}
+	}
+}
+
+FEI_authoritarian_black_hole_system_1 = {
+	name = NAME_FEI_authoritarian_black_hole_1
+	class = sc_black_hole
+	max_instances = 1
+
+	planet = {
+		class = pc_black_hole
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 35
+	}
+
+	init_effect = {
+		save_global_event_target_as = FEI_authoritarian_black_hole_system_1
+		create_starbase = {
+			size = "starbase_outpost"
+			owner = event_target:FEI_authoritarian_imperium
+		}
+	}
+}
+
+FEI_authoritarian_black_hole_system_2 = {
+	name = NAME_FEI_authoritarian_black_hole_2
+	class = sc_black_hole
+	max_instances = 1
+
+	planet = {
+		class = pc_black_hole
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 35
+	}
+
+	init_effect = {
+		save_global_event_target_as = FEI_authoritarian_black_hole_system_2
+		create_starbase = {
+			size = "starbase_outpost"
+			owner = event_target:FEI_authoritarian_imperium
+		}
+	}
+}
+
+FEI_authoritarian_black_hole_system_3 = {
+	name = NAME_FEI_authoritarian_black_hole_3
+	class = sc_black_hole
+	max_instances = 1
+
+	planet = {
+		class = pc_black_hole
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 35
+	}
+
+	init_effect = {
+		save_global_event_target_as = FEI_authoritarian_black_hole_system_3
+		create_starbase = {
+			size = "starbase_outpost"
+			owner = event_target:FEI_authoritarian_imperium
+		}
+	}
+}

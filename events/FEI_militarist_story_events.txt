@@ -396,6 +396,17 @@ country_event = {
 
 	immediate = {
 		set_country_flag = fei_militarist_defeat_rewarded
+		random_country = {
+			limit = {
+				OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+				is_machine_empire = no
+			}
+			save_global_event_target_as = fei_militarist_rewarding_elder
+		}
+		add_specimen = fei_world_forging_project
 		add_resource = {
 			energy = 100000
 			minerals = 100000

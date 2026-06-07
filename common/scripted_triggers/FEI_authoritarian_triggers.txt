@@ -1,0 +1,3 @@
+is_FEI_authoritarian_fallen_empire = {
+	has_country_flag = FEI_authoritarian_fallen_empire
+}
