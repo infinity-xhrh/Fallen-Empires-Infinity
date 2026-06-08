@@ -91,7 +91,7 @@ FEI_authoritarian_capital_system = {
 			add_building = building_dimensional_fabricator
 			add_building = building_class_4_singularity
 			add_building = building_nano_forge
-			add_building = building_master_archive2
+			add_building = building_master_archive
 			add_building = building_fe_lab_2
 		}
 	}

@@ -9,7 +9,8 @@ tech_FEI_barrier = {
 	ai_update_type = all
 	weight = 1
 
-	prerequisites = { "tech_dark_matter_deflector" }
+	
+	icon = "GFX_ship_part_FEI_barrier"prerequisites = { "tech_dark_matter_deflector" }
 
 	weight_modifier = {
 		modifier = {
@@ -29,7 +30,8 @@ tech_FEI_kinetic_artillery = {
 	ai_update_type = military
 	weight = 1
 
-	prerequisites = { "tech_mass_accelerator_2" }
+	
+	icon = "GFX_ship_part_FEI_kinetic_artillery"prerequisites = { "tech_mass_accelerator_2" }
 
 	weight_modifier = {
 		modifier = {
@@ -38,3 +40,70 @@ tech_FEI_kinetic_artillery = {
 		}
 	}
 }
+
+#太虚VI型暗物质湮灭引擎
+tech_FEI_thruster = {
+	cost = @fallentechcost
+	area = engineering
+	tier = @fallentechtier
+	category = { propulsion }
+	is_rare = yes
+	is_reverse_engineerable = no
+	ai_update_type = military
+	weight = 1
+
+	
+	icon = "GFX_ship_part_FEI_thruster"prerequisites = { "tech_dark_matter_propulsion" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			is_FEI_militarist_forerunner_empire = no
+		}
+	}
+}
+
+#能量鱼雷武器化
+tech_FEI_energy_torpedo = {
+	cost = @fallentechcost
+	area = physics
+	tier = @fallentechtier
+	category = { particles }
+	is_rare = yes
+	is_reverse_engineerable = no
+	ai_update_type = military
+	weight = 1
+
+	
+	icon = "GFX_ship_part_FEI_energy_torpedo"prerequisites = { "tech_energy_torpedoes_2" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			is_FEI_militarist_forerunner_empire = no
+		}
+	}
+}
+
+#反护盾射线武器化
+tech_FEI_antishield_rays = {
+	cost = @fallentechcost
+	area = physics
+	tier = @fallentechtier
+	category = { particles }
+	is_rare = yes
+	is_reverse_engineerable = no
+	ai_update_type = military
+	weight = 1
+
+	
+	icon = "GFX_ship_part_FEI_antishield_ray"prerequisites = { "tech_lasers_5" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			is_FEI_militarist_forerunner_empire = no
+		}
+	}
+}
+

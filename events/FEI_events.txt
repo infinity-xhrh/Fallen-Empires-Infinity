@@ -33,100 +33,55 @@ event = {
 	}
 }
 
-#军国老登的心灵专家
-country_event = {
-    id = fei_initialize.3
-    hide_window = yes
-    is_triggered_only = yes
-
-    trigger = {
-        exists = fromfrom
-        fromfromfrom = {
-            any_ground_combat_defender = {
-                is_in_frontline = yes
-                is_owned_by = fromfrom
-                army_type = FEI_psi_army
-            }
-        }
-    }
-
-    immediate = {
-        if = {
-            limit = { from = { exists = species } }
-            fromfromfrom = {
-                create_army = {
-                    owner = fromfrom
-                    type = from
-                    species = from
-                }
-            }
-        }
-        else = {
-            fromfromfrom = {
-                create_army = {
-                    owner = fromfrom
-                    type = from
-                    species = root
-                }
-            }
-        }
-    }
-}
-
-#军国老登的增殖机器人
-country_event = {
-    id = fei_initialize.5
-    hide_window = yes
-    is_triggered_only = yes
-
-    trigger = {
-        exists = fromfrom
-        fromfromfrom = {
-            any_ground_combat_defender = {
-                is_in_frontline = yes
-                is_owned_by = fromfrom
-                army_type = FEI_duplicant_army
-            }
-        }
-    }
-
-    immediate = {
-        fromfromfrom = {
-            create_army = {
-                owner = fromfrom
-                type = FEI_duplicant_army
-                species = fromfrom
-            }
-        }
-    }
-}
-
-#每10天根据前线部队数量抹杀进攻者部队
+# 军国堕落特色陆军地面战逻辑
+# 进入地面战后启动两个星球作用域循环：
+# 1. 超时空军团每 10 天按前线数量抹杀进攻方部队。
+# 2. 心灵专家与增殖机器人每 10 天生成防守增援。
 planet_event = {
     id = fei_initialize.2
     hide_window = yes
     is_triggered_only = yes
 
     trigger = {
+        has_ground_combat = yes
         exists = owner
-        not = { has_planet_flag = FEI_chrono_army_triggered }
-        any_ground_combat_defender = {
-            army_type = FEI_chrono_army
+        OR = {
+            any_ground_combat_defender = { army_type = FEI_chrono_army }
+            any_ground_combat_defender = { army_type = FEI_psi_army }
+            any_ground_combat_defender = { army_type = FEI_duplicant_army }
         }
     }
 
     immediate = {
-        country_event = {
-            id = fei_initialize.4
-            days = 11
+        if = {
+            limit = {
+                NOT = { has_planet_flag = FEI_chrono_army_triggered }
+                any_ground_combat_defender = { army_type = FEI_chrono_army }
+            }
+            planet_event = { id = fei_initialize.4 days = 10 }
+            set_timed_planet_flag = {
+                flag = FEI_chrono_army_triggered
+                days = 10
+            }
         }
-        set_timed_planet_flag = { 
-            flag = FEI_chrono_army_triggered
-            days = 10
+        if = {
+            limit = {
+                NOT = { has_planet_flag = FEI_special_army_reinforce_triggered }
+                OR = {
+                    any_ground_combat_defender = { army_type = FEI_psi_army }
+                    any_ground_combat_defender = { army_type = FEI_duplicant_army }
+                }
+            }
+            planet_event = { id = fei_initialize.6 days = 10 }
+            set_timed_planet_flag = {
+                flag = FEI_special_army_reinforce_triggered
+                days = 10
+            }
         }
     }
 }
 
+# 超时空军团：每 10 天按前线超时空军团数量抹杀进攻方陆军。
 planet_event = {
     id = fei_initialize.4
     hide_window = yes
@@ -140,11 +95,8 @@ planet_event = {
     }
 
     immediate = {
-        planet_event = {
-            id = fei_initialize.4
-            days = 10
-        }
-        set_timed_planet_flag = { 
+        planet_event = { id = fei_initialize.4 days = 10 }
+        set_timed_planet_flag = {
             flag = FEI_chrono_army_triggered
             days = 10
         }
@@ -152,7 +104,7 @@ planet_event = {
             trigger = count_ground_combat_defender
             parameters = {
                 limit = {
-                     is_in_frontline = yes
+                    is_in_frontline = yes
                     army_type = FEI_chrono_army
                 }
             }
@@ -160,10 +112,70 @@ planet_event = {
         }
         while = {
             count = FEI_chrono_army_counter
-            random_ground_combat_attacker = {
-                remove_army = yes
+            if = {
+                limit = {
+                    any_ground_combat_attacker = { always = yes }
+                }
+                random_ground_combat_attacker = {
+                    remove_army = yes
+                }
             }
         }
     }
 }
 
+# 心灵专家 / 增殖机器人：改为星球作用域循环，避免 on_army_killed_in_combat 的跨作用域不稳定。
+# 每 10 天在战斗仍持续时，为仍在前线的特色部队生成一支防守增援。
+planet_event = {
+    id = fei_initialize.6
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        has_ground_combat = yes
+        exists = owner
+        OR = {
+            any_ground_combat_defender = {
+                is_in_frontline = yes
+                army_type = FEI_psi_army
+            }
+            any_ground_combat_defender = {
+                is_in_frontline = yes
+                army_type = FEI_duplicant_army
+            }
+        }
+    }
+
+    immediate = {
+        planet_event = { id = fei_initialize.6 days = 10 }
+        set_timed_planet_flag = {
+            flag = FEI_special_army_reinforce_triggered
+            days = 10
+        }
+        if = {
+            limit = {
+                any_ground_combat_defender = {
+                    is_in_frontline = yes
+                    army_type = FEI_psi_army
+                }
+            }
+            create_army = {
+                owner = owner
+                type = FEI_psi_army
+                species = owner_main_species
+            }
+        }
+        if = {
+            limit = {
+                any_ground_combat_defender = {
+                    is_in_frontline = yes
+                    army_type = FEI_duplicant_army
+                }
+            }
+            create_army = {
+                owner = owner
+                type = FEI_duplicant_army
+            }
+        }
+    }
+}

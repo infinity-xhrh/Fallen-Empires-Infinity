@@ -299,6 +299,11 @@ FEI_initializer_yanwuchang = {
 					add_global_ship_design = "NAME_FEI_Sigma"
 					add_global_ship_design = "NAME_FEI_Theta"
 					add_global_ship_design = "NAME_FEI_Tau"
+					give_technology = { tech = tech_FEI_barrier message = no }
+					give_technology = { tech = tech_FEI_kinetic_artillery message = no }
+					give_technology = { tech = tech_FEI_thruster message = no }
+					give_technology = { tech = tech_FEI_energy_torpedo message = no }
+					give_technology = { tech = tech_FEI_antishield_rays message = no }
 					random_list = {
 						1 = { }
 						1 = { set_name = NAME_FEI_militarist_forerunner_empire_2 }
@@ -351,12 +356,40 @@ FEI_initializer_yanwuchang = {
 			create_FEI_militarist_forerunner_fleet = yes
 			create_FEI_militarist_forerunner_fleet = yes
 			create_FEI_militarist_forerunner_fleet = yes
+			# 军国堕落特色守军：半机械先驱、超时空军团、超能力部队、增殖机器人
 			while = {
-				count = 20
+				count = 6
 				create_army = {
 					name = random
 					owner = event_target:FEI_militarist_forerunner
-					type = "warpling_army"
+					type = FEI_cyborg_army
+					species = owner_main_species
+				}
+			}
+			while = {
+				count = 4
+				create_army = {
+					name = random
+					owner = event_target:FEI_militarist_forerunner
+					type = FEI_chrono_army
+					species = owner_main_species
+				}
+			}
+			while = {
+				count = 5
+				create_army = {
+					name = random
+					owner = event_target:FEI_militarist_forerunner
+					type = FEI_psi_army
+					species = owner_main_species
+				}
+			}
+			while = {
+				count = 5
+				create_army = {
+					name = random
+					owner = event_target:FEI_militarist_forerunner
+					type = FEI_duplicant_army
 				}
 			}
 		}

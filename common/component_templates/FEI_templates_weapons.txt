@@ -233,6 +233,8 @@ utility_component_template = {
 	modifier = {
 		ship_shield_add = @shield_L7
 		ship_shield_regen_add_static = @regen_L7
+		ship_shield_hardening_add = 0.06
+		ship_aoe_damage_reduction_mult = 0.01
 	}
 
 	component_set = "FEI_BARRIER"
@@ -283,7 +285,7 @@ weapon_component_template = {
 	damage = { min = 500 max = 1500 }
 	windup = { min = 10 max = 15 }
 	total_fire_time = 14
-	max_range = 250
+	range = 250
 	min_range = 45
 	accuracy = 0.75
 	tracking = 0
@@ -292,6 +294,12 @@ weapon_component_template = {
 	shield_damage = 1.5
 	armor_damage = 0.75
 	hull_damage = 1.5
+
+	inline_script = {
+		script = ship_components/batw_weapon_aoe_effect
+		archaeotech = no size = titanic type = FEI_KINETIC_ARTILLERY_T cooldown = 5.0 size_tag = t tag = kinetic aoe_range = 40.0
+		base_damage = 500.0 fe_color = blue fe_size = medium
+	}
 
 	ai_weight = {
 		weight = 9
@@ -332,7 +340,7 @@ weapon_component_template = {
 	damage = { min = 225 max = 675 }
 	windup = { min = 10 max = 16 }
 	total_fire_time = 11
-	max_range = 250
+	range = 250
 	min_range = 45
 	accuracy = 0.75
 	tracking = 0
@@ -351,3 +359,327 @@ weapon_component_template = {
 		}
 	}
 }
+
+#军国堕落六级能量鱼雷
+weapon_component_template = {
+	key = "FEI_ENERGY_TORPEDO"
+	prerequisites = { tech_FEI_energy_torpedo }
+
+	power = -180
+	size = torpedo
+	type = missile
+	prio_projectile = yes
+	icon = "GFX_ship_part_FEI_energy_torpedo"
+	icon_frame = 1
+	projectile_gfx = "gatebuilder_torpedo"
+	firing_arc = 120.0
+
+	component_set = "FEI_ENERGY_TORPEDO"
+	tags = { weapon_type_explosive weapon_role_artillery }
+	ai_tags = { weapon_role_anti_armor weapon_role_anti_hull artillery }
+	ai_tag_weight = 0
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t6_cost
+			sr_dark_matter = @m_t6_rare
+		}
+		upkeep = {
+			energy = @m_t6_upkeep_energy
+			alloys = @m_t6_upkeep_alloys
+		}
+	}
+
+	damage = { min = 160 max = 420 }
+	windup = { min = 20 max = 30 }
+	total_fire_time = 35
+	range = 140
+	missile_health = 35
+	missile_armor = 0
+	missile_evasion = 0.65
+	missile_retarget_range = 200
+	missile_shield = 80
+	missile_speed = 16
+
+	shield_damage = 1.0
+	armor_damage = 1.25
+	hull_damage = 1.25
+	shield_penetration = 0.5
+	size_damage_factor = 1
+
+	ai_weight = {
+		weight = 9
+		modifier = {
+			set = 0
+			is_FEI_militarist_forerunner_empire = no
+		}
+	}
+}
+
+#军国堕落六级反护盾射线
+weapon_component_template = {
+	key = "SMALL_FEI_ANTISHIELD_RAY"
+	prerequisites = { tech_FEI_antishield_rays }
+
+	power = -35
+	size = small
+	type = instant
+	icon = "GFX_ship_part_FEI_antishield_ray"
+	icon_frame = 1
+	projectile_gfx = "arc_emitter"
+	tags = { weapon_type_energy weapon_role_anti_shield s_slot }
+	ai_tags = { weapon_role_anti_shield artillery }
+	ai_tag_weight = 0
+
+	component_set = "FEI_ANTISHIELD_RAY"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t6_cost
+			sr_dark_matter = @s_t6_rare
+		}
+		upkeep = {
+			energy = @s_t6_upkeep_energy
+			alloys = @s_t6_upkeep_alloys
+		}
+	}
+
+	damage = { min = 25 max = 70 }
+	windup = { min = 4 max = 8 }
+	total_fire_time = 8
+	range = 80
+	accuracy = 0.85
+	tracking = 0.5
+	firing_arc = 90
+
+	shield_damage = 3.0
+	armor_damage = 0.4
+	hull_damage = 0.7
+
+	ai_weight = {
+		weight = 9
+		modifier = {
+			set = 0
+			is_FEI_militarist_forerunner_empire = no
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "MEDIUM_FEI_ANTISHIELD_RAY"
+	prerequisites = { tech_FEI_antishield_rays }
+
+	power = -70
+	size = medium
+	type = instant
+	icon = "GFX_ship_part_FEI_antishield_ray"
+	icon_frame = 1
+	projectile_gfx = "arc_emitter"
+	tags = { weapon_type_energy weapon_role_anti_shield m_slot }
+	ai_tags = { weapon_role_anti_shield artillery }
+	ai_tag_weight = 0
+
+	component_set = "FEI_ANTISHIELD_RAY"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t6_cost
+			sr_dark_matter = @m_t6_rare
+		}
+		upkeep = {
+			energy = @m_t6_upkeep_energy
+			alloys = @m_t6_upkeep_alloys
+		}
+	}
+
+	damage = { min = 60 max = 160 }
+	windup = { min = 5 max = 9 }
+	total_fire_time = 9
+	range = 100
+	accuracy = 0.82
+	tracking = 0.3
+	firing_arc = 70
+
+	shield_damage = 3.0
+	armor_damage = 0.4
+	hull_damage = 0.7
+
+	ai_weight = {
+		weight = 9
+		modifier = {
+			set = 0
+			is_FEI_militarist_forerunner_empire = no
+		}
+	}
+}
+
+weapon_component_template = {
+	key = "LARGE_FEI_ANTISHIELD_RAY"
+	prerequisites = { tech_FEI_antishield_rays }
+
+	power = -140
+	size = large
+	type = instant
+	icon = "GFX_ship_part_FEI_antishield_ray"
+	icon_frame = 1
+	projectile_gfx = "arc_emitter"
+	tags = { weapon_type_energy weapon_role_anti_shield l_slot }
+	ai_tags = { weapon_role_anti_shield artillery }
+	ai_tag_weight = 0
+
+	component_set = "FEI_ANTISHIELD_RAY"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t6_cost
+			sr_dark_matter = @l_t6_rare
+		}
+		upkeep = {
+			energy = @l_t6_upkeep_energy
+			alloys = @l_t6_upkeep_alloys
+		}
+	}
+
+	damage = { min = 130 max = 330 }
+	windup = { min = 6 max = 10 }
+	total_fire_time = 10
+	range = 120
+	accuracy = 0.8
+	tracking = 0.15
+	firing_arc = 50
+
+	shield_damage = 3.0
+	armor_damage = 0.4
+	hull_damage = 0.7
+
+	ai_weight = {
+		weight = 9
+		modifier = {
+			set = 0
+			is_FEI_militarist_forerunner_empire = no
+		}
+	}
+}
+
+#军国堕落六级太虚引擎
+utility_component_template = {
+	key = "CORVETTE_FEI_THRUSTER_6"
+	size = aux
+	icon = "GFX_ship_part_FEI_thruster"
+	icon_frame = 1
+	power = -20
+	prerequisites = { tech_FEI_thruster }
+
+	component_set = "FEI_THRUSTER"
+
+	modifier = {
+		ship_speed_mult = 1.5
+		ship_evasion_add = 15
+	}
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t6_cost
+			sr_dark_matter = @s_t6_rare
+		}
+		upkeep = {
+			energy = @s_t6_upkeep_energy
+			alloys = @s_t6_upkeep_alloys
+		}
+	}
+
+	ai_weight = { weight = 9 }
+}
+
+utility_component_template = {
+	key = "DESTROYER_FEI_THRUSTER_6"
+	size = aux
+	icon = "GFX_ship_part_FEI_thruster"
+	icon_frame = 1
+	power = -35
+	prerequisites = { tech_FEI_thruster }
+
+	component_set = "FEI_THRUSTER"
+
+	modifier = {
+		ship_speed_mult = 1.5
+		ship_evasion_add = 15
+	}
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @m_t6_cost
+			sr_dark_matter = @m_t6_rare
+		}
+		upkeep = {
+			energy = @m_t6_upkeep_energy
+			alloys = @m_t6_upkeep_alloys
+		}
+	}
+
+	ai_weight = { weight = 9 }
+}
+
+utility_component_template = {
+	key = "BATTLESHIP_FEI_THRUSTER_6"
+	size = aux
+	icon = "GFX_ship_part_FEI_thruster"
+	icon_frame = 1
+	power = -70
+	prerequisites = { tech_FEI_thruster }
+
+	component_set = "FEI_THRUSTER"
+
+	modifier = {
+		ship_speed_mult = 1.5
+		ship_evasion_add = 15
+	}
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t6_cost
+			sr_dark_matter = @l_t6_rare
+		}
+		upkeep = {
+			energy = @l_t6_upkeep_energy
+			alloys = @l_t6_upkeep_alloys
+		}
+	}
+
+	ai_weight = { weight = 9 }
+}
+
+utility_component_template = {
+	key = "TITAN_FEI_THRUSTER_6"
+	size = aux
+	icon = "GFX_ship_part_FEI_thruster"
+	icon_frame = 1
+	power = -140
+	prerequisites = { tech_FEI_thruster }
+
+	component_set = "FEI_THRUSTER"
+
+	modifier = {
+		ship_speed_mult = 1.5
+		ship_evasion_add = 15
+	}
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @xl_t6_cost
+			sr_dark_matter = @xl_t6_rare
+		}
+		upkeep = {
+			energy = @xl_t6_upkeep_energy
+			alloys = @xl_t6_upkeep_alloys
+		}
+	}
+
+	ai_weight = { weight = 9 }
+}
+

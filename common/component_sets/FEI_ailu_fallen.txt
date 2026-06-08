@@ -19,3 +19,28 @@ component_set = {
 	icon = "GFX_ship_part_FEI_kinetic_artillery"
 	icon_frame = 1
 }
+
+#军国ldx能量鱼雷
+component_set = {
+	key = "FEI_ENERGY_TORPEDO"
+
+	icon = "GFX_ship_part_FEI_energy_torpedo"
+	icon_frame = 1
+}
+
+#军国ldx反护盾射线
+component_set = {
+	key = "FEI_ANTISHIELD_RAY"
+
+	icon = "GFX_ship_part_FEI_antishield_ray"
+	icon_frame = 1
+}
+
+#军国ldx六级引擎
+component_set = {
+	key = "FEI_THRUSTER"
+
+	icon = "GFX_ship_part_FEI_thruster"
+	icon_frame = 1
+}
+

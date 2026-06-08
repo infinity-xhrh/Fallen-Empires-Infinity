@@ -47,7 +47,7 @@ fe_maintenance_bot = {
     }
 }
 
-fe_guardian_bot = {
+fe_garrison_army = {
     category = precursor
     is_capped_by_modifier = yes
     building_icon = building_maintenance_depot

@@ -1,8 +1,22 @@
-spriteType = {
-    name = "GFX_ship_part_FEI_barrier"
-    texturefile = "gfx/interface/icons/ship_parts/ship_part_FEI_barrier.dds"
-}
-spriteType = {
-    name = "GFX_ship_part_FEI_kinetic_artillery"
-    texturefile = "gfx/interface/icons/ship_parts/ship_part_FEI_kinetic_artillery.dds"
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_ship_part_FEI_barrier"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_FEI_barrier.dds"
+	}
+	SpriteType = {
+		name = "GFX_ship_part_FEI_kinetic_artillery"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_FEI_kinetic_artillery.dds"
+	}
+	SpriteType = {
+		name = "GFX_ship_part_FEI_energy_torpedo"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_FEI_energy_torpedo.dds"
+	}
+	SpriteType = {
+		name = "GFX_ship_part_FEI_antishield_ray"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_FEI_antishield_ray.dds"
+	}
+	SpriteType = {
+		name = "GFX_ship_part_FEI_thruster"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_FEI_thruster.dds"
+	}
 }
