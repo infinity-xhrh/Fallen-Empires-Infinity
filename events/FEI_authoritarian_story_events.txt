@@ -1,0 +1,671 @@
+namespace = fei_authoritarian_story
+
+# Archaeological stage 1.
+fleet_event = {
+	id = fei_authoritarian_story.10
+	title = fei_authoritarian_story.10.name
+	desc = fei_authoritarian_story.10.desc
+	picture = GFX_evt_psionics
+	is_triggered_only = yes
+	archaeology = yes
+
+	option = {
+		name = fei_authoritarian_story.10.a
+	}
+}
+
+# Archaeological stage 2.
+fleet_event = {
+	id = fei_authoritarian_story.11
+	title = fei_authoritarian_story.11.name
+	desc = fei_authoritarian_story.11.desc
+	picture = GFX_evt_psionics
+	is_triggered_only = yes
+	archaeology = yes
+
+	option = {
+		name = fei_authoritarian_story.11.a
+	}
+}
+
+# Archaeological stage 3.
+fleet_event = {
+	id = fei_authoritarian_story.12
+	title = fei_authoritarian_story.12.name
+	desc = fei_authoritarian_story.12.desc
+	picture = GFX_evt_psionics
+	is_triggered_only = yes
+	archaeology = yes
+
+	option = {
+		name = fei_authoritarian_story.12.a
+	}
+}
+
+# Archaeological stage 4: the machine beneath the site is exposed.
+fleet_event = {
+	id = fei_authoritarian_story.13
+	title = fei_authoritarian_story.13.name
+	desc = fei_authoritarian_story.13.desc
+	picture = GFX_evt_psionics
+	is_triggered_only = yes
+	archaeology = yes
+
+	immediate = {
+		from.planet = {
+			save_global_event_target_as = FEI_authoritarian_veil_machine_planet
+			add_deposit = d_FEI_authoritarian_veil_piercer
+			set_planet_flag = FEI_authoritarian_veil_machine_discovered
+		}
+	}
+
+	option = {
+		name = fei_authoritarian_story.13.a
+		owner = {
+			if = {
+				limit = { NOT = { has_country_flag = FEI_authoritarian_veil_machine_excavator } }
+				set_country_flag = FEI_authoritarian_veil_machine_excavator
+				save_global_event_target_as = FEI_authoritarian_veil_machine_excavator
+				country_event = { id = fei_authoritarian_story.19 days = 30 }
+			}
+		}
+	}
+}
+
+# Hidden setup: create or extend the vanilla Shroudwalker enclave in this system.
+country_event = {
+	id = fei_authoritarian_story.19
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = FEI_authoritarian_veil_machine_excavator
+		exists = event_target:FEI_authoritarian_veil_system
+		exists = event_target:FEI_authoritarian_veil_machine_planet
+		NOT = { has_global_flag = FEI_authoritarian_shroudwalker_enclave_arrived }
+	}
+
+	immediate = {
+		set_global_flag = FEI_authoritarian_shroudwalker_enclave_arrived
+		event_target:FEI_authoritarian_veil_system = {
+			random_system_planet = {
+				limit = {
+					is_star = no
+					NOT = { is_planet_class = pc_neutron_star }
+				}
+				set_planet_flag = shroudwalker_enclave_planet
+				save_global_event_target_as = shroudwalker_enclave_planet
+				if = {
+					limit = { NOT = { exists = event_target:shroudwalker_enclave_country } }
+					create_species = {
+						homeworld = this
+						name = random
+						class = SHROUDWALKER
+						namelist = NECROID1
+						portrait = random
+						traits = {
+							ideal_planet_class = pc_habitat
+							trait = trait_psionic
+							trait = random_traits
+						}
+					}
+					last_created_species = {
+						save_event_target_as = shroudwalker_enclave_species
+					}
+					create_shroudwalker_enclave_country = yes
+					solar_system = {
+						save_global_event_target_as = shroudwalker_enclave_system
+					}
+				}
+				else = {
+					event_target:shroudwalker_enclave_country = {
+						create_shroudwalker_enclave_starbase = yes
+					}
+				}
+				add_deposit = d_zro_deposit_5
+			}
+		}
+		event_target:shroudwalker_enclave_country = {
+			establish_communications_no_message = root
+		}
+		country_event = { id = fei_authoritarian_story.20 days = 30 }
+	}
+}
+
+# The Shroudwalkers arrive, but speak only in fragments.
+country_event = {
+	id = fei_authoritarian_story.20
+	title = fei_authoritarian_story.20.name
+	desc = fei_authoritarian_story.20.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture = GFX_evt_shroud
+	event_picture_background = GFX_evt_shroud
+	picture_event_data = {
+		portrait = event_target:shroudwalker_enclave_country
+		room = event_target:shroudwalker_enclave_country.ruler
+		planet_background = event_target:FEI_authoritarian_veil_machine_planet
+	}
+
+	trigger = {
+		has_country_flag = FEI_authoritarian_veil_machine_excavator
+		exists = event_target:shroudwalker_enclave_country
+		NOT = { has_global_flag = FEI_authoritarian_shroudwalker_warning_sent }
+	}
+
+	immediate = {
+		set_global_flag = FEI_authoritarian_shroudwalker_warning_sent
+		add_resource = {
+			unity = 1000
+			sr_zro = 50
+		}
+		country_event = { id = fei_authoritarian_story.24 days = 360 random = 180 }
+	}
+
+	option = {
+		name = fei_authoritarian_story.20.a
+	}
+}
+
+# Hidden setup: create or extend the vanilla Curator enclave in this system.
+country_event = {
+	id = fei_authoritarian_story.24
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = FEI_authoritarian_veil_machine_excavator
+		exists = event_target:FEI_authoritarian_veil_system
+		has_global_flag = FEI_authoritarian_shroudwalker_warning_sent
+		NOT = { has_global_flag = FEI_authoritarian_curator_enclave_arrived }
+	}
+
+	immediate = {
+		set_global_flag = FEI_authoritarian_curator_enclave_arrived
+		event_target:FEI_authoritarian_veil_system = {
+			random_system_planet = {
+				limit = {
+					is_star = no
+					NOT = { is_planet_class = pc_neutron_star }
+				}
+				save_global_event_target_as = FEI_authoritarian_curator_enclave_planet
+				if = {
+					limit = { NOT = { exists = event_target:curator_enclave_country } }
+					create_species = {
+						name = random
+						class = random_non_machine
+						portrait = random
+						traits = {
+							ideal_planet_class = pc_habitat
+							trait = random_traits
+						}
+					}
+					create_country = {
+						name = "NAME_Curator_Order"
+						adjective = "NAME_Curator_adj"
+						type = enclave
+						authority = "auth_oligarchic"
+						civics = {
+							civic = civic_ancient_preservers
+						}
+						origin = "origin_default"
+						species = last_created_species
+						flag = {
+							icon = {
+								category = "enclaves"
+								file = "enclaves_flag_curator.dds"
+							}
+							background = {
+								category = "backgrounds"
+								file = "vertical.dds"
+							}
+							colors = {
+								"blue"
+								"dark_blue"
+								"null"
+								"null"
+							}
+						}
+						ethos = {
+							ethic = ethic_fanatic_materialist
+							ethic = ethic_pacifist
+						}
+						ignore_initial_colony_error = yes
+					}
+					last_created_country = {
+						set_country_flag = curator_enclave_country
+						set_graphical_culture = mammalian_01
+						save_global_event_target_as = curator_enclave_country
+						create_fleet = {
+							name = "NAME_Curator_Alpha_Enclave"
+							settings = { spawn_debris = no }
+							effect = {
+								set_owner = prev
+								create_ship = {
+									name = random
+									design = "NAME_Curator_Enclave_Station"
+									graphical_culture = prev
+								}
+								set_location = {
+									target = event_target:FEI_authoritarian_curator_enclave_planet
+									angle = random
+									distance = 100
+								}
+								save_event_target_as = CustomCapital
+								prev = {
+									set_custom_capital_location = event_target:CustomCapital
+								}
+							}
+						}
+						create_leader = {
+							class = scientist
+							species = this
+							name = random
+							skill = 5
+						}
+						set_leader = last_created_leader
+					}
+					solar_system = {
+						save_global_event_target_as = curator_enclave_system
+					}
+				}
+				else = {
+					event_target:curator_enclave_country = {
+						create_fleet = {
+							name = "NAME_Curator_Alpha_Enclave"
+							settings = { spawn_debris = no }
+							effect = {
+								set_owner = prev
+								create_ship = {
+									name = random
+									design = "NAME_Curator_Enclave_Station"
+									graphical_culture = prev
+								}
+								set_location = {
+									target = event_target:FEI_authoritarian_curator_enclave_planet
+									distance = 120
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		event_target:curator_enclave_country = {
+			establish_communications_no_message = root
+		}
+		country_event = { id = fei_authoritarian_story.21 days = 30 }
+	}
+}
+
+# The Curators arrive after the Shroudwalkers.
+country_event = {
+	id = fei_authoritarian_story.21
+	title = fei_authoritarian_story.21.name
+	desc = fei_authoritarian_story.21.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture = GFX_evt_alien_ruins
+	event_picture_background = GFX_evt_alien_ruins
+	picture_event_data = {
+		portrait = event_target:curator_enclave_country
+		room = event_target:curator_enclave_country.ruler
+		planet_background = event_target:FEI_authoritarian_veil_machine_planet
+	}
+
+	trigger = {
+		has_country_flag = FEI_authoritarian_veil_machine_excavator
+		has_global_flag = FEI_authoritarian_shroudwalker_warning_sent
+		exists = event_target:curator_enclave_country
+		NOT = { has_global_flag = FEI_authoritarian_curator_warning_sent }
+	}
+
+	immediate = {
+		set_global_flag = FEI_authoritarian_curator_warning_sent
+		set_global_flag = FEI_authoritarian_veil_city_state_spawned
+		add_resource = {
+			energy = 3000
+			physics_research = 1500
+			society_research = 1500
+			engineering_research = 1500
+		}
+		country_event = { id = fei_authoritarian_story.29 days = 1 }
+		country_event = { id = fei_authoritarian_story.30 days = 360 random = 180 }
+	}
+
+	option = {
+		name = fei_authoritarian_story.21.a
+	}
+}
+
+
+# Hidden setup: a neutral guard country owns all temporary aid fleets, preventing FE AI from recalling them.
+country_event = {
+	id = fei_authoritarian_story.29
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = FEI_authoritarian_veil_machine_excavator
+		NOT = { exists = event_target:FEI_authoritarian_neutral_guard_country }
+	}
+
+	immediate = {
+		create_country = {
+			name = NAME_FEI_authoritarian_neutral_guard_country
+			type = faction
+			auto_delete = no
+			flag = random
+			effect = {
+				set_country_flag = FEI_authoritarian_neutral_guard_country
+				save_global_event_target_as = FEI_authoritarian_neutral_guard_country
+				set_graphical_culture = fallen_empire_03
+				add_global_ship_design = "NAME_Alpha"
+				add_global_ship_design = "NAME_Beta"
+				add_global_ship_design = "NAME_Gamma"
+				add_global_ship_design = "NAME_FEI_authoritarian_flagship"
+			}
+		}
+	}
+}
+
+# Hidden dispatcher: pick one surviving non-militarist, non-authoritarian fallen empire at a time.
+country_event = {
+	id = fei_authoritarian_story.30
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = FEI_authoritarian_veil_machine_excavator
+		has_global_flag = FEI_authoritarian_veil_city_state_spawned
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_country = {
+					OR = {
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+					NOT = { has_country_flag = FEI_militarist_forerunner_empire }
+					NOT = { has_country_flag = FEI_authoritarian_fallen_empire }
+					NOT = { has_country_flag = FEI_authoritarian_legacy_aid_contacted }
+				}
+			}
+			random_country = {
+				limit = {
+					OR = {
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+					}
+					NOT = { has_country_flag = FEI_militarist_forerunner_empire }
+					NOT = { has_country_flag = FEI_authoritarian_fallen_empire }
+					NOT = { has_country_flag = FEI_authoritarian_legacy_aid_contacted }
+				}
+				set_country_flag = FEI_authoritarian_legacy_aid_contacted
+				save_global_event_target_as = FEI_authoritarian_current_legacy_helper
+			}
+			country_event = { id = fei_authoritarian_story.31 days = 30 }
+		}
+		else = {
+			country_event = { id = fei_authoritarian_story.40 days = 540 random = 180 }
+		}
+	}
+}
+
+# One surviving fallen empire offers fragmentary aid.
+country_event = {
+	id = fei_authoritarian_story.31
+	title = fei_authoritarian_story.31.name
+	desc = {
+		trigger = {
+			exists = event_target:FEI_authoritarian_current_legacy_helper
+			event_target:FEI_authoritarian_current_legacy_helper = { is_machine_empire = yes }
+		}
+		text = fei_authoritarian_story.31.machine.desc
+	}
+	desc = {
+		trigger = {
+			exists = event_target:FEI_authoritarian_current_legacy_helper
+			event_target:FEI_authoritarian_current_legacy_helper = {
+				is_machine_empire = no
+				is_hive_empire = yes
+			}
+		}
+		text = fei_authoritarian_story.31.hive.desc
+	}
+	desc = {
+		trigger = {
+			exists = event_target:FEI_authoritarian_current_legacy_helper
+			event_target:FEI_authoritarian_current_legacy_helper = {
+				is_machine_empire = no
+				is_hive_empire = no
+			}
+		}
+		text = fei_authoritarian_story.31.desc
+	}
+	diplomatic = yes
+	is_triggered_only = yes
+	picture = GFX_evt_alien_ruins
+	event_picture_background = GFX_evt_alien_ruins
+	picture_event_data = {
+		portrait = event_target:FEI_authoritarian_current_legacy_helper
+		room = event_target:FEI_authoritarian_current_legacy_helper.ruler
+		planet_background = event_target:FEI_authoritarian_current_legacy_helper.capital_scope
+	}
+
+	trigger = {
+		has_country_flag = FEI_authoritarian_veil_machine_excavator
+		exists = event_target:FEI_authoritarian_current_legacy_helper
+		event_target:FEI_authoritarian_current_legacy_helper = {
+			OR = {
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+			}
+		}
+	}
+
+	immediate = {
+		add_resource = {
+			energy = 3000
+			alloys = 1500
+			physics_research = 1000
+			society_research = 1000
+			engineering_research = 1000
+		}
+		if = {
+			limit = { NOT = { exists = event_target:FEI_authoritarian_neutral_guard_country } }
+			country_event = { id = fei_authoritarian_story.29 }
+		}
+		event_target:FEI_authoritarian_neutral_guard_country = {
+			add_global_ship_design = "NAME_Alpha"
+			add_global_ship_design = "NAME_Beta"
+			add_global_ship_design = "NAME_Gamma"
+			create_fleet = {
+				name = NAME_FEI_authoritarian_legacy_guard_fleet
+				settings = { spawn_debris = no }
+				effect = {
+					set_owner = event_target:FEI_authoritarian_neutral_guard_country
+					create_ship = {
+						name = random
+						design = "NAME_Alpha"
+						graphical_culture = prev
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Beta"
+						graphical_culture = prev
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Beta"
+						graphical_culture = prev
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = prev
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = prev
+					}
+					create_ship = {
+						name = random
+						design = "NAME_Gamma"
+						graphical_culture = prev
+					}
+					set_location = {
+						target = event_target:FEI_authoritarian_veil_machine_planet
+						distance = 25
+						angle = random
+					}
+					set_fleet_flag = FEI_authoritarian_legacy_guard_fleet
+					set_fleet_stance = passive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 0
+				}
+			}
+		}
+		country_event = { id = fei_authoritarian_story.50 days = 30 }
+		country_event = { id = fei_authoritarian_story.30 days = 360 random = 360 }
+	}
+
+	option = {
+		name = fei_authoritarian_story.31.a
+	}
+}
+
+# The authoritarian emperor finally speaks.
+country_event = {
+	id = fei_authoritarian_story.40
+	title = fei_authoritarian_story.40.name
+	desc = fei_authoritarian_story.40.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture = GFX_evt_fallen_empire
+	event_picture_background = GFX_evt_fallen_empire
+	picture_event_data = {
+		portrait = event_target:FEI_authoritarian_imperium
+		room = event_target:FEI_authoritarian_imperium.ruler
+		planet_background = event_target:FEI_authoritarian_imperium.capital_scope
+	}
+
+	trigger = {
+		has_country_flag = FEI_authoritarian_veil_machine_excavator
+		has_global_flag = FEI_authoritarian_veil_city_state_spawned
+		exists = event_target:FEI_authoritarian_imperium
+		NOT = { has_global_flag = FEI_authoritarian_emperor_aid_sent }
+	}
+
+	immediate = {
+		set_global_flag = FEI_authoritarian_emperor_aid_sent
+		if = {
+			limit = { NOT = { exists = event_target:FEI_authoritarian_neutral_guard_country } }
+			country_event = { id = fei_authoritarian_story.29 }
+		}
+		event_target:FEI_authoritarian_neutral_guard_country = {
+			add_global_ship_design = "NAME_FEI_authoritarian_flagship"
+			create_fleet = {
+				name = NAME_FEI_authoritarian_emperor_aid_fleet_1
+				settings = { spawn_debris = no }
+				effect = {
+					set_owner = event_target:FEI_authoritarian_neutral_guard_country
+					create_ship = {
+						name = NAME_FEI_authoritarian_flagship
+						design = "NAME_FEI_authoritarian_flagship"
+						graphical_culture = fallen_empire_03
+					}
+					create_ship = {
+						name = NAME_FEI_authoritarian_flagship
+						design = "NAME_FEI_authoritarian_flagship"
+						graphical_culture = fallen_empire_03
+					}
+					set_location = {
+						target = event_target:FEI_authoritarian_veil_machine_planet
+						distance = 25
+						angle = 90
+					}
+					set_fleet_flag = FEI_authoritarian_emperor_aid_fleet
+					set_fleet_stance = passive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 0
+				}
+			}
+			create_fleet = {
+				name = NAME_FEI_authoritarian_emperor_aid_fleet_2
+				settings = { spawn_debris = no }
+				effect = {
+					set_owner = event_target:FEI_authoritarian_neutral_guard_country
+					create_ship = {
+						name = NAME_FEI_authoritarian_flagship
+						design = "NAME_FEI_authoritarian_flagship"
+						graphical_culture = fallen_empire_03
+					}
+					create_ship = {
+						name = NAME_FEI_authoritarian_flagship
+						design = "NAME_FEI_authoritarian_flagship"
+						graphical_culture = fallen_empire_03
+					}
+					set_location = {
+						target = event_target:FEI_authoritarian_veil_machine_planet
+						distance = 25
+						angle = 270
+					}
+					set_fleet_flag = FEI_authoritarian_emperor_aid_fleet
+					set_fleet_stance = passive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 0
+				}
+			}
+		}
+		set_global_flag = FEI_authoritarian_pre_storm_ready
+		country_event = { id = fei_authoritarian_story.50 days = 30 }
+	}
+
+	option = {
+		name = fei_authoritarian_story.40.a
+	}
+}
+
+
+# Keep FE aid fleets in the veil system.
+country_event = {
+	id = fei_authoritarian_story.50
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = FEI_authoritarian_veil_machine_excavator
+		exists = event_target:FEI_authoritarian_veil_machine_planet
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { exists = event_target:FEI_authoritarian_neutral_guard_country } }
+			country_event = { id = fei_authoritarian_story.29 }
+		}
+		event_target:FEI_authoritarian_neutral_guard_country = {
+			every_owned_fleet = {
+				limit = {
+					OR = {
+						has_fleet_flag = FEI_authoritarian_legacy_guard_fleet
+						has_fleet_flag = FEI_authoritarian_emperor_aid_fleet
+					}
+				}
+				set_fleet_stance = passive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 0
+				set_location = {
+					target = event_target:FEI_authoritarian_veil_machine_planet
+					distance = 25
+					angle = random
+				}
+			}
+		}
+		country_event = { id = fei_authoritarian_story.50 days = 90 }
+	}
+}

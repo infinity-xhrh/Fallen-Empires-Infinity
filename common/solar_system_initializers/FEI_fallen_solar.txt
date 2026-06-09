@@ -30,6 +30,7 @@ FEI_initializer_hepingshichuang = {
 
 	init_effect = {
 		save_event_target_as = FEI_GXXLZ_system_pulsar
+		save_global_event_target_as = FEI_GXXLZ_system_pulsar
 		spawn_megastructure = {
 			type = quantum_catapult_ruined
 			planet = star
@@ -127,11 +128,6 @@ FEI_initializer_hepingshichuang = {
 				from = this
 				to = event_target:FEI_GXXLZ_system_pulsar
 			}
-		}
-		spawn_natural_wormhole = {
-			bypass_type = wormhole
-			random_pos = yes
-			orbit_angle = 360
 		}
 	}
 }
@@ -486,12 +482,6 @@ FEI_initializer_yanwuchang = {
 			initializer = FEI_initializer_ziran
 			hyperlane = no
 		}
-		spawn_natural_wormhole = {
-			bypass_type = wormhole
-			random_pos = yes
-			orbit_angle = 360
-		}
-		link_wormholes = event_target:FEI_GXXLZ_system_pulsar
 	}
 }
 

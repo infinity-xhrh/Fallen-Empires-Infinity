@@ -1,0 +1,51 @@
+# FEI authoritarian story chain archaeological site.
+
+site_FEI_authoritarian_veil_machine = {
+	desc = site_FEI_authoritarian_veil_machine_desc
+	picture = GFX_evt_psionics
+	stages = 4
+	weight = 0
+
+	allow = {
+		exists = leader
+		leader = { leader_class = scientist }
+	}
+
+	visible = {
+		default_site_visible_trigger = yes
+	}
+
+	stage = {
+		difficulty = 10
+		icon = GFX_archaeology_runes_A1
+		event = fei_authoritarian_story.10
+	}
+
+	stage = {
+		difficulty = 11
+		icon = GFX_archaeology_runes_B2
+		event = fei_authoritarian_story.11
+	}
+
+	stage = {
+		difficulty = 12
+		icon = GFX_archaeology_runes_C3
+		event = fei_authoritarian_story.12
+	}
+
+	stage = {
+		difficulty = 13
+		icon = GFX_archaeology_runes_D4
+		event = fei_authoritarian_story.13
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = no_events }
+		}
+	}
+
+	on_create = {
+		save_global_event_target_as = FEI_authoritarian_veil_machine_site
+	}
+}

@@ -27,7 +27,7 @@ country_event = {
 
 
 # Monthly scanner: if any normal country has established contact with the militarist fallen empire,
-# start the active contact chain once.
+# open the delayed wormhole early if needed, then start the active contact chain once.
 country_event = {
 	id = fei_militarist_story.1
 	hide_window = yes
@@ -46,6 +46,15 @@ country_event = {
 	immediate = {
 		set_global_flag = fei_militarist_active_contact_started
 		save_global_event_target_as = fei_militarist_contacted_country
+		if = {
+			limit = {
+				NOT = { has_global_flag = FEI_militarist_wormhole_opened }
+				exists = event_target:FEI_militarist_forerunner
+			}
+			event_target:FEI_militarist_forerunner = {
+				country_event = { id = fei_initialize.7 }
+			}
+		}
 		country_event = { id = fei_militarist_story.10 days = 5 }
 	}
 }
@@ -153,7 +162,7 @@ country_event = {
 		event_target:FEI_militarist_forerunner = {
 			is_country_type = awakened_fallen_empire
 		}
-		NOT = { is_subject_of = event_target:FEI_militarist_forerunner }
+		is_subject = no
 	}
 
 	option = {
@@ -272,7 +281,7 @@ country_event = {
 				}
 				NOT = { is_same_value = root }
 				NOT = { has_country_flag = fei_militarist_contacted_gave_coordinates }
-				NOT = { is_subject_of = root }
+				is_subject = no
 				NOT = { is_at_war_with = root }
 			}
 			set_country_flag = fei_militarist_opposed_forerunner
@@ -310,7 +319,7 @@ country_event = {
 					is_country_type = awakened_fallen_empire
 				}
 				NOT = { is_same_value = root }
-				NOT = { is_subject_of = root }
+				is_subject = no
 				NOT = { is_at_war_with = root }
 			}
 			set_country_flag = fei_militarist_opposed_forerunner
@@ -350,19 +359,75 @@ country_event = {
 					is_country_type = awakened_fallen_empire
 				}
 				NOT = { is_same_value = root }
-				NOT = { is_subject_of = root }
+				is_subject = no
+				NOT = { has_country_flag = fei_elu_enclave_country }
 			}
 		}
 	}
 
 	immediate = {
 		set_global_flag = fei_militarist_story_chain_ended
+		save_global_event_target_as = FEI_militarist_final_order_country
 		remove_modifier = FEI_militarist_forerunner_unending_war
 		add_modifier = { modifier = FEI_militarist_forerunner_final_order days = -1 }
+		every_playable_country = {
+			limit = { is_ai = no }
+			country_event = { id = fei_militarist_story.51 days = 1 }
+		}
 	}
 
 	option = {
 		name = fei_militarist_story.50.a
+	}
+}
+
+# Lightweight checker called from on_country_destroyed.
+# ROOT is the destroyed country, so this event forwards the check to the militarist forerunner.
+country_event = {
+	id = fei_militarist_story.52
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = fei_militarist_forerunner_returned
+		NOT = { has_global_flag = fei_militarist_story_chain_ended }
+		exists = event_target:FEI_militarist_forerunner
+		event_target:FEI_militarist_forerunner = {
+			has_country_flag = FEI_militarist_forerunner_empire
+			is_country_type = awakened_fallen_empire
+		}
+	}
+
+	immediate = {
+		event_target:FEI_militarist_forerunner = {
+			country_event = { id = fei_militarist_story.50 days = 1 }
+		}
+	}
+}
+
+
+
+# Player notification for the final order ending.
+country_event = {
+	id = fei_militarist_story.51
+	title = fei_militarist_story.51.name
+	desc = fei_militarist_story.51.desc
+	diplomatic = yes
+	is_triggered_only = yes
+	picture = GFX_evt_fleet_neutral
+	show_sound = event_alien_signal
+
+	trigger = {
+		has_global_flag = fei_militarist_story_chain_ended
+		exists = event_target:FEI_militarist_final_order_country
+		event_target:FEI_militarist_final_order_country = {
+			has_country_flag = FEI_militarist_forerunner_empire
+			has_modifier = FEI_militarist_forerunner_final_order
+		}
+	}
+
+	option = {
+		name = fei_militarist_story.51.a
 	}
 }
 
@@ -406,7 +471,7 @@ country_event = {
 			}
 			save_global_event_target_as = fei_militarist_rewarding_elder
 		}
-		give_specimen = fei_world_forging_project
+		give_specimen = { key = fei_world_forging_project }
 		add_resource = {
 			energy = 100000
 			minerals = 100000

@@ -17,7 +17,7 @@ building_utpiod_capital = {
         job_job_FEU_utpiod_god_per_pop = 0.1
     }
     building_sets = { all }
-    resources = { upkeep = { energy = 10 } }
+    resources = { category = planet_buildings upkeep = { energy = 10 } }
     upgrades = {}
 }
 
@@ -42,6 +42,6 @@ building_utpiod_base = {
         job_job_FEU_adam_per_pop = 0.3
     }
     building_sets = { all }
-    resources = { upkeep = { energy = 10 } }
+    resources = { category = planet_buildings upkeep = { energy = 10 } }
     upgrades = {}
 }

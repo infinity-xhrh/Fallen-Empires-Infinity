@@ -1,6 +1,6 @@
 namespace = fei_authoritarian
 
-# Spawn the authoritarian fallen empire and its silent black hole systems.
+# Spawn the authoritarian fallen empire and its surrounding ancient domain.
 event = {
 	id = fei_authoritarian.1
 	is_triggered_only = yes
@@ -24,24 +24,79 @@ event = {
 				initializer = FEI_authoritarian_capital_system
 				hyperlane = yes
 			}
+			last_created_system = {
+				save_event_target_as = FEI_authoritarian_spawn_capital_system
+			}
 		}
-		event_target:FEI_authoritarian_capital_system = {
+		event_target:FEI_authoritarian_spawn_capital_system = {
 			spawn_system = {
-				min_distance >= 5
-				max_distance <= 15
+				min_distance >= 8
+				max_distance <= 18
+				initializer = FEI_authoritarian_court_system_1
+				hyperlane = yes
+			}
+			last_created_system = {
+				save_event_target_as = FEI_authoritarian_spawn_inner_1
+			}
+			spawn_system = {
+				min_distance >= 8
+				max_distance <= 18
+				initializer = FEI_authoritarian_court_system_2
+				hyperlane = yes
+			}
+			last_created_system = {
+				save_event_target_as = FEI_authoritarian_spawn_inner_2
+			}
+			spawn_system = {
+				min_distance >= 8
+				max_distance <= 18
+				initializer = FEI_authoritarian_black_hole_system_3
+				hyperlane = yes
+			}
+		}
+		event_target:FEI_authoritarian_spawn_inner_1 = {
+			spawn_system = {
+				min_distance >= 8
+				max_distance <= 18
+				initializer = FEI_authoritarian_archive_system
+				hyperlane = yes
+			}
+			spawn_system = {
+				min_distance >= 8
+				max_distance <= 18
 				initializer = FEI_authoritarian_black_hole_system_1
 				hyperlane = yes
 			}
+		}
+		event_target:FEI_authoritarian_spawn_inner_2 = {
 			spawn_system = {
-				min_distance >= 5
-				max_distance <= 15
-				initializer = FEI_authoritarian_black_hole_system_2
+				min_distance >= 8
+				max_distance <= 18
+				initializer = FEI_authoritarian_foundry_system
 				hyperlane = yes
 			}
 			spawn_system = {
-				min_distance >= 5
-				max_distance <= 15
-				initializer = FEI_authoritarian_black_hole_system_3
+				min_distance >= 8
+				max_distance <= 18
+				initializer = FEI_authoritarian_black_hole_system_2
+				hyperlane = yes
+			}
+		}
+		random_system = {
+			limit = {
+				is_rim_system = no
+				NOT = { has_star_flag = crisis_spawn_exclude }
+				NOT = { has_hyperlane_to = event_target:FEI_authoritarian_spawn_capital_system }
+				distance = {
+					source = event_target:FEI_authoritarian_spawn_capital_system
+					type = euclidean
+					min_distance >= 120
+				}
+			}
+			spawn_system = {
+				min_distance >= 20
+				max_distance <= 45
+				initializer = FEI_authoritarian_veil_system
 				hyperlane = yes
 			}
 		}

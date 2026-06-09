@@ -1,0 +1,27 @@
+# FEI authoritarian story chain deposits.
+
+d_FEI_authoritarian_veil_piercer = {
+	icon = d_psionic_region
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	planet_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.25
+		planet_jobs_society_research_produces_mult = 0.25
+		planet_jobs_engineering_research_produces_mult = 0.15
+	}
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			sr_zro = 5
+			physics_research = 12
+			society_research = 12
+			engineering_research = 8
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}

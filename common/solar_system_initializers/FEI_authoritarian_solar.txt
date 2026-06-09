@@ -62,6 +62,7 @@ FEI_authoritarian_capital_system = {
 						alloys = 10000
 						influence = 500
 					}
+					add_global_ship_design = "NAME_FEI_authoritarian_flagship"
 					random_list = {
 						1 = { }
 						1 = { set_name = NAME_FEI_authoritarian_empire_2 }
@@ -74,7 +75,10 @@ FEI_authoritarian_capital_system = {
 					}
 				}
 			}
+			set_planet_flag = fallen_empire_world
+			set_planet_flag = fallen_empire_capital
 			set_owner = event_target:FEI_authoritarian_imperium
+			set_controller = event_target:FEI_authoritarian_imperium
 			set_capital = yes
 			while = {
 				count = 30
@@ -93,6 +97,18 @@ FEI_authoritarian_capital_system = {
 			add_building = building_nano_forge
 			add_building = building_master_archive
 			add_building = building_fe_lab_2
+			create_fleet = {
+				name = NAME_FEI_authoritarian_flagship_fleet
+				effect = {
+					set_owner = event_target:FEI_authoritarian_imperium
+					create_ship = {
+						name = NAME_FEI_authoritarian_flagship
+						design = "NAME_FEI_authoritarian_flagship"
+						graphical_culture = owner
+					}
+					set_location = prev
+				}
+			}
 		}
 	}
 
@@ -105,7 +121,9 @@ FEI_authoritarian_capital_system = {
 		init_effect = {
 			prevent_anomaly = yes
 			clear_blockers = yes
+			set_planet_flag = fallen_empire_world
 			set_owner = event_target:FEI_authoritarian_imperium
+			set_controller = event_target:FEI_authoritarian_imperium
 			while = {
 				count = 24
 				add_district = district_city
@@ -133,7 +151,9 @@ FEI_authoritarian_capital_system = {
 		init_effect = {
 			prevent_anomaly = yes
 			clear_blockers = yes
+			set_planet_flag = fallen_empire_world
 			set_owner = event_target:FEI_authoritarian_imperium
+			set_controller = event_target:FEI_authoritarian_imperium
 			while = {
 				count = 24
 				add_district = district_city
@@ -167,6 +187,246 @@ FEI_authoritarian_capital_system = {
 			building = "command_center"
 			building = "target_uplink_computer"
 			building = "dark_matter_listening_post"
+		}
+	}
+}
+
+FEI_authoritarian_court_system_1 = {
+	name = NAME_FEI_authoritarian_court_system_1
+	class = sc_f
+	max_instances = 1
+
+	planet = {
+		class = pc_f_star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 30
+	}
+
+	planet = {
+		name = NAME_FEI_authoritarian_court_world_1
+		class = pc_gaia
+		orbit_distance = 45
+		orbit_angle = 70
+		size = 22
+		init_effect = {
+			prevent_anomaly = yes
+			clear_blockers = yes
+			set_planet_flag = fallen_empire_world
+			set_owner = event_target:FEI_authoritarian_imperium
+			set_controller = event_target:FEI_authoritarian_imperium
+			while = {
+				count = 18
+				add_district = district_city
+			}
+			create_pop_group = {
+				size = 2800
+				species = event_target:FEI_authoritarian_species
+			}
+			add_building = building_ancient_palace
+			add_building = building_fe_stronghold
+			add_building = building_affluence_center
+			add_building = building_dimensional_fabricator
+			add_building = building_fe_lab_2
+		}
+	}
+
+	planet = {
+		class = pc_barren
+		orbit_distance = 25
+		orbit_angle = 150
+		size = 18
+		init_effect = {
+			prevent_anomaly = yes
+		}
+	}
+
+	init_effect = {
+		save_global_event_target_as = FEI_authoritarian_court_system_1
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEI_authoritarian_imperium
+			module = "gun_battery"
+			module = "gun_battery"
+			module = "hangar_bay"
+			module = "anchorage"
+			building = "target_uplink_computer"
+			building = "defense_grid"
+		}
+	}
+}
+
+FEI_authoritarian_court_system_2 = {
+	name = NAME_FEI_authoritarian_court_system_2
+	class = sc_g
+	max_instances = 1
+
+	planet = {
+		class = pc_g_star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 30
+	}
+
+	planet = {
+		name = NAME_FEI_authoritarian_court_world_2
+		class = pc_gaia
+		orbit_distance = 45
+		orbit_angle = 210
+		size = 22
+		init_effect = {
+			prevent_anomaly = yes
+			clear_blockers = yes
+			set_planet_flag = fallen_empire_world
+			set_owner = event_target:FEI_authoritarian_imperium
+			set_controller = event_target:FEI_authoritarian_imperium
+			while = {
+				count = 18
+				add_district = district_city
+			}
+			create_pop_group = {
+				size = 2800
+				species = event_target:FEI_authoritarian_species
+			}
+			add_building = building_ancient_palace
+			add_building = building_fe_stronghold
+			add_building = building_nourishment_center
+			add_building = building_nano_forge
+			add_building = building_fe_lab_2
+		}
+	}
+
+	planet = {
+		class = pc_barren_cold
+		orbit_distance = 25
+		orbit_angle = 40
+		size = 18
+		init_effect = {
+			prevent_anomaly = yes
+		}
+	}
+
+	init_effect = {
+		save_global_event_target_as = FEI_authoritarian_court_system_2
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEI_authoritarian_imperium
+			module = "gun_battery"
+			module = "gun_battery"
+			module = "hangar_bay"
+			module = "anchorage"
+			building = "target_uplink_computer"
+			building = "defense_grid"
+		}
+	}
+}
+
+FEI_authoritarian_archive_system = {
+	name = NAME_FEI_authoritarian_archive_system
+	class = sc_k
+	max_instances = 1
+
+	planet = {
+		class = pc_k_star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 30
+	}
+
+	planet = {
+		name = NAME_FEI_authoritarian_archive_world
+		class = pc_gaia
+		orbit_distance = 45
+		orbit_angle = 120
+		size = 24
+		init_effect = {
+			prevent_anomaly = yes
+			clear_blockers = yes
+			set_planet_flag = fallen_empire_world
+			set_owner = event_target:FEI_authoritarian_imperium
+			set_controller = event_target:FEI_authoritarian_imperium
+			while = {
+				count = 20
+				add_district = district_city
+			}
+			create_pop_group = {
+				size = 3200
+				species = event_target:FEI_authoritarian_species
+			}
+			add_building = building_ancient_palace
+			add_building = building_fe_lab_2
+			add_building = building_fe_lab_2
+			add_building = building_master_archive
+			add_building = building_dimensional_fabricator
+		}
+	}
+
+	init_effect = {
+		save_global_event_target_as = FEI_authoritarian_archive_system
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEI_authoritarian_imperium
+			module = "gun_battery"
+			module = "hangar_bay"
+			module = "anchorage"
+			module = "anchorage"
+			building = "target_uplink_computer"
+			building = "defense_grid"
+		}
+	}
+}
+
+FEI_authoritarian_foundry_system = {
+	name = NAME_FEI_authoritarian_foundry_system
+	class = sc_m
+	max_instances = 1
+
+	planet = {
+		class = pc_m_star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 30
+	}
+
+	planet = {
+		name = NAME_FEI_authoritarian_foundry_world
+		class = pc_gaia
+		orbit_distance = 45
+		orbit_angle = 300
+		size = 24
+		init_effect = {
+			prevent_anomaly = yes
+			clear_blockers = yes
+			set_planet_flag = fallen_empire_world
+			set_owner = event_target:FEI_authoritarian_imperium
+			set_controller = event_target:FEI_authoritarian_imperium
+			while = {
+				count = 20
+				add_district = district_city
+			}
+			create_pop_group = {
+				size = 3200
+				species = event_target:FEI_authoritarian_species
+			}
+			add_building = building_ancient_palace
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_class_4_singularity
+			add_building = building_dimensional_fabricator
+		}
+	}
+
+	init_effect = {
+		save_global_event_target_as = FEI_authoritarian_foundry_system
+		create_starbase = {
+			size = "starbase_citadel"
+			owner = event_target:FEI_authoritarian_imperium
+			module = "shipyard"
+			module = "shipyard"
+			module = "gun_battery"
+			module = "hangar_bay"
+			building = "target_uplink_computer"
+			building = "defense_grid"
 		}
 	}
 }

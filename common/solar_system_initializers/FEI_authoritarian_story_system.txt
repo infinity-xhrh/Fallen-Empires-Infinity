@@ -1,0 +1,110 @@
+# FEI authoritarian story chain system.
+# A very old, isolated system related to the lost God-Emperor.
+
+FEI_authoritarian_veil_system = {
+	name = NAME_FEI_authoritarian_veil_system
+	class = sc_neutron_star
+	max_instances = 1
+
+	flags = {
+		crisis_spawn_exclude
+		FEI_authoritarian_veil_system
+	}
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 110
+	}
+
+	planet = {
+		class = pc_neutron_star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 35
+		init_effect = {
+			prevent_anomaly = yes
+			set_planet_flag = FEI_authoritarian_ancient_star
+		}
+	}
+
+	change_orbit = 45
+
+	planet = {
+		name = NAME_FEI_authoritarian_veil_world
+		class = pc_gaia
+		orbit_distance = 0
+		orbit_angle = 35
+		size = 22
+		deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+			clear_blockers = yes
+			clear_deposits = yes
+			save_global_event_target_as = FEI_authoritarian_veil_world
+			set_planet_flag = FEI_authoritarian_veil_world
+			add_deposit = d_betharian_deposit
+			create_archaeological_site = site_FEI_authoritarian_veil_machine
+		}
+	}
+
+	change_orbit = 25
+
+	planet = {
+		name = NAME_FEI_authoritarian_relic_moon
+		class = pc_barren_cold
+		orbit_distance = 0
+		orbit_angle = 145
+		size = 16
+		init_effect = {
+			prevent_anomaly = yes
+			set_planet_flag = FEI_authoritarian_relic_moon
+		}
+	}
+
+	change_orbit = 30
+
+	planet = {
+		count = { min = 4 max = 6 }
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 25 max = 85 }
+		size = { min = 3 max = 6 }
+		init_effect = {
+			prevent_anomaly = yes
+		}
+	}
+
+	change_orbit = 35
+
+	planet = {
+		name = NAME_FEI_authoritarian_dead_archive
+		class = pc_broken
+		orbit_distance = 0
+		orbit_angle = 260
+		size = 20
+		init_effect = {
+			prevent_anomaly = yes
+			set_planet_flag = FEI_authoritarian_dead_archive
+		}
+	}
+
+	init_effect = {
+		save_global_event_target_as = FEI_authoritarian_veil_system
+		set_star_flag = FEI_authoritarian_veil_system
+		while = {
+			count = 3
+			create_ambient_object = {
+				type = "large_debris_object"
+				location = solar_system
+			}
+		}
+		while = {
+			count = 4
+			create_ambient_object = {
+				type = "medium_debris_01_object"
+				location = solar_system
+			}
+		}
+	}
+}
