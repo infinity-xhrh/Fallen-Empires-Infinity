@@ -869,7 +869,7 @@ country_event = {
                 add_trait = leader_trait_graysky_scitist
                 change_leader_portrait = gray_sky
                 add_trait = subclass_scientist_governor
-                save_global_event_target_as = Graysky
+                save_global_event_target_as = gray_sky
                 set_leader_flag = immune_to_negative_traits
                 set_leader_flag = legendary_leader
             }
@@ -897,13 +897,18 @@ country_event = {
             has_country_flag = graysky_reforming
         }
         has_country_flag = graysky_scitist
-       from = { is_country_type = graysky }
+        from = { is_country_type = graysky }
     }
     after = {
         hidden_effect = { remove_country_flag = graysky_diplomacy_engaged }
     }
     option = {
         name = Nanites_grander.20.a
+    }
+    option = {
+        name = Nanites_grander.20.d
+        custom_tooltip = Nanites_grander.20.d.tooltip
+        country_event = { id = Nanites_grander.35 }
     }
     option = {
         name = Nanites_grander.20.b
@@ -914,6 +919,10 @@ country_event = {
                 remove_all_traits = yes
                 change_leader_class = commander
                 add_trait = leader_trait_graysky_commander
+                set_skill = 1
+                add_experience = 100000
+                set_leader_flag = immune_to_negative_traits
+                set_leader_flag = legendary_leader
             }
         }
     }
@@ -987,16 +996,20 @@ country_event = {
         custom_tooltip = Nanites_grander.20.d.tooltip
         country_event = { id = Nanites_grander.35 }
     }
-
     option = {
         name = Nanites_grander.21.b
         hidden_effect = {
             set_country_flag = graysky_scitist
             remove_country_flag = graysky_commander
             event_target:gray_sky = {
-                change_leader_class = scientist
                 remove_all_traits = yes
+                change_leader_class = scientist
                 add_trait = leader_trait_graysky_scitist
+                add_trait = subclass_scientist_governor
+                set_skill = 1
+                add_experience = 100000
+                set_leader_flag = immune_to_negative_traits
+                set_leader_flag = legendary_leader
             }
         }
     }

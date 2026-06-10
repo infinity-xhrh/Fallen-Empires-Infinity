@@ -1,0 +1,12 @@
+# Scope: Leader
+# Returns owner pop count / 100.
+# The 0.01 multiplier is used to adapt the old per-pop research scaling to Stellaris 4.x population scale.
+fei_graysky_owner_pop_count = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_pop_amount
+		trigger_scope = owner
+		mode = add
+		mult = 0.01
+	}
+}
