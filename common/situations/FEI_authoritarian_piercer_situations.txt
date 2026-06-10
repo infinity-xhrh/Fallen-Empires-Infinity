@@ -1,0 +1,67 @@
+fei_authoritarian_shroud_piercing_situation = {
+	picture = GFX_evt_shroud
+	category = positive
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_good
+
+	on_start = {
+		hidden_effect = {
+			set_situation_flag = fei_authoritarian_shroud_piercing_active
+			owner = { country_event = { id = fei_authoritarian_story.102 days = 10 } }
+		}
+	}
+
+	on_progress_complete = {
+		custom_tooltip = fei_authoritarian_shroud_piercing_complete_tooltip
+		hidden_effect = {
+			owner = { country_event = { id = fei_authoritarian_story.120 days = 10 } }
+			destroy_situation = this
+		}
+	}
+
+	on_abort = {
+		hidden_effect = { destroy_situation = this }
+	}
+
+	abort_trigger = {
+		OR = {
+			has_global_flag = FEI_authoritarian_veil_system_destroyed
+			has_global_flag = FEI_authoritarian_god_emperor_outcome_started
+			owner = { NOT = { has_country_flag = FEI_authoritarian_veil_machine_excavator } }
+		}
+	}
+
+	stages = {
+		fei_authoritarian_shroud_piercing_stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_green
+			end = 33
+			custom_tooltip = fei_authoritarian_shroud_piercing_stage_1_tooltip
+			on_first_enter = { owner = { country_event = { id = fei_authoritarian_story.103 days = 10 } } }
+		}
+		fei_authoritarian_shroud_piercing_stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_green
+			end = 66
+			custom_tooltip = fei_authoritarian_shroud_piercing_stage_2_tooltip
+			on_first_enter = { owner = { country_event = { id = fei_authoritarian_story.104 days = 10 } } }
+		}
+		fei_authoritarian_shroud_piercing_stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_green
+			end = 100
+			custom_tooltip = fei_authoritarian_shroud_piercing_stage_3_tooltip
+			on_first_enter = { owner = { country_event = { id = fei_authoritarian_story.105 days = 10 } } }
+		}
+	}
+
+	approach = {
+		name = fei_authoritarian_shroud_piercing_approach_hold
+		icon = GFX_situation_approach_shield
+		icon_background = GFX_situation_approach_bg_blue
+		default = yes
+		ai_weight = { weight = 100 }
+	}
+
+	monthly_progress = { base = 1.20 }
+}

@@ -1,0 +1,34 @@
+fei_authoritarian_piercer_stage_1 = {
+	shroud_delve_cooldown = -0.25
+	ship_psionic_aura_speed_mult = 0.10
+	ship_psionic_aura_fire_rate_mult = 0.10
+	category_psionics_draw_chance_mult = 0.10
+}
+
+fei_authoritarian_piercer_stage_2 = {
+	shroud_delve_cooldown = -0.50
+	ship_psionic_aura_speed_mult = 0.20
+	ship_psionic_aura_fire_rate_mult = 0.20
+	category_psionics_draw_chance_mult = 0.20
+}
+
+fei_authoritarian_piercer_stage_3 = {
+	shroud_delve_cooldown = -0.75
+	ship_psionic_aura_speed_mult = 0.35
+	ship_psionic_aura_fire_rate_mult = 0.35
+	category_psionics_draw_chance_mult = 0.35
+}
+
+fei_authoritarian_god_emperor_crisis_guidance = {
+	ship_fire_rate_mult = 0.25
+	ship_weapon_damage = 0.25
+	ship_speed_mult = 0.15
+	ship_shield_mult = 0.25
+	ship_armor_mult = 0.25
+}
+
+fei_authoritarian_mad_god_edict_pressure = {
+	pop_happiness = -0.10
+	planet_stability_add = -10
+	country_naval_cap_mult = -0.10
+}

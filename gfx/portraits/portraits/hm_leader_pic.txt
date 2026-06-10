@@ -1,7 +1,4 @@
 
 portraits = {
-    gray_sky1 = { texturefile = gfx/models/portraits/Graysky_1.png }
-    gray_sky2 = { texturefile = gfx/models/portraits/Graysky_2.png }
-    gray_sky3 = { texturefile = gfx/models/portraits/Graysky_3.png }
-
+    gray_sky = { texturefile = gfx/models/portraits/gray_sky.dds  }
 }
