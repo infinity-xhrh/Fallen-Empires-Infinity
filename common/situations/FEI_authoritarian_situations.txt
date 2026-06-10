@@ -1,0 +1,74 @@
+# FEI authoritarian fallen emperor rescue war situation.
+# This file follows the format already used by common/situations/FEI_militarist_situations.txt.
+
+fei_authoritarian_veil_war_situation = {
+	picture = GFX_evt_shroud
+	category = negative
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_outcome_bad
+
+	on_start = {
+		hidden_effect = {
+			set_situation_flag = fei_authoritarian_veil_war_active
+		}
+	}
+
+	on_progress_complete = {
+		custom_tooltip = fei_authoritarian_veil_war_complete_tooltip
+		hidden_effect = {
+			owner = {
+				country_event = { id = fei_authoritarian_story.89 }
+			}
+			destroy_situation = this
+		}
+	}
+
+	on_abort = {
+		hidden_effect = {
+			destroy_situation = this
+		}
+	}
+
+	abort_trigger = {
+		OR = {
+			has_global_flag = FEI_authoritarian_veil_system_destroyed
+			has_global_flag = FEI_authoritarian_veil_war_finished
+			owner = {
+				NOT = { has_country_flag = FEI_authoritarian_veil_machine_excavator }
+			}
+		}
+	}
+
+	stages = {
+		fei_authoritarian_veil_war_stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 33
+			custom_tooltip = fei_authoritarian_veil_war_stage_1_tooltip
+		}
+		fei_authoritarian_veil_war_stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_red
+			end = 66
+			custom_tooltip = fei_authoritarian_veil_war_stage_2_tooltip
+		}
+		fei_authoritarian_veil_war_stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = fei_authoritarian_veil_war_stage_3_tooltip
+		}
+	}
+
+	approach = {
+		name = fei_authoritarian_veil_war_hold_the_line
+		icon = GFX_situation_approach_shield
+		icon_background = GFX_situation_approach_bg_blue
+		default = yes
+		ai_weight = { weight = 100 }
+	}
+
+	monthly_progress = {
+		base = 0.70
+	}
+}

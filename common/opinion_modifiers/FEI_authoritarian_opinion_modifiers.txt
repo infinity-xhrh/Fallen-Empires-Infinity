@@ -1,0 +1,19 @@
+opinion_FEI_refused_piercer_recalibration_authoritarian = {
+	opinion = -300
+	years = 50
+}
+
+opinion_FEI_refused_piercer_recalibration_enclave = {
+	opinion = -75
+	years = 30
+}
+
+opinion_FEI_mad_queen_ultimatum_refused = {
+	opinion = -500
+	years = 100
+}
+
+opinion_FEI_rallied_against_mad_queen = {
+	opinion = 150
+	years = 50
+}

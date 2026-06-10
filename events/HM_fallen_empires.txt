@@ -641,7 +641,7 @@ country_event = {
             }
             ethic_leader_creator = {
                 SPECIES_CLASS = " event_target:lgate_grander_fallen.owner_main_species"
-                LEADER_PORTRAIT = gray_sky1
+                LEADER_PORTRAIT = gray_sky
                 CLASS = scientist
                 NAME = Lgater_leader
                 LEVEL = 10
@@ -652,7 +652,7 @@ country_event = {
                 CATCH_PHRASE = Lgater_leader_phrase
             }
             last_created_leader = {
-                change_leader_portrait = gray_sky1
+                change_leader_portrait = gray_sky
                 add_trait = leader_trait_graysky_scitist
                 add_trait = subclass_scientist_governor
                 save_event_target_as = showing_leader
@@ -704,7 +704,7 @@ country_event = {
                 randomize_traits = no
                 effect = {
                     add_trait = leader_trait_graysky_scitist
-                    change_leader_portrait = gray_sky1
+                    change_leader_portrait = gray_sky
                     add_trait = subclass_scientist_governor
                     save_global_event_target_as = gray_sky
                     set_leader_flag = immune_to_negative_traits
@@ -799,9 +799,7 @@ country_event = {
     id = Nanites_grander.17
     is_triggered_only = yes
     hide_window = yes
-    trigger = {
-        exists = event_target:gray_sky
-    }
+    trigger = { exists = event_target:gray_sky }
     immediate = {
         event_target:gray_sky = {
             if = {
@@ -820,6 +818,7 @@ country_event = {
                 limit = { has_global_flag = graysky_portrait_3 }
                 change_leader_portrait = gray_sky3
             }
+            else = { change_leader_portrait = gray_sky }
         }
         country_event = { id = Nanites_grander.17 days = 31 }
     }
@@ -868,7 +867,7 @@ country_event = {
             randomize_traits = no
             effect = {
                 add_trait = leader_trait_graysky_scitist
-                change_leader_portrait = gray_sky1
+                change_leader_portrait = gray_sky
                 add_trait = subclass_scientist_governor
                 save_global_event_target_as = Graysky
                 set_leader_flag = immune_to_negative_traits
@@ -905,11 +904,6 @@ country_event = {
     }
     option = {
         name = Nanites_grander.20.a
-    }
-    option = {
-        name = Nanites_grander.20.d
-        custom_tooltip = Nanites_grander.20.d.tooltip
-        country_event = { id = Nanites_grander.35 }
     }
     option = {
         name = Nanites_grander.20.b
@@ -993,6 +987,7 @@ country_event = {
         custom_tooltip = Nanites_grander.20.d.tooltip
         country_event = { id = Nanites_grander.35 }
     }
+
     option = {
         name = Nanites_grander.21.b
         hidden_effect = {
@@ -1327,15 +1322,13 @@ country_event = {
     }
 }
 
-
-#衣柜
 country_event = {
     id = Nanites_grander.35
     is_triggered_only = yes
     title = Nanites_grander.35
-    desc = 11-F
+    desc = Nanites_grander.35.desc
     diplomatic = yes
-    diplomatic_title = 11-F
+    diplomatic_title = Nanites_grander.35
     picture_event_data = {
         portrait = root.ruler
         room = root
