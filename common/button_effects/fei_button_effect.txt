@@ -1,0 +1,102 @@
+
+GS_xiaoxiang_1 = {
+	potential = { always = yes }
+	allow = {
+		hidden_trigger = {
+			not = { has_global_flag = graysky_not_has_special_protriat }
+		}
+	}
+	effect = {}
+}
+GS_xiaoxiang_2 = {
+	potential = { always = yes }
+	allow = {
+		hidden_trigger = {
+			not = { has_global_flag = graysky_portrait_1 }
+		}
+	}
+	effect = {}
+}
+GS_xiaoxiang_3 = {
+	potential = { always = yes }
+	allow = {
+		hidden_trigger = {
+			not = { has_global_flag = graysky_portrait_2 }
+		}
+	}
+	effect = {}
+}
+GS_xiaoxiang_4 = {
+	potential = { always = yes }
+	allow = {
+		hidden_trigger = {
+			not = { has_global_flag = graysky_portrait_3 }
+		}
+	}
+	effect = {}
+}
+
+FEI_graysky_button_1= {
+	potential = { always = yes }
+	allow = {
+		custom_tooltip = no_special_portriat
+		always = yes
+	}
+	effect = {
+		set_global_flag = graysky_not_has_special_protriat
+		remove_global_flag = graysky_portrait_1
+		remove_global_flag = graysky_portrait_2
+		remove_global_flag = graysky_portrait_3
+		event_target:gray_sky = {
+			change_leader_portrait = root.owner_main_species
+		}
+	}
+}
+
+FEI_graysky_button_2= {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = {
+		hidden_effect = {
+			set_global_flag = graysky_portrait_1
+			remove_global_flag = graysky_portrait_2
+			remove_global_flag = graysky_portrait_3
+			remove_global_flag = graysky_not_has_special_protriat
+			event_target:gray_sky = {
+				change_leader_portrait = gray_sky1
+			}
+		}
+	}
+}
+
+FEI_graysky_button_3= {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = {
+		hidden_effect = {
+			set_global_flag = graysky_portrait_2
+			remove_global_flag = graysky_portrait_1
+			remove_global_flag = graysky_portrait_3
+			remove_global_flag = graysky_not_has_special_protriat
+			event_target:gray_sky = {
+				change_leader_portrait = gray_sky2
+			}
+		}
+	}
+}
+
+FEI_graysky_button_4= {
+	potential = { always = yes }
+	allow = { always = yes }
+	effect = {
+		hidden_effect = {
+			set_global_flag = graysky_portrait_3
+			remove_global_flag = graysky_not_has_special_protriat
+			remove_global_flag = graysky_portrait_1
+			remove_global_flag = graysky_portrait_2
+			event_target:gray_sky = {
+				change_leader_portrait = gray_sky3
+			}
+		}
+	}
+}
