@@ -12,8 +12,9 @@ leader_trait_graysky_commander = {
     }
     self_modifier = { leaders_upkeep_mult = -1 }
     fleet_modifier = {
-        ship_hull_regen_add_perc = 0.4
-        ship_armor_regen_add_perc = 0.4
+        ship_hull_regen_add_perc = 0.5
+        ship_armor_regen_add_perc = 0.5
+        ship_weapon_range_mult = 1
     }
     leader_potential_add = { always = no }
     leader_class = { commander }
@@ -44,17 +45,17 @@ leader_trait_graysky_scitist = {
         ship_anomaly_generation_chance_mult = 0.5
     }
     triggered_self_modifier = {
-        potential = { root.owner = { not = { is_gestalt = no }} }
-        leader_commanders_physics_research_produces_add = 1
-        leader_commanders_society_research_produces_add = 1
-        leader_commanders_engineering_research_produces_add = 1
+        potential = { root.owner = { is_gestalt = no } }
+        leader_scientists_physics_research_produces_add = 1
+        leader_scientists_society_research_produces_add = 1
+        leader_scientists_engineering_research_produces_add = 1
         mult = root.owner.trigger:count_owned_pop
     }
     triggered_self_modifier = {
-        potential = { root.owner = { not = { is_gestalt = yes }} }
-        leader_commanders_physics_research_produces_add = 0.5
-        leader_commanders_society_research_produces_add = 0.5
-        leader_commanders_engineering_research_produces_add = 0.5
+        potential = { root.owner = { is_gestalt = yes } }
+        leader_scientists_physics_research_produces_add = 0.5
+        leader_scientists_society_research_produces_add = 0.5
+        leader_scientists_engineering_research_produces_add = 0.5
         mult = root.owner.trigger:count_owned_pop
     }
     leader_potential_add = { always = no }
