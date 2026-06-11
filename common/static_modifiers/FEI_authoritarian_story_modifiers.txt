@@ -1,5 +1,6 @@
 fei_authoritarian_piercer_stage_1 = {
 	shroud_delve_cooldown = -0.25
+	shroud_delve_cost = -0.10
 	ship_psionic_aura_speed_mult = 0.10
 	ship_psionic_aura_fire_rate_mult = 0.10
 	category_psionics_draw_chance_mult = 0.10
@@ -7,6 +8,7 @@ fei_authoritarian_piercer_stage_1 = {
 
 fei_authoritarian_piercer_stage_2 = {
 	shroud_delve_cooldown = -0.50
+	shroud_delve_cost = -0.20
 	ship_psionic_aura_speed_mult = 0.20
 	ship_psionic_aura_fire_rate_mult = 0.20
 	category_psionics_draw_chance_mult = 0.20
@@ -14,6 +16,7 @@ fei_authoritarian_piercer_stage_2 = {
 
 fei_authoritarian_piercer_stage_3 = {
 	shroud_delve_cooldown = -0.75
+	shroud_delve_cost = -0.30
 	ship_psionic_aura_speed_mult = 0.35
 	ship_psionic_aura_fire_rate_mult = 0.35
 	category_psionics_draw_chance_mult = 0.35
@@ -32,3 +35,27 @@ fei_authoritarian_mad_god_edict_pressure = {
 	planet_stability_add = -10
 	country_naval_cap_mult = -0.10
 }
+
+fei_authoritarian_veil_war_stage_1_modifier = {
+	ship_fire_rate_mult = 0.05
+}
+
+fei_authoritarian_veil_war_stage_2_modifier = {
+	ship_fire_rate_mult = 0.10
+}
+
+fei_authoritarian_veil_war_stage_3_modifier = {
+	ship_fire_rate_mult = 0.15
+}
+
+fei_authoritarian_veil_war_second_immortal_shielding = {
+	ship_shield_mult = 0.20
+}
+
+fei_authoritarian_neutral_guard_combat_boost = {
+	ship_weapon_damage = 0.5
+	ship_fire_rate_mult = 0.5
+	ship_shield_regen_add_perc = 0.5
+	ship_armor_regen_add_perc = 0.5
+}
+

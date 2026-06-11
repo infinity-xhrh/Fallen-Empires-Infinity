@@ -14,6 +14,7 @@ fei_authoritarian_veil_war_situation = {
 	}
 
 	on_progress_complete = {
+		hidden_effect = { owner = { remove_modifier = fei_authoritarian_veil_war_stage_1_modifier remove_modifier = fei_authoritarian_veil_war_stage_2_modifier remove_modifier = fei_authoritarian_veil_war_stage_3_modifier remove_modifier = fei_authoritarian_veil_war_second_immortal_shielding } }
 		custom_tooltip = fei_authoritarian_veil_war_complete_tooltip
 		hidden_effect = {
 			owner = {
@@ -25,6 +26,7 @@ fei_authoritarian_veil_war_situation = {
 
 	on_abort = {
 		hidden_effect = {
+			owner = { remove_modifier = fei_authoritarian_veil_war_stage_1_modifier remove_modifier = fei_authoritarian_veil_war_stage_2_modifier remove_modifier = fei_authoritarian_veil_war_stage_3_modifier remove_modifier = fei_authoritarian_veil_war_second_immortal_shielding }
 			destroy_situation = this
 		}
 	}
@@ -45,18 +47,21 @@ fei_authoritarian_veil_war_situation = {
 			icon_background = GFX_situation_stage_frame_red
 			end = 33
 			custom_tooltip = fei_authoritarian_veil_war_stage_1_tooltip
+			on_first_enter = { owner = { remove_modifier = fei_authoritarian_veil_war_stage_2_modifier remove_modifier = fei_authoritarian_veil_war_stage_3_modifier add_modifier = { modifier = fei_authoritarian_veil_war_stage_1_modifier days = -1 } country_event = { id = fei_authoritarian_story.70 days = 1 } } }
 		}
 		fei_authoritarian_veil_war_stage_2 = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_red
 			end = 66
 			custom_tooltip = fei_authoritarian_veil_war_stage_2_tooltip
+			on_first_enter = { owner = { remove_modifier = fei_authoritarian_veil_war_stage_1_modifier remove_modifier = fei_authoritarian_veil_war_stage_3_modifier add_modifier = { modifier = fei_authoritarian_veil_war_stage_2_modifier days = -1 } country_event = { id = fei_authoritarian_story.73 days = 1 } } }
 		}
 		fei_authoritarian_veil_war_stage_3 = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			custom_tooltip = fei_authoritarian_veil_war_stage_3_tooltip
+			on_first_enter = { owner = { remove_modifier = fei_authoritarian_veil_war_stage_1_modifier remove_modifier = fei_authoritarian_veil_war_stage_2_modifier add_modifier = { modifier = fei_authoritarian_veil_war_stage_3_modifier days = -1 } country_event = { id = fei_authoritarian_story.76 days = 1 } } }
 		}
 	}
 
@@ -66,6 +71,18 @@ fei_authoritarian_veil_war_situation = {
 		icon_background = GFX_situation_approach_bg_blue
 		default = yes
 		ai_weight = { weight = 100 }
+	}
+
+	approach = {
+		name = fei_authoritarian_veil_war_second_immortal_shielding_approach
+		icon = GFX_situation_approach_shield
+		icon_background = GFX_situation_approach_bg_blue
+		modifier = { ship_shield_mult = 0.20 }
+		resources = {
+			category = situations
+			upkeep = { zro = 2 }
+		}
+		ai_weight = { weight = 0 }
 	}
 
 	monthly_progress = {

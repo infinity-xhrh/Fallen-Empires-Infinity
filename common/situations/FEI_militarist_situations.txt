@@ -17,6 +17,7 @@ fei_militarist_signal_trace_situation = {
 	}
 
 	on_progress_complete = {
+		hidden_effect = { owner = { remove_modifier = fei_militarist_signal_trace_stage_1_modifier remove_modifier = fei_militarist_signal_trace_stage_2_modifier remove_modifier = fei_militarist_signal_trace_stage_3_modifier } }
 		custom_tooltip = fei_militarist_signal_trace_complete_tooltip
 		hidden_effect = {
 			owner = {
@@ -28,6 +29,7 @@ fei_militarist_signal_trace_situation = {
 
 	on_abort = {
 		hidden_effect = {
+			owner = { remove_modifier = fei_militarist_signal_trace_stage_1_modifier remove_modifier = fei_militarist_signal_trace_stage_2_modifier remove_modifier = fei_militarist_signal_trace_stage_3_modifier }
 			destroy_situation = this
 		}
 	}
@@ -48,18 +50,21 @@ fei_militarist_signal_trace_situation = {
 			icon_background = GFX_situation_stage_frame_red
 			end = 30
 			custom_tooltip = fei_militarist_signal_trace_stage_1_tooltip
+			on_first_enter = { owner = { remove_modifier = fei_militarist_signal_trace_stage_2_modifier remove_modifier = fei_militarist_signal_trace_stage_3_modifier add_modifier = { modifier = fei_militarist_signal_trace_stage_1_modifier days = -1 } } }
 		}
 		fei_militarist_signal_trace_stage_2 = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_red
 			end = 65
 			custom_tooltip = fei_militarist_signal_trace_stage_2_tooltip
+			on_first_enter = { owner = { remove_modifier = fei_militarist_signal_trace_stage_1_modifier remove_modifier = fei_militarist_signal_trace_stage_3_modifier add_modifier = { modifier = fei_militarist_signal_trace_stage_2_modifier days = -1 } } }
 		}
 		fei_militarist_signal_trace_stage_3 = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			custom_tooltip = fei_militarist_signal_trace_stage_3_tooltip
+			on_first_enter = { owner = { remove_modifier = fei_militarist_signal_trace_stage_1_modifier remove_modifier = fei_militarist_signal_trace_stage_2_modifier add_modifier = { modifier = fei_militarist_signal_trace_stage_3_modifier days = -1 } } }
 		}
 	}
 

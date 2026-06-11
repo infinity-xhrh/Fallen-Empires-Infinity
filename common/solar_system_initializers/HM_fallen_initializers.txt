@@ -63,7 +63,7 @@ fallen_lgategrander = {
                     size = 9400
                     species = owner_main_species
                 }
-                create_fallen_empire_starting_navy = yes
+                create_FEI_lgategrander_starting_navy = yes
                 while = {
                     count = 20
                     create_army = {
@@ -117,7 +117,7 @@ fallen_lgategrander = {
                 size = 9400
                 species = owner_main_species
             }
-            create_fallen_empire_starting_navy = yes
+            create_FEI_lgategrander_starting_navy = yes
             while = {
                 count = 20
                 create_army = {

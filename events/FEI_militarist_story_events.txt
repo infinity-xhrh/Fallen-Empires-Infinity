@@ -626,6 +626,10 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_fleet_neutral
 	event_picture_background = GFX_evt_busy_spaceport
+	picture_event_data = {
+		portrait = event_target:fei_elu_commander
+		room = root
+	}
 
 	option = {
 		name = fei_militarist_story.71.a
@@ -664,6 +668,7 @@ country_event = {
 		allow = {
 			custom_tooltip = {
 				fail_text = fei_militarist_story.72.insufficient_resources
+				NOT = { has_country_flag = fei_elu_favor_cooldown }
 				resource_stockpile_compare = { resource = energy value >= 5000 }
 				resource_stockpile_compare = { resource = alloys value >= 2500 }
 			}
@@ -678,8 +683,9 @@ country_event = {
 				value = 6
 				min = 1000
 			}
+			set_timed_country_flag = { flag = fei_elu_favor_cooldown days = 540 }
 			change_variable = { which = fei_elu_favor value = 25 }
-			country_event = { id = fei_militarist_story.72 days = 1 }
+			country_event = { id = fei_militarist_story.72 days = 540 }
 		}
 	}
 
@@ -688,6 +694,7 @@ country_event = {
 		allow = {
 			custom_tooltip = {
 				fail_text = fei_militarist_story.72.insufficient_resources
+				NOT = { has_country_flag = fei_elu_favor_cooldown }
 				resource_stockpile_compare = { resource = energy value >= 8000 }
 				resource_stockpile_compare = { resource = consumer_goods value >= 3000 }
 			}
@@ -697,13 +704,13 @@ country_event = {
 				energy = -8000
 				consumer_goods = -3000
 			}
-			add_monthly_resource_mult = {
-				resource = unity
-				value = 6
-				min = 1000
+			every_owned_leader = {
+				limit = { leader_class = commander }
+				add_experience = 1000
 			}
+			set_timed_country_flag = { flag = fei_elu_favor_cooldown days = 540 }
 			change_variable = { which = fei_elu_favor value = 25 }
-			country_event = { id = fei_militarist_story.72 days = 1 }
+			country_event = { id = fei_militarist_story.72 days = 540 }
 		}
 	}
 

@@ -17,3 +17,15 @@ FEI_militarist_forerunner_final_order = {
 	damage_vs_country_type_ai_empire_mult = 10
 	damage_vs_country_type_gray_goo_mult = 10
 }
+
+fei_militarist_signal_trace_stage_1_modifier = {
+	all_technology_research_speed = 0.05
+}
+
+fei_militarist_signal_trace_stage_2_modifier = {
+	planet_jobs_produces_mult = 0.05
+}
+
+fei_militarist_signal_trace_stage_3_modifier = {
+	ship_build_speed_mult = 0.30
+}

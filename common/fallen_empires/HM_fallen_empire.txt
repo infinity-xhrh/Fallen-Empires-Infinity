@@ -3,7 +3,7 @@ fallen_machine_empire_LgateGrander = {
 	graphical_culture = "fallen_machine_empire_01"
 	initializer = fallen_lgategrander
 	weight_modifier = {
-		base = 100
+		base = 0
 		modifier = {
 			factor = 0
 			num_fallen_empires = 0
@@ -13,10 +13,7 @@ fallen_machine_empire_LgateGrander = {
 			lgate_enabled = no
 		}
 	}
-	possible = {
-		# 4.3.x: Synthetic Dawn content is part of the base game; keep the L-Gate/Distant Stars gate.
-		host_has_dlc = "Distant Stars Story Pack"
-	}
+	possible = { always = no }
 	create_country_effect = {
 		create_species = {
 			name = random
