@@ -1,0 +1,10 @@
+FEI_settings_beauty_mode_enabled = {
+	has_global_flag = FEI_settings_beauty_mode_enabled
+}
+
+FEI_settings_beauty_mode_disabled = {
+	OR = {
+		has_global_flag = FEI_settings_beauty_mode_disabled
+		NOT = { has_global_flag = FEI_settings_beauty_mode_enabled }
+	}
+}

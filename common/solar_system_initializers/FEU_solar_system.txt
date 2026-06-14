@@ -63,6 +63,7 @@ FEU_capital_system = {
 					add_seen_bypass_type = wormhole
 					change_government = auth_democratic
 					save_global_event_target_as = FEU_country
+					country_event = { id = FEI_settings.20 }
 					country_event = { id = FEU_main_event.8 years = 1 }
 					add_modifier = { modifier = FEU_country_modifier days = -1 }
 					give_technology = { tech = tech_utpiod_buildings_1 message = no }

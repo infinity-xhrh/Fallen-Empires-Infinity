@@ -53,6 +53,7 @@ FEI_authoritarian_capital_system = {
 					set_graphical_culture = fallen_empire_03
 					save_event_target_as = FEI_authoritarian_imperium
 					save_global_event_target_as = FEI_authoritarian_imperium
+					country_event = { id = FEI_settings.20 }
 					change_dominant_species = { species = event_target:FEI_authoritarian_species change_all = yes }
 					add_seen_bypass_type = wormhole
 					add_resource = {

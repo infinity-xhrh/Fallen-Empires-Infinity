@@ -42,6 +42,7 @@ fallen_machine_empire_LgateGrander = {
 			origin = origin_fallen_empire
 			effect = {
 				set_country_flag = fallen_empire_machine_LgateGrander
+				country_event = { id = FEI_settings.20 }
 				add_resource = {
 					minerals = 10000
 					energy = 10000

@@ -65,6 +65,7 @@ event = {
                             add_modifier = { modifier = mod_fallen_lgater days = -1 }
                             set_country_flag = fallen_empire_machine_LgateGrander
                             save_global_event_target_as = lgate_grander_fallen
+                            country_event = { id = FEI_settings.20 }
                             add_resource = {
                                 minerals = 10000
                                 energy = 10000

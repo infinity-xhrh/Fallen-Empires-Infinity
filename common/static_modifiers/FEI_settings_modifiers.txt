@@ -1,0 +1,30 @@
+# FEI start settings difficulty modifiers.
+# Applied only to FEI custom fallen empires by FEI_settings.20.
+
+fei_settings_difficulty_reduced = {
+	ship_weapon_damage = -0.25
+	ship_fire_rate_mult = -0.25
+	ship_shield_mult = -0.25
+	ship_armor_mult = -0.25
+}
+
+fei_settings_difficulty_hard = {
+	ship_weapon_damage = 0.50
+	ship_fire_rate_mult = 0.50
+	ship_shield_mult = 0.50
+	ship_armor_mult = 0.50
+}
+
+fei_settings_difficulty_elite = {
+	ship_weapon_damage = 1.00
+	ship_fire_rate_mult = 1.00
+	ship_shield_mult = 1.00
+	ship_armor_mult = 1.00
+}
+
+fei_settings_difficulty_nightmare = {
+	ship_weapon_damage = 2.00
+	ship_fire_rate_mult = 2.00
+	ship_shield_mult = 2.00
+	ship_armor_mult = 2.00
+}

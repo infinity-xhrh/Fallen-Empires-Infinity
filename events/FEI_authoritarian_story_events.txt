@@ -563,10 +563,9 @@ country_event = {
 			}
 			if = {
 				limit = { event_target:FEI_authoritarian_current_legacy_helper = { is_hive_empire = yes } }
-				add_global_ship_design = "NAME_Swarm_Queen"
-				add_global_ship_design = "NAME_Swarm_Large"
-				add_global_ship_design = "NAME_Swarm_Carrier"
-				add_global_ship_design = "NAME_Swarm_Small"
+				add_global_ship_design = "NAME_Cutholoids"
+				add_global_ship_design = "NAME_Cutholoids_Juvenile"
+				add_global_ship_design = "NAME_Cutholoids_Hatchling"
 			}
 			else = {
 				add_global_ship_design = "NAME_Alpha"
@@ -580,14 +579,14 @@ country_event = {
 					set_owner = event_target:FEI_authoritarian_neutral_guard_country
 					if = {
 						limit = { event_target:FEI_authoritarian_current_legacy_helper = { is_hive_empire = yes } }
-						create_ship = { name = random design = "NAME_Swarm_Queen" }
-						create_ship = { name = random design = "NAME_Swarm_Large" }
-						create_ship = { name = random design = "NAME_Swarm_Carrier" }
-						create_ship = { name = random design = "NAME_Swarm_Large" }
-						create_ship = { name = random design = "NAME_Swarm_Small" }
-						create_ship = { name = random design = "NAME_Swarm_Small" }
-						create_ship = { name = random design = "NAME_Swarm_Small" }
-						create_ship = { name = random design = "NAME_Swarm_Small" }
+						create_ship = { name = random design = "NAME_Cutholoids" }
+						create_ship = { name = random design = "NAME_Cutholoids_Juvenile" }
+						create_ship = { name = random design = "NAME_Cutholoids" }
+						create_ship = { name = random design = "NAME_Cutholoids_Juvenile" }
+						create_ship = { name = random design = "NAME_Cutholoids_Hatchling" }
+						create_ship = { name = random design = "NAME_Cutholoids_Hatchling" }
+						create_ship = { name = random design = "NAME_Cutholoids_Hatchling" }
+						create_ship = { name = random design = "NAME_Cutholoids_Hatchling" }
 					}
 					else = {
 						create_ship = { name = random design = "NAME_Alpha" graphical_culture = event_target:FEI_authoritarian_current_legacy_helper }
@@ -825,6 +824,9 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_shroud
 	event_picture_background = GFX_evt_shroud
+	picture_event_data = {
+		planet_background = event_target:FEI_authoritarian_veil_machine_planet
+	}
 	trigger = {
 		has_country_flag = FEI_authoritarian_veil_machine_excavator
 		has_global_flag = FEI_authoritarian_pre_storm_ready
@@ -995,6 +997,9 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_shroud
 	event_picture_background = GFX_evt_shroud
+	picture_event_data = {
+		planet_background = event_target:FEI_authoritarian_veil_machine_planet
+	}
 	trigger = { has_country_flag = FEI_authoritarian_veil_machine_excavator has_global_flag = FEI_authoritarian_veil_war_started NOT = { has_global_flag = FEI_authoritarian_veil_system_destroyed } NOT = { has_global_flag = FEI_authoritarian_veil_war_stage_1_spawned } exists = event_target:FEI_authoritarian_shroud_betrayers }
 	immediate = { set_global_flag = FEI_authoritarian_veil_war_stage_1_spawned country_event = { id = fei_authoritarian_story.71 days = 10 } }
 	option = { name = fei_authoritarian_story.70.a }
@@ -1049,6 +1054,9 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_shroud
 	event_picture_background = GFX_evt_shroud
+	picture_event_data = {
+		planet_background = event_target:FEI_authoritarian_veil_machine_planet
+	}
 	trigger = { has_country_flag = FEI_authoritarian_veil_machine_excavator NOT = { has_global_flag = FEI_authoritarian_veil_system_destroyed } NOT = { has_global_flag = FEI_authoritarian_veil_war_stage_2_spawned } exists = event_target:FEI_authoritarian_shroud_betrayers }
 	immediate = { set_global_flag = FEI_authoritarian_veil_war_stage_2_spawned country_event = { id = fei_authoritarian_story.74 days = 10 } }
 	option = { name = fei_authoritarian_story.73.a }
@@ -1106,6 +1114,9 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_shroud
 	event_picture_background = GFX_evt_shroud
+	picture_event_data = {
+		planet_background = event_target:FEI_authoritarian_veil_machine_planet
+	}
 	trigger = { has_country_flag = FEI_authoritarian_veil_machine_excavator NOT = { has_global_flag = FEI_authoritarian_veil_system_destroyed } NOT = { has_global_flag = FEI_authoritarian_veil_war_stage_3_spawned } exists = event_target:FEI_authoritarian_shroud_betrayers }
 	immediate = { set_global_flag = FEI_authoritarian_veil_war_stage_3_spawned country_event = { id = fei_authoritarian_story.77 days = 10 } }
 	option = { name = fei_authoritarian_story.76.a }
@@ -1229,9 +1240,12 @@ country_event = {
 	title = fei_authoritarian_story.91.name
 	desc = fei_authoritarian_story.91.desc
 	is_triggered_only = yes
-	picture = GFX_evt_shroud
-	event_picture_background = GFX_evt_shroud
 
+	picture = GFX_evt_fe_overlords
+	event_picture_background = GFX_evt_fe_overlords
+	picture_event_data = {
+		planet_background = event_target:FEI_authoritarian_veil_machine_planet
+	}
 	trigger = {
 		has_country_flag = FEI_authoritarian_veil_machine_excavator
 		exists = event_target:FEI_authoritarian_imperium
@@ -1301,9 +1315,12 @@ country_event = {
 	title = fei_authoritarian_story.103.name
 	desc = fei_authoritarian_story.103.desc
 	is_triggered_only = yes
-	picture = GFX_evt_shroud
-	event_picture_background = GFX_evt_shroud
 
+	picture = GFX_evt_psionics
+	event_picture_background = GFX_evt_psionics
+	picture_event_data = {
+		planet_background = event_target:FEI_authoritarian_veil_machine_planet
+	}
 	immediate = {
 		every_country = {
 			limit = { is_country_type = default }
@@ -1321,9 +1338,12 @@ country_event = {
 	title = fei_authoritarian_story.104.name
 	desc = fei_authoritarian_story.104.desc
 	is_triggered_only = yes
+
 	picture = GFX_evt_shroud
 	event_picture_background = GFX_evt_shroud
-
+	picture_event_data = {
+		planet_background = event_target:FEI_authoritarian_veil_machine_planet
+	}
 	immediate = {
 		every_country = {
 			limit = { is_country_type = default }
@@ -1341,9 +1361,12 @@ country_event = {
 	title = fei_authoritarian_story.105.name
 	desc = fei_authoritarian_story.105.desc
 	is_triggered_only = yes
+
 	picture = GFX_evt_shroud
 	event_picture_background = GFX_evt_shroud
-
+	picture_event_data = {
+		planet_background = event_target:FEI_authoritarian_veil_machine_planet
+	}
 	immediate = {
 		every_country = {
 			limit = { is_country_type = default }
@@ -1702,6 +1725,7 @@ country_event = {
 			skill = 10
 			effect = {
 				add_trait = { trait = leader_trait_psionic }
+				add_trait = { trait = leader_trait_fei_heir_destiny }
 				save_event_target_as = FEI_authoritarian_returned_heir_leader
 			}
 		}

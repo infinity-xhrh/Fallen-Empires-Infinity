@@ -80,7 +80,7 @@ fei_authoritarian_veil_war_situation = {
 		modifier = { ship_shield_mult = 0.20 }
 		resources = {
 			category = situations
-			upkeep = { zro = 2 }
+			upkeep = { sr_zro = 2 }
 		}
 		ai_weight = { weight = 0 }
 	}

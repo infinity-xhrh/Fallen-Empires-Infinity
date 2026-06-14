@@ -584,6 +584,8 @@ country_event = {
 							2 = leader_trait_aggressive_2
 							3 = leader_trait_cautious_2
 							4 = leader_trait_trickster_2
+						
+							5 = leader_trait_fei_elu_destiny
 						}
 						effect = {
 							save_global_event_target_as = fei_elu_commander
@@ -824,5 +826,93 @@ country_event = {
 
 	option = {
 		name = fei_militarist_story.42.a
+	}
+}
+# Elu's destiny trait: intense battle teaching counter.
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+country_event = {
+	id = fei_militarist_story.900
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		fromfrom = {
+			exists = leader
+			leader = {
+				has_trait = leader_trait_fei_elu_destiny
+				NOT = { has_leader_flag = fei_elu_master_gunner_teaching_completed }
+			}
+		}
+		fromfromfrom = {
+			fleet_power >= 10000
+		}
+		any_owned_leader = {
+			leader_class = commander
+			has_trait = leader_trait_master_gunner
+			NOT = { has_trait = leader_trait_fei_elu_master_gunner }
+		}
+	}
+
+	immediate = {
+		fromfrom = {
+			leader = {
+				if = {
+					limit = { NOT = { is_variable_set = fei_elu_intense_battle_count } }
+					set_variable = { which = fei_elu_intense_battle_count value = 0 }
+				}
+				change_variable = { which = fei_elu_intense_battle_count value = 1 }
+				if = {
+					limit = {
+						check_variable = { which = fei_elu_intense_battle_count value >= 5 }
+						owner = {
+							any_owned_leader = {
+								leader_class = commander
+								has_trait = leader_trait_master_gunner
+								NOT = { has_trait = leader_trait_fei_elu_master_gunner }
+							}
+						}
+					}
+					set_leader_flag = fei_elu_master_gunner_teaching_completed
+					owner = { country_event = { id = fei_militarist_story.901 } }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = fei_militarist_story.901
+	title = fei_militarist_story.901.name
+	desc = fei_militarist_story.901.desc
+	is_triggered_only = yes
+	picture = GFX_evt_fleet_neutral
+	event_picture_background = GFX_evt_fleet_neutral
+
+	trigger = {
+		any_owned_leader = {
+			leader_class = commander
+			has_trait = leader_trait_master_gunner
+			NOT = { has_trait = leader_trait_fei_elu_master_gunner }
+		}
+	}
+
+	immediate = {
+		random_owned_leader = {
+			limit = {
+				leader_class = commander
+				has_trait = leader_trait_master_gunner
+				NOT = { has_trait = leader_trait_fei_elu_master_gunner }
+			}
+			save_event_target_as = fei_elu_master_gunner_student
+			remove_trait = leader_trait_master_gunner
+			add_trait = { trait = leader_trait_fei_elu_master_gunner }
+		}
+	}
+
+	option = {
+		name = fei_militarist_story.901.a
 	}
 }

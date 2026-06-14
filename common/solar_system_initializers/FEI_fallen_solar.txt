@@ -283,6 +283,7 @@ FEI_initializer_yanwuchang = {
 					set_graphical_culture = fallen_empire_02
 					save_event_target_as = FEI_militarist_forerunner
 					save_global_event_target_as = FEI_militarist_forerunner
+					country_event = { id = FEI_settings.20 }
 					add_resource = {
 						minerals = 10000
 						energy = 10000

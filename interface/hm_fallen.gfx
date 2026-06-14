@@ -72,4 +72,19 @@ spriteTypes = {
 		name = GFX_no_special_portrait
 		textureFile = gfx/models/portraits/no_special_portrait.dds
 	}
+
+	spriteType = {
+		name = GFX_leader_trait_fei_elu_destiny
+		textureFile = gfx/interface/icons/traits/leader_elu_destiny.dds
+	}
+
+	spriteType = {
+		name = GFX_leader_trait_fei_heir_destiny
+		textureFile = gfx/interface/icons/traits/leader_heir_destiny.dds
+	}
+
+	spriteType = {
+		name = GFX_leader_trait_fei_elu_master_gunner
+		textureFile = gfx/interface/icons/traits/leader_elu_master_gunner.dds
+	}
 }

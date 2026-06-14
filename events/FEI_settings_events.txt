@@ -1,0 +1,219 @@
+namespace = FEI_settings
+
+country_event = {
+	id = FEI_settings.1
+	title = FEI_settings.1.name
+	desc = FEI_settings.1.desc
+	is_triggered_only = yes
+	picture = GFX_evt_fallen_empire
+	event_picture_background = GFX_evt_fallen_empire
+	picture_event_data = {
+		portrait = root.ruler
+		room = root
+		planet_background = root.capital_scope
+	}
+
+	trigger = {
+		is_ai = no
+	}
+
+	immediate = {
+		set_country_flag = FEI_settings_panel_seen
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = FEI_settings_difficulty_reduced
+					has_global_flag = FEI_settings_difficulty_standard
+					has_global_flag = FEI_settings_difficulty_hard
+					has_global_flag = FEI_settings_difficulty_elite
+					has_global_flag = FEI_settings_difficulty_nightmare
+				}
+			}
+			set_global_flag = FEI_settings_difficulty_standard
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = FEI_settings_beauty_mode_enabled
+					has_global_flag = FEI_settings_beauty_mode_disabled
+				}
+			}
+			set_global_flag = FEI_settings_beauty_mode_disabled
+		}
+	}
+
+	option = { name = FEI_settings.1.update country_event = { id = FEI_settings.2 } }
+	option = { name = FEI_settings.1.difficulty country_event = { id = FEI_settings.3 } }
+	option = { name = FEI_settings.1.beauty country_event = { id = FEI_settings.4 } }
+	option = { name = FEI_settings.1.intro country_event = { id = FEI_settings.5 } }
+	option = { name = FEI_settings.1.tutorial country_event = { id = FEI_settings.6 } }
+	option = { name = FEI_settings.close }
+}
+
+country_event = {
+	id = FEI_settings.2
+	title = FEI_settings.2.name
+	desc = FEI_settings.2.desc
+	is_triggered_only = yes
+	picture = GFX_evt_alien_ruins
+	event_picture_background = GFX_evt_alien_ruins
+	picture_event_data = { portrait = root.ruler room = root planet_background = root.capital_scope }
+	option = { name = FEI_settings.back country_event = { id = FEI_settings.1 } }
+	option = { name = FEI_settings.close }
+}
+
+country_event = {
+	id = FEI_settings.3
+	title = FEI_settings.3.name
+	desc = FEI_settings.3.desc
+	is_triggered_only = yes
+	picture = GFX_evt_fallen_empire_awakes
+	event_picture_background = GFX_evt_fallen_empire_awakes
+	picture_event_data = { portrait = root.ruler room = root planet_background = root.capital_scope }
+
+	option = {
+		name = FEI_settings.3.reduced
+		custom_tooltip = FEI_settings.3.reduced.tooltip
+		hidden_effect = {
+			remove_global_flag = FEI_settings_difficulty_standard
+			remove_global_flag = FEI_settings_difficulty_hard
+			remove_global_flag = FEI_settings_difficulty_elite
+			remove_global_flag = FEI_settings_difficulty_nightmare
+			set_global_flag = FEI_settings_difficulty_reduced
+			every_country = { limit = { OR = { has_country_flag = fallen_empire_machine_LgateGrander has_country_flag = FEI_militarist_forerunner_empire has_country_flag = FEI_authoritarian_fallen_empire AND = { exists = event_target:FEU_country is_same_value = event_target:FEU_country } } } country_event = { id = FEI_settings.20 } }
+		}
+		country_event = { id = FEI_settings.3 }
+	}
+	option = {
+		name = FEI_settings.3.standard
+		custom_tooltip = FEI_settings.3.standard.tooltip
+		hidden_effect = {
+			remove_global_flag = FEI_settings_difficulty_reduced
+			remove_global_flag = FEI_settings_difficulty_hard
+			remove_global_flag = FEI_settings_difficulty_elite
+			remove_global_flag = FEI_settings_difficulty_nightmare
+			set_global_flag = FEI_settings_difficulty_standard
+			every_country = { limit = { OR = { has_country_flag = fallen_empire_machine_LgateGrander has_country_flag = FEI_militarist_forerunner_empire has_country_flag = FEI_authoritarian_fallen_empire AND = { exists = event_target:FEU_country is_same_value = event_target:FEU_country } } } country_event = { id = FEI_settings.20 } }
+		}
+		country_event = { id = FEI_settings.3 }
+	}
+	option = {
+		name = FEI_settings.3.hard
+		custom_tooltip = FEI_settings.3.hard.tooltip
+		hidden_effect = {
+			remove_global_flag = FEI_settings_difficulty_reduced
+			remove_global_flag = FEI_settings_difficulty_standard
+			remove_global_flag = FEI_settings_difficulty_elite
+			remove_global_flag = FEI_settings_difficulty_nightmare
+			set_global_flag = FEI_settings_difficulty_hard
+			every_country = { limit = { OR = { has_country_flag = fallen_empire_machine_LgateGrander has_country_flag = FEI_militarist_forerunner_empire has_country_flag = FEI_authoritarian_fallen_empire AND = { exists = event_target:FEU_country is_same_value = event_target:FEU_country } } } country_event = { id = FEI_settings.20 } }
+		}
+		country_event = { id = FEI_settings.3 }
+	}
+	option = {
+		name = FEI_settings.3.elite
+		custom_tooltip = FEI_settings.3.elite.tooltip
+		hidden_effect = {
+			remove_global_flag = FEI_settings_difficulty_reduced
+			remove_global_flag = FEI_settings_difficulty_standard
+			remove_global_flag = FEI_settings_difficulty_hard
+			remove_global_flag = FEI_settings_difficulty_nightmare
+			set_global_flag = FEI_settings_difficulty_elite
+			every_country = { limit = { OR = { has_country_flag = fallen_empire_machine_LgateGrander has_country_flag = FEI_militarist_forerunner_empire has_country_flag = FEI_authoritarian_fallen_empire AND = { exists = event_target:FEU_country is_same_value = event_target:FEU_country } } } country_event = { id = FEI_settings.20 } }
+		}
+		country_event = { id = FEI_settings.3 }
+	}
+	option = {
+		name = FEI_settings.3.nightmare
+		custom_tooltip = FEI_settings.3.nightmare.tooltip
+		hidden_effect = {
+			remove_global_flag = FEI_settings_difficulty_reduced
+			remove_global_flag = FEI_settings_difficulty_standard
+			remove_global_flag = FEI_settings_difficulty_hard
+			remove_global_flag = FEI_settings_difficulty_elite
+			set_global_flag = FEI_settings_difficulty_nightmare
+			every_country = { limit = { OR = { has_country_flag = fallen_empire_machine_LgateGrander has_country_flag = FEI_militarist_forerunner_empire has_country_flag = FEI_authoritarian_fallen_empire AND = { exists = event_target:FEU_country is_same_value = event_target:FEU_country } } } country_event = { id = FEI_settings.20 } }
+		}
+		country_event = { id = FEI_settings.3 }
+	}
+	option = { name = FEI_settings.back country_event = { id = FEI_settings.1 } }
+	option = { name = FEI_settings.close }
+}
+
+country_event = {
+	id = FEI_settings.4
+	title = FEI_settings.4.name
+	desc = FEI_settings.4.desc
+	is_triggered_only = yes
+	picture = GFX_evt_fallen_empire
+	event_picture_background = GFX_evt_fallen_empire
+	picture_event_data = { portrait = root.ruler room = root planet_background = root.capital_scope }
+
+	option = {
+		name = FEI_settings.4.enable
+		custom_tooltip = FEI_settings.4.enable.tooltip
+		hidden_effect = { remove_global_flag = FEI_settings_beauty_mode_disabled set_global_flag = FEI_settings_beauty_mode_enabled }
+		country_event = { id = FEI_settings.4 }
+	}
+	option = {
+		name = FEI_settings.4.disable
+		custom_tooltip = FEI_settings.4.disable.tooltip
+		hidden_effect = { remove_global_flag = FEI_settings_beauty_mode_enabled set_global_flag = FEI_settings_beauty_mode_disabled }
+		country_event = { id = FEI_settings.4 }
+	}
+	option = { name = FEI_settings.back country_event = { id = FEI_settings.1 } }
+	option = { name = FEI_settings.close }
+}
+
+country_event = {
+	id = FEI_settings.5
+	title = FEI_settings.5.name
+	desc = FEI_settings.5.desc
+	is_triggered_only = yes
+	picture = GFX_evt_fallen_empire
+	event_picture_background = GFX_evt_fallen_empire
+	picture_event_data = { portrait = root.ruler room = root planet_background = root.capital_scope }
+	option = { name = FEI_settings.back country_event = { id = FEI_settings.1 } }
+	option = { name = FEI_settings.close }
+}
+
+country_event = {
+	id = FEI_settings.6
+	title = FEI_settings.6.name
+	desc = FEI_settings.6.desc
+	is_triggered_only = yes
+	picture = GFX_evt_alien_ruins
+	event_picture_background = GFX_evt_alien_ruins
+	picture_event_data = { portrait = root.ruler room = root planet_background = root.capital_scope }
+	option = { name = FEI_settings.back country_event = { id = FEI_settings.1 } }
+	option = { name = FEI_settings.close }
+}
+
+country_event = {
+	id = FEI_settings.20
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			has_country_flag = fallen_empire_machine_LgateGrander
+			has_country_flag = FEI_militarist_forerunner_empire
+			has_country_flag = FEI_authoritarian_fallen_empire
+			AND = {
+				exists = event_target:FEU_country
+				is_same_value = event_target:FEU_country
+			}
+		}
+	}
+
+	immediate = {
+		remove_modifier = fei_settings_difficulty_reduced
+		remove_modifier = fei_settings_difficulty_hard
+		remove_modifier = fei_settings_difficulty_elite
+		remove_modifier = fei_settings_difficulty_nightmare
+		if = { limit = { has_global_flag = FEI_settings_difficulty_reduced } add_modifier = { modifier = fei_settings_difficulty_reduced days = -1 } }
+		if = { limit = { has_global_flag = FEI_settings_difficulty_hard } add_modifier = { modifier = fei_settings_difficulty_hard days = -1 } }
+		if = { limit = { has_global_flag = FEI_settings_difficulty_elite } add_modifier = { modifier = fei_settings_difficulty_elite days = -1 } }
+		if = { limit = { has_global_flag = FEI_settings_difficulty_nightmare } add_modifier = { modifier = fei_settings_difficulty_nightmare days = -1 } }
+	}
+}
